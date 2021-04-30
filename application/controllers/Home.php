@@ -11,15 +11,16 @@ class Home extends Admin_core_controller {
     $this->load->model('cms/Frame_model');
     $this->load->model('cms/Home_model');
     $this->load->model('cms/Email_model');
+    $this->load->model('cms/Faq_model');
   }
 
   public function index()
   {
     $res = $this->Frame_model->all();
+    $faq = $this->Faq_model->all();
     $data['res'] = $res;
-    $this->load->view('frontend/partials/header');
-    $this->load->view('frontend/home', $data);
-    $this->load->view('frontend/partials/footer');
+    $data['faq'] = $faq;
+    $this->wrapper_frontend('frontend/home', $data);
 
   }
 

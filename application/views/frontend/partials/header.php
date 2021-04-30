@@ -14,7 +14,7 @@
     <body>
       <header class="header">
         <div class="pagewrapper">
-          <aside><img src="images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></aside>
+          <aside><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></aside>
 
           <nav class="mainnav">
             <ul>
@@ -66,34 +66,14 @@
             </div>
             <h3>FAQs</h3>
             <ul class="faq-list">
-              <li>
-                <div class="faq-top"><p>How do I order Cuadro Frames?</p></div>
-                <div class="faq-content"><p>Visit our website www.cuadro.com and simply upload your selected photos from your phone or social media accounts (FB or IG). Then, sit back and we’ll deliver your frames to your doorstep.</p></div>
-              </li>
-              <li>
-                <div class="faq-top"><p>How much do Cuadro Frames cost?</p></div>
-                <div class="faq-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus sem, convallis sit amet metus id, ultrices viverra felis. Vestibulum finibus ultrices aliquam.</p></div>
-              </li>
-              <li>
-                <div class="faq-top"><p>How much do I pay for shipping?</p></div>
-                <div class="faq-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus sem, convallis sit amet metus id, ultrices viverra felis. Vestibulum finibus ultrices aliquam.</p></div>
-              </li>
-              <li>
-                <div class="faq-top"><p>Do you ship to other countries?</p></div>
-                <div class="faq-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus sem, convallis sit amet metus id, ultrices viverra felis. Vestibulum finibus ultrices aliquam.</p></div>
-              </li>
-              <li>
-                <div class="faq-top"><p>How do I hang my Cuadro Frames?</p></div>
-                <div class="faq-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus sem, convallis sit amet metus id, ultrices viverra felis. Vestibulum finibus ultrices aliquam.</p></div>
-              </li>
-              <li>
-                <div class="faq-top"><p>Can I move my frames to another spot?</p></div>
-                <div class="faq-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus sem, convallis sit amet metus id, ultrices viverra felis. Vestibulum finibus ultrices aliquam.</p></div>
-              </li>
-              <li>
-                <div class="faq-top"><p>What is the minimum photo resolution I should use?</p></div>
-                <div class="faq-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus sem, convallis sit amet metus id, ultrices viverra felis. Vestibulum finibus ultrices aliquam.</p></div>
-              </li>
+              <?php if (count($faq) > 0 ): ?>
+                <?php $i = 1; foreach ($faq as $key => $value): ?>
+                  <li>
+                    <div class="faq-top"><p><?php echo $value->faq_question ;?></p></div>
+                    <div class="faq-content"><p><?php echo $value->faq_answer ;?></p></div>
+                  </li> 
+                <?php endforeach; ?>
+              <?php endif; ?>
             </ul>
           </div>
 

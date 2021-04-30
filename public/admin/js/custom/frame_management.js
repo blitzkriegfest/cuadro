@@ -27,7 +27,7 @@ $(document).ready(function() {
    $('#main-form')[0].reset() // reset the form
 
    $('input[name=frame_type]').attr('required', 'required')
-   $('input[name=frame_image]').attr("required", 'required')
+   // $('input[name=frame_image]').attr("required", 'required')
 
    $('#main-form').attr('action', base_url + 'cms/frames/add')
    
