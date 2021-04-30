@@ -67,10 +67,10 @@
         <div class="lets-do-it"><a href="get-started.html">LET'S DO IT!</a></div>
       </footer>
 <!-- SCRIPTS -->
-  <script src="<?php echo base_url('public/admin/'); ?>js/frontend/jquery-3.6.0.min.js"></script>
-  <script src="<?php echo base_url('public/admin/'); ?>js/frontend/slick.min.js"></script>
-  <script src="<?php echo base_url('public/admin/'); ?>js/frontend/pagination.min.js"></script>
-  <script src="<?php echo base_url('public/admin/'); ?>js/frontend/main.js"></script>
+  <script src="<?php echo base_url('public/frontend/'); ?>js/jquery-3.6.0.min.js"></script>
+  <script src="<?php echo base_url('public/frontend/'); ?>js/slick.min.js"></script>
+  <script src="<?php echo base_url('public/frontend/'); ?>js/pagination.min.js"></script>
+  <script src="<?php echo base_url('public/frontend/'); ?>js/main.js"></script>
       
       
     </body>
