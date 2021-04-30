@@ -4,7 +4,7 @@
             <ul class="footer">
               <li class="contact-info">
                 <ul class="cinfo">
-                  <li class="footerlogo"><a href="#"><img src="images/cuadro-frames-logo.jpg"></a></li>
+                  <li class="footerlogo"><a href="#"><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg"></a></li>
                   <li class="contactdet">
                     <h4>CUADRO CORPORATION</h4>
                     <ul class="office">

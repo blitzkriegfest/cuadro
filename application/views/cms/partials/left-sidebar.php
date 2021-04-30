@@ -77,6 +77,13 @@
             <span>Products</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('cms/projects') ?>"
+            class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'projects') ? 'active': ''; ?>">
+            <i class="fa fa-th"></i>
+            <span>Projects</span>
+          </a>
+        </li>
       </ul>
       <!-- sidebar menu end-->
     </div>
