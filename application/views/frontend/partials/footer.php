@@ -29,24 +29,23 @@
                 <h4>MENU</h4>
                 <ul class="menulist">
                   <li>
-                    <a href="#">Home</a><br>
+                    <a href="<?php echo base_url();?>">Home</a><br>
                     <a href="#faq" class="faq-footer">FAQs</a><br>
-                    <a href="#" class="color-r">Hot New Items</a><br>
-                    <a href="#">Home</a>
+                    <a href="products" class="color-r">Hot New Items</a><br>
+                    <a href="contact">Contact Us</a>
                   </li>
                   <li>
-                    <a href="#">Get Started</a><br>
-                    <a href="#">Privacy Policy</a><br>
-                    <a href="#">Terms of Use</a>
+                    <a href="getstarted">Get Started</a><br>
+                    <a href="#">Cuadro Terms & Conditions</a><br>
                   </li>
                 </ul>
               </li>
               <li class="social-links">
                 <h4>Follow us on</h4>
                 <ul class="socials">
-                  <li><a href="#" class="fb"></a></li>
-                  <li><a href="#" class="ig"></a></li>
-                  <li><a href="#" class="yt"></a></li>
+                  <li><a href="https://www.facebook.com/cuadroframes" class="fb" target="_blank"></a></li>
+                  <li><a href="https://www.instagram.com/cuadroframes/?fbclid=IwAR05xqPWCLKRWOEHzeRBoEsIqje8q4cRrot7tmPz3wDMXy65lz6QnpEVm_w" class="ig" target="_blank"></a></li>
+                  <li><a href="https://www.youtube.com/channel/UC7LRMSfUFEWhu58UF5xk8fw" class="yt" target="_blank"></a></li>
                 </ul>
               </li>
             </ul>
@@ -54,8 +53,7 @@
               <ul class="mobile-footer-links">
                 <li><a href="#">Chat with Us</a></li>
                 <li class="faq-footer">FAQs</li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Cuadro Terms & Conditions</a></li>
               </ul>
               <p class="mob-copyright">Copyright 2021. Cuadro Corporation.</p>
             </div>
@@ -69,10 +67,10 @@
 <!-- SCRIPTS -->
   <script src="<?php echo base_url('public/frontend/'); ?>js/jquery-3.6.0.min.js"></script>
   <script src="<?php echo base_url('public/frontend/'); ?>js/slick.min.js"></script>
+  <script src="<?php echo base_url('public/frontend/'); ?>js/croppie.js"></script>
   <script src="<?php echo base_url('public/frontend/'); ?>js/pagination.min.js"></script>
   <script src="<?php echo base_url('public/frontend/'); ?>js/main.js"></script>
-      
-      
+  <script src="<?php echo base_url('public/admin/js/custom/') ?>getstarted_management.js"></script>
     </body>
 
 </html>

@@ -1,23 +1,3 @@
- <!--FAQ DESKTOP-->
-      <div class="faq-desktop">
-        <div class="faq-lbox-cont">
-          <div class="faq-lbox">
-            <h3>FAQs</h3>
-            <span class="clsbtn"></span>
-            <ul class="faq-list">
-              <?php if (count($faq) > 0 ): ?>
-                <?php $i = 1; foreach ($faq as $key => $value): ?>
-                  <li>
-                    <div class="faq-top"><p><?php echo $value->faq_question;?></p></div>
-                    <div class="faq-content"><p><?php echo $value->faq_answer;?></p></div>
-                  </li>
-                <?php endforeach; ?>
-              <?php endif; ?>
-            </ul>
-          </div>
-        </div>
-      </div>
-
       <section class="featured">
         <h1>Wall Art in <span>5 Minutes</span></h1>
         <img src="<?php echo base_url('public/frontend/'); ?>images/featured-img.jpg" alt="Wall Art in 5 Minutes">

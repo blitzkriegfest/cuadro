@@ -84,6 +84,13 @@
             <span>Projects</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('cms/rates') ?>"
+            class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'rates') ? 'active': ''; ?>">
+            <i class="fa fa-book"></i>
+            <span>Rates Management</span>
+          </a>
+        </li>
       </ul>
       <!-- sidebar menu end-->
     </div>

@@ -91,9 +91,9 @@ button {cursor: pointer; background: transparent;}
 .listn {list-style: none; margin: 0; padding: 0;} // use this as reset for unordered/ordered lists
 
 /* Containers */
-.pagewrapper {width: 98%;  margin: 0 auto; padding: 0; } // change width and max-width accordingly
-.pagewrapper2 {width: 97%; margin: 0 auto;  position: relative;}
-.pagewrapper3 {width: 96%; margin: 0 auto; max-width: 1420px }
+.pagewrapper {width: 100%;  margin: 0 auto; padding: 0 24px; } // change width and max-width accordingly
+.pagewrapper2 {width: 100%; margin: 0 auto; padding: 0 24px; position: relative;}
+.pagewrapper3 {width: 100%; margin: 0 auto; max-width: 1420px; padding: 0 24px;}
 .pagewrapper4 {width: 94%; margin: 0 auto; max-width: 1356px;}
 .pagewrapper5 {width: 88%; margin: 0 auto; max-width: 1260px;}
 .pagewrapper6 {width: 100%; margin: 0 auto; max-width: 1440px;}
@@ -809,7 +809,7 @@ img.mfp-img {
 
 header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwbox; position: fixed; top: 0; left: 0; height: 130px; z-index: 1000;
   .pagewrapper {@extend .flex; @extend .betweenstretch; height: 129px;
-    aside {width: 110px; height: 110px; position: absolute; top: 0; left: 0;}
+    aside {width: 110px; height: 110px; position: absolute; top: 0; left: 24px;z-index: 1}
     nav {@extend .wid100; padding-left: 130px; height: 119px; position: relative;
       ul {@extend .listn; @extend .flex; @extend .endcenter; height: 100%;
         li {height: 100%; margin-left: 10px;
@@ -891,9 +891,8 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
       }
       .bottom{position: absolute; bottom: 0; left: 0; width: 100%;
         ul.privacy-terms{width: 100%;@extend .listn; @extend .flex; margin-bottom: 42px;
-          li{width: 50%; text-align: center;
+          li{width: 100%; text-align: center;
             a{font: 20px/24px $fontmain; color: black;}
-            &:first-child{border-right: 2px solid $black}
           }
         }
         ul.socials{width: 100%; padding: 10px 0; background: $offwhite2; @extend .listn; @extend .flex; @extend .centercenter;
@@ -908,18 +907,18 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
         } 
       } 
     }
-    .faqs{display: none; padding-top: 110px; width: 100%; height: 100%;
+    .faqs{display: none; padding-top: 110px; padding-bottom: 24px; width: 100%; height: 100%;
       h3{width: 100%; text-align: center; color: $orange; font: 36px/42px $fonthead; height: 72px; @extend .flex; @extend .centercenter;}
       ul.faq-list{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .listn;
         li{width: 100%; border-bottom: 1px solid $offwhite2;
           &.active .faq-top:after{transform: translateY(-50%) rotate(180deg);}
-          .faq-top{width: 100%; padding: 10px 5px; position: relative; padding-right: 48px;
+          .faq-top{width: 100%; padding: 10px 15px; position: relative; padding-right: 48px; cursor: pointer;
             &:after{content: ''; display: block; width: 17px; height: 9px; background: url('../images/arrow-down.png'); background-size: contain;
               position: absolute; top: 50%; transform: translateY(-50%); right: 16px; transform-origin: center; transition: all 200ms ease-in-out;
             }
             p{font: 20px/32px $fontbold; color: $blue;}
           }
-          .faq-content{padding: 5px 5px 10px; display: none;
+          .faq-content{padding: 5px 15px 10px; display: none;
             p{font: 14px/20px $fontmain;}
           }
         }
@@ -935,15 +934,16 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
 
 .faq-desktop{position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000;
   background: rgba(0,0,0,0.6); display: none;
-  .faq-lbox-cont{width: 100%; height: 100%; @extend .flex; align-items: center; justify-content: center;
-    .faq-lbox{background: white; width: 100%; max-width: 680px; position: relative; padding: 32px;
+  .faq-lbox-cont{width: 100%; height: 100%; @extend .flex; align-items: center; justify-content: center; padding: 24px 0;
+    .faq-lbox{background: white; width: 100%; max-width: 680px; position: relative; padding: 32px; max-height: 100%;
       span.clsbtn{cursor: pointer; display: block; position: absolute; top: 16px; right: 26px; width: 32px; height: 32px;
         background: url('../images/close-nav.png'); background-size: contain;}
       h3{font: 36px/42px $fonthead; color: $orange; width: 100%; text-align: center; padding: 20px 12px}
-      ul.faq-list{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .listn;
+      .scrollwrap{height: calc(100% - 82px); overflow-y: auto;}
+      ul.faq-list{width: 100%;  @extend .listn;
         li{width: 100%; border-bottom: 1px solid $offwhite2;
           &.active .faq-top:after{transform: translateY(-50%) rotate(180deg);}
-          .faq-top{width: 100%; padding: 10px 5px; position: relative; padding-right: 48px;
+          .faq-top{width: 100%; padding: 10px 5px; position: relative; padding-right: 48px; cursor: pointer;
             &:after{content: ''; display: block; width: 17px; height: 9px; background: url('../images/arrow-down.png'); background-size: contain;
               position: absolute; top: 50%; transform: translateY(-50%); right: 16px; transform-origin: center; transition: all 200ms ease-in-out;
             }
@@ -1032,7 +1032,7 @@ footer {@extend .wid100; position: relative;padding-top: 40px;
       h4 {font: 18px/24px $fonthead; color: $black; letter-spacing: 0.5px; @extend .wid100; margin-bottom: 5px; text-transform: uppercase;}
       ul.menulist{@extend .wid100; @extend .listn; @extend .flex; @extend .betweenstart;
         li{width: 49%;
-          a{color: black; font: 15px/22px $fontmain; }
+          a{color: black; font: 15px/22px $fontmain; &:hover{color: $orange;}}
         }
       }
     }
@@ -1041,9 +1041,9 @@ footer {@extend .wid100; position: relative;padding-top: 40px;
       ul.socials {@extend .wid100; @extend .listn; @extend .flex; @extend .startstart;
         li{width: 41px; height: 41px; margin-right: 10px; margin-bottom: 10px;
           a{width: 100%; height: 100%; display: block;
-            &.fb{background: url('../images/fb.png'); background-size: contain;}
-            &.ig{background: url('../images/ig.png'); background-size: contain;}
-            &.yt{background: url('../images/yt.png'); background-size: contain;}
+            &.fb{background: url('../images/fb.png'); background-size: contain; &:hover{opacity: 0.8;}}
+            &.ig{background: url('../images/ig.png'); background-size: contain; &:hover{opacity: 0.8;}}
+            &.yt{background: url('../images/yt.png'); background-size: contain; &:hover{opacity: 0.8;}}
           }
         }
       }
@@ -1129,7 +1129,7 @@ footer {@extend .wid100; position: relative;padding-top: 40px;
   }
 }
 
-.products{@extend .wid100;
+.products{@extend .wid100; padding: 0 20px;
   .product-list{@extend .listn; @extend .flex; @extend .startstretch; margin: 0 -24px;
     li{width: 33.333%; margin-bottom: 32px; padding: 0 24px;
       &.hidden{display: none;}
@@ -1210,9 +1210,18 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
         &:disabled{opacity: 0.5!important; pointer-events: none;}
       }
       .place-order-btn{@extend .checkout-btn;}
+      .iagree-sec{position: relative; width: 100%; @extend .flex; justify-content: center; margin-bottom: 16px;
+        .iagree-wrap{padding-left: 42px; }
+        input[type='checkbox']{width: 26px; height: 26px; background: white; border: 1px solid $offwhite; position: absolute; left: 0;
+          &:checked{background: white url('../images/check.png'); background-size: contain;}
+        }
+        label{font: 18px/28px $fontmain; color: black;
+          a{font-size: inherit; line-height: inherit; color: inherit; text-decoration: underline;}
+        }
+      }
     }
     .step-1 {
-      ul.pick-options{@extend .listn; @extend .flex; @extend .centercenter; width: 100%; padding-top: 56px;
+      ul.pick-options{@extend .listn; @extend .flex; @extend .centerstretch; width: 100%; padding-top: 56px;
         li:first-child, li:last-child{width: 280px; height: 280px; transition: border-color 200ms ease-in; overflow: hidden;
           border: 3px solid $dblue; border-radius: 50%; position: relative; @extend .flex; align-items: center; justify-content: center;
           label{color: $dblue; font: 40px/56px $fonthead; width: 100%; text-align: center; transition: color 200ms ease-in;
@@ -1226,11 +1235,16 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
             &::before{opacity: 1;}
           }
         }
-        li.divider{color: $black; font: 24px/32px $fonthead; text-align:center; padding: 0 62px;}
+        li.divider{color: $black; font: 24px/32px $fonthead; text-align:center; padding: 0 62px; @extend .flex; @extend .centercenter; position: relative;
+          &:before{content: ''; width: 1px; height: calc(50% - 28px); background: $offwhite3; position: absolute; top: 0; left: calc(50% - 1px);}
+          &:after{content: ''; width: 1px; height: calc(50% - 28px); background: $offwhite3; position: absolute; bottom: 0; left: calc(50% - 1px);}
+        }
       }
     }
 
     .step-2 {
+      h5{margin-bottom: 5px}
+      p{margin-bottom: 24px; text-align: center; font: 15px/22px $fontmain}
       ul.upload-options{@extend .listn; @extend .flex; @extend .betweenstretch; width: 100%; padding-top: 36px; padding-bottom: 138px;
         &>li{width: 31.5%;position: relative;transition: background 100ms ease-in-out;
           &:hover{background: $offwhite3;}
@@ -1239,7 +1253,7 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
             color: $black; font: 18px/24px $fontbold; border-radius: 8px; display: block; text-align: center;
             img.logo{width: auto; height: auto; display: block; margin: 0 auto 24px;}
           }
-          ul.files{@extend .listn; position: absolute; bottom: 0; transform: translateY(calc(100% + 12px)); left: 0; width: 100%; padding: 0 10px;
+          ul.files{@extend .listn; position: absolute; bottom: 0; transform: translateY(calc(100% + 12px)); left: 0; width: 100%; padding: 0 10px; max-height: 145px; overflow-y: auto;
             li{width: 100%; position: relative; margin-bottom: 8px; padding-right: 24px; 
               a{color: $black; text-decoration: underline; font: 14px/20px $fontmain; word-break: break-all;}
               span.remove{width: 18px; height: 18px; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
@@ -1290,15 +1304,16 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
                   }
                   .remove-photo-btn{ padding-left: 24px; background: white url('../images/remove-single.png'); background-size: 16px; background-position: left center; background-repeat: no-repeat;
                     transition: opacity 100ms ease-in; &:hover{opacity: 0.5;}
+                    &.disabled {opacity: 0.5;}
                   }
                 }
               }
             }
             
             //upload section
-            .upload-pane{width: 240px; height: 240px;
-              background: url('../images/border-dashed.png'); background-size: 100%;
-              ul.inner-upload-options{@extend .listn; width: 100%; height: 100%;
+            .upload-pane{
+              ul.inner-upload-options{@extend .listn; width: 240px; height: 240px; background: url('../images/border-dashed.png'); background-size: 100%;
+                margin-bottom: 10px;
                 li{width: 100%; height: 33.333%; position: relative; border-bottom: 1px solid #f7f7f7;
                   &:hover{background: $offwhite3;} transition: background 100ms ease-in-out;
                   .single-input-file{opacity: 0; position: absolute; top: 0; left: 0;}
@@ -1311,6 +1326,14 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
                     font: 14px/20px $fontbold; cursor: pointer; text-align: left;}
                   .logo{width: 50px; height: auto; display: block; position: absolute; top: 50%; transform: translateY(-50%); left: 24px;}
                   
+                }
+              }
+              .photo-options{width: 100%; @extend .listn; @extend .flex; @extend .centercenter;
+                li{padding: 5px 12px 5px 0;
+                  .remove-photo-btn{ padding-left: 24px; background: white url('../images/remove-single.png'); background-size: 16px; background-position: left center; background-repeat: no-repeat;
+                    transition: opacity 100ms ease-in; &:hover{opacity: 0.5;}
+                    &.disabled {opacity: 0.5;}
+                  }
                 }
               }
             }
@@ -1361,7 +1384,11 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
               .photos-list-final{@extend .listn; margin: 0 -12px; @extend .flex; @extend .startcenter; margin-bottom: 18px;
                 li{width: 25%; padding: 0 12px;
                   .photo-wrap{position: relative;}
-                  img.final-frame{width: 100%; height: auto; position: absolute; top: 0; left: 0;}
+
+                  .frames{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+                  img.final-frame{width: 100%; height: auto; position: absolute; top: 0; left: 0; display: none;
+                    &.active-frame{display: block;}
+                  }
                   img{width: 100%; height: auto;}
                 }
               }
@@ -1379,6 +1406,14 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
             }
           }
         }
+      }
+    }
+
+    .step-6{
+      p{font: 16px/24px $fontmain; margin-bottom: 12px; text-align: center;}
+      .return-home-btn{display: inline-block; background: $orange;font: 22px/22px $fonthead; padding: 16px 24px; min-width: 165px; text-align: center; color: white; border-radius: 8px;
+        background: $orange;transition: opacity 100ms ease-in-out; position: relative; left: 50%; transform: translateX(-50%);
+        &:hover{opacity: 0.8;}
       }
     }
   }

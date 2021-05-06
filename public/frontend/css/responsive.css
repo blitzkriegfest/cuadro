@@ -5,6 +5,8 @@
 
 @media screen and (max-width: 1440px) {
 
+	.get-started .wrap .step-2 ul.upload-options{padding-bottom: 72px; padding-top: 16px;}
+	.get-started .wrap .step-2 p{margin-bottom: 16px;}
 }
 
 @media screen and (max-width: 1366px) {
@@ -29,7 +31,7 @@
 	.contact-info-main .wrap article .contact-det h4{font-size: 20px; line-height: 30px;}
 	.contact-info-main .wrap article .contact-det ul.office li h5, .contact-info-main .wrap article .contact-det ul.office li:last-child h5,
 	.contact-info-main .wrap article .contact-det ul.office li p, .contact-info-main .wrap article .contact-det ul.office li:last-child p{font-size: 16px; line-height: 24px;}
-	.contact-form .pagewrapper3{padding: 0;}
+	/* .contact-form .pagewrapper3{padding: 0;} */
 	.contact-form .pagewrapper3 .wrap h4{font-size: 22px; line-height: 30px;}
 	.contact-form .pagewrapper3 .wrap ul li label,
 	.contact-form .pagewrapper3 .wrap .iagree-sec label{font-size: 16px; line-height: 24px;}
@@ -48,13 +50,13 @@
 	.content .wrap h5 {font-size: 20px; line-height: 30px;}
 	.content .wrap h6 {font-size: 18px; line-height: 24px;}
 
-	.get-started .wrap .step-1 ul.pick-options{padding-top: 32px;}
+	.get-started .wrap .step-1 ul.pick-options li:first-child, .get-started .wrap .step-1 ul.pick-options li:last-child{width: 270px; height: 270px;}
+	.get-started .wrap .step-1 ul.pick-options{padding-top: 24px;}
 	.get-started .wrap h1{font-size: 36px; line-height: 48px;}
 	.get-started .wrap .steps h5{font-size: 20px; line-height: 32px;}
 	.get-started .wrap .step-1 ul.pick-options li:first-child label, .get-started .wrap .step-1 ul.pick-options li:last-child label{font-size: 36px; line-height: 48px;}
-	.get-started .wrap .navigation{margin-top: 56px!important;}
+	.get-started .wrap .navigation{margin-top: 42px!important;}
 	.get-started .wrap .step-2 ul.upload-options > li label{font-size: 16px; line-height: 22px;}
-	.get-started .wrap .step-2 ul.upload-options{padding-bottom: 125px;}
 
 	.get-started .wrap .step-4 .forms ul.form-list li label{font-size: 16px; line-height: 26px;}
 
@@ -65,6 +67,11 @@
 	.get-started .wrap .step-5 .checkouts .container .right .total label,
 	.get-started .wrap .step-5 .checkouts .container .right .total .value-total,
 	.get-started .wrap .step-5 .checkouts .container .right .top .costs li .quantity{font-size: 18px; line-height: 32px;}
+	.get-started .wrap .navigation .iagree-sec .iagree-wrap label{font-size: 16px; line-height: 24px;}
+}
+
+@media screen and (max-height: 768px) {
+	.faq-desktop .faq-lbox-cont .faq-lbox{height: 100%;}
 }
 
 /*Landscape tablets*/
@@ -87,15 +94,15 @@
 /*Portrait Tablets*/
 @media screen and (max-width: 999px) {
 	/* header .pagewrapper nav ul li a{padding: 0 12px;} */
-	.pagewrapper, .pagewrapper2 {width: 96%;}
+	/* .pagewrapper, .pagewrapper2 {width: 96%;} */
 	header .mainnav{display: none;}
 	header .lets-do-it {display: flex;}
 	header #mobnav{display: flex;}
-	header{height: auto; padding-bottom: 10px; padding-top: 0;}
+	header{height: auto; padding-bottom: 10px;}
 	header .pagewrapper{height: 108px;}
 	header .pagewrapper aside{right: 0; left: auto;}
 	
-	.featured{height: auto; padding: 118px 5px 32px;}
+	.featured{height: auto; padding: 128px 24px 32px;}
 	.featured h1{font-size: 48px; line-height: 54px; position: relative; top: auto; padding: 20px 12px;}
 	.featured{width: 100%; height: auto;}
 
@@ -121,8 +128,8 @@
 	/* footer ul.footer li.footermenu{width: 70%;}
 	footer ul.footer li.social-links{width: 30%;} */
 
-	.contact-info-main{padding-top: 118px;}
-	.short-banner{padding-top: 118px;}
+	.contact-info-main{padding-top: 128px;}
+	.short-banner{padding-top: 128px;}
 	.contact-info-main .wrap{padding-top: 0;}
 	.contact-info-main .wrap .gmaps {width: 100%; height: 306px; padding-top: 72px;}
 	.contact-info-main .wrap article{width: 100%;}
@@ -135,7 +142,7 @@
 	.products .product-list{margin: 0 -12px;}
 	.products .product-list li{width: 50%; padding: 0 12px;}
 
-	.get-started{padding-top: 118px;}
+	.get-started{padding-top: 128px;}
 	.get-started .wrap .step-1 ul.pick-options li.divider{font-size: 20px; line-height: 28px; padding: 0 24px;}
 	.get-started .wrap .step-1 ul.pick-options li:first-child, .get-started .wrap .step-1 ul.pick-options li:last-child{width: 250px; height: 250px;}
 
@@ -146,7 +153,7 @@
 
 /*Modern Phones*/
 @media screen and (max-width: 600px) {
-	.pagewrapper, .pagewrapper2, .pagewrapper7{width: 95%;}
+	.pagewrapper, .pagewrapper2, .pagewrapper3, .pagewrapper7{padding: 0 15px;}
 	header .pagewrapper{height: 98px;}
 	header .pagewrapper aside{width: 98px; height: 98px; right: 0; left: auto;}
 	header .mob-dropdown ul li a{font-size: 18px; line-height: 26px;}
@@ -154,6 +161,7 @@
 	header .mob-dropdown .faqs ul.faq-list li .faq-top p{font-size: 16px; line-height: 24px;}
 	ul.accordion li .accord-top p{font-size: 16px; line-height: 24px;}
 
+	.featured{padding: 128px 15px 32px;}
 	.featured h1{font-size: 42px; line-height: 52px;}
 	.featured h1 span{display: block;}
 
@@ -180,14 +188,15 @@
 	.contact-info-main .wrap article .contact-det h4{font-size: 18px; line-height: 28px; margin-bottom: 8px;}
 	.contact-info-main .wrap article .contact-det ul.office li h5, .contact-info-main .wrap article .contact-det ul.office li:last-child h5, .contact-info-main .wrap article .contact-det ul.office li p, .contact-info-main .wrap article .contact-det ul.office li:last-child p{font-size: 15px; line-height: 24px;}
 	.contact-info-main .wrap{padding-bottom: 0; border-bottom: 0; margin-bottom: 0;}
-	.contact-form .pagewrapper3{width: 100%;}
+	.contact-form .pagewrapper3{padding: 0;}
+	.contact-form .pagewrapper3 .wrap{padding: 32px 24px;}
 	.contact-form .pagewrapper3 .wrap ul li{width: 100%!important;}
 	.contact-form .pagewrapper3 .wrap ul li label, .contact-form .pagewrapper3 .wrap .iagree-sec label,
 	.contact-form .pagewrapper3 .wrap ul li input, .contact-form .pagewrapper3 .wrap ul li textarea{font-size: 15px; line-height: 24px;}
 	.contact-form .pagewrapper3 .wrap .iagree-sec{width: 100%; margin-bottom: 18px;}
-	.contact-info-main{padding-top: 108px;}
+	.contact-info-main{padding-top: 118px;}
 	
-	.short-banner{padding-top: 108px;}
+	.short-banner{padding-top: 118px;}
 	.short-banner .wrap{border-bottom: none; padding-top: 0;}
 	.products .product-list{margin: 0 0 24px}
 	.products .product-list li{width: 80%; padding: 0; margin: 0 auto 24px;}
@@ -195,7 +204,7 @@
 	.products .product-list li h5{font-size: 16px; line-height: 24px;}
 	.products .pagination li a{font-size: 16px; line-height: 16px;}
 
-	.get-started{padding-top: 108px;}
+	.get-started{padding-top: 118px;}
 	.get-started .wrap{padding: 16px 0 56px;}
 	.get-started .wrap .navigation{margin-top: 24px;}
 	.get-started .wrap .navigation .next-btn{font-size: 16px; line-height: 16px; padding: 14px 48px 14px 24px;}
@@ -207,8 +216,8 @@
 	.get-started .wrap .step-1 ul.pick-options{flex-direction: column;}
 	.get-started .wrap .step-1 ul.pick-options li.divider{padding: 0; margin: 24px 0; font-size: 15px; line-height: 24px; width: 100%; position: relative;}
 	.get-started .wrap .step-1 ul.pick-options li.divider:before{content: ''; width: calc(50% - 24px); height: 1px; background: #e1e7ec; position: absolute; left: 0; top: calc(50% - 1px);}
-	.get-started .wrap .step-1 ul.pick-options li.divider:after{content: ''; width: calc(50% - 24px); height: 1px; background: #e1e7ec; position: absolute; right: 0; top: calc(50% - 1px);}
-	.get-started .wrap .step-1 ul.pick-options li:first-child, .get-started .wrap .step-1 ul.pick-options li:last-child{width: 154px; height: 154px; }
+	.get-started .wrap .step-1 ul.pick-options li.divider:after{content: ''; width: calc(50% - 24px); height: 1px; background: #e1e7ec; position: absolute; right: 0; top: calc(50% - 1px); left: auto;}
+	.get-started .wrap .step-1 ul.pick-options li:first-child, .get-started .wrap .step-1 ul.pick-options li:last-child{width: 154px; height: 154px; margin: 0 auto;}
 	.get-started .wrap .step-1 ul.pick-options li:first-child::before, .get-started .wrap .step-1 ul.pick-options li:last-child::before{width: calc(100% - 20px); height: calc(100% - 20px);}
 	.get-started .wrap .step-1 ul.pick-options li:first-child label, .get-started .wrap .step-1 ul.pick-options li:last-child label{font-size: 22px; line-height: 28px;}
 
@@ -238,6 +247,7 @@
 	.get-started .wrap .step-5 .checkouts .container .left p{font-size: 14px; line-height: 20px;}
 	.get-started .wrap .step-5 .checkouts .container .right .top .photos-list-final{margin: 0 -6px 12px;}
 	.get-started .wrap .step-5 .checkouts .container .right .top .photos-list-final li{padding: 0 6px;}
+	.get-started .wrap .navigation .iagree-sec .iagree-wrap label{font-size: 15px; line-height: 24px;}
 }
 
 /*SE Phones*/

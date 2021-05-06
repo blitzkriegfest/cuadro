@@ -18,11 +18,11 @@
 
           <nav class="mainnav">
             <ul>
-              <li><a href="./">Home</a></li>
+              <li><a href="<?php echo base_url();?>">Home</a></li>
               <li class="faq-desk"><a href="#faq">FAQs</a></li>
-              <li><a href="./hot-items.html">Hot New Items</a></li>
-              <li><a href="./contact-us.html">Contact Us</a></li>
-              <li><a href="./get-started.html">LET'S DO IT!</a></li>
+              <li><a href="products">Hot New Items</a></li>
+              <li><a href="contact">Contact Us</a></li>
+              <li><a href="getstarted">LET'S DO IT!</a></li>
             </ul>
           </nav>
         </div>
@@ -32,36 +32,35 @@
         <div class="mob-dropdown">
           <div class="menu">
             <div class="top">
-              <aside><img src="images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></aside>
+              <aside><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></aside>
               <button id="close-nav"><span></span></button>
             </div>
             <nav>
               <ul>
-                <li class="hom"><a href="./index.html">Home</a></li>
+                <li class="hom"><a href="<?php echo base_url();?>">Home</a></li>
                 <li class="faq">FAQs</li>
-                <li class="hni"><a href="./hot-items.html">Hot New Items</a></li>
-                <li class="cus"><a href="./contact-us.html">Contact Us</a></li>
+                <li class="hni"><a href="products">Hot New Items</a></li>
+                <li class="cus"><a href="contact">Contact Us</a></li>
                 <li class="cwu"><a href="#">Chat with Us</a></li>
               </ul>
             </nav>
             <div class="lets-do-it">
-              <a href="./get-started.html" >LET'S DO IT!</a>
+              <a href="getstarted" >LET'S DO IT!</a>
             </div>
             <div class="bottom">  
               <ul class="privacy-terms">
-                <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="./privacy-policy.html">Terms of Us</a></li>
+                <li><a href="./privacy-policy.html">Cuadro Terms & Conditions</a></li>
               </ul>
               <ul class="socials">
-                <li><a href="#" class="fb"></a></li>
-                <li><a href="#" class="ig"></a></li>
-                <li><a href="#" class="yt"></a></li>
+                <li><a href="https://www.facebook.com/cuadroframes" class="fb" target="_blank"></a></li>
+                <li><a href="https://www.instagram.com/cuadroframes/?fbclid=IwAR05xqPWCLKRWOEHzeRBoEsIqje8q4cRrot7tmPz3wDMXy65lz6QnpEVm_w" class="ig" target="_blank"></a></li>
+                <li><a href="https://www.youtube.com/channel/UC7LRMSfUFEWhu58UF5xk8fw" class="yt" target="_blank"></a></li>
               </ul>
             </div>
           </div>
           <div class="faqs">
             <div class="top">
-              <aside><img src="images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></aside>
+              <aside><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></aside>
               <button id="close-faq"><span></span></button>
             </div>
             <h3>FAQs</h3>
@@ -79,3 +78,26 @@
 
         </div>
       </header>
+      
+      <!--FAQ DESKTOP-->
+      <div class="faq-desktop">
+        <div class="faq-lbox-cont">
+          <div class="faq-lbox">
+            <h3>FAQs</h3>
+            <span class="clsbtn"></span>
+            <div class="scrollwrap">
+              <ul class="faq-list">
+                <?php if (count($faq) > 0 ): ?>
+                <?php $i = 1; foreach ($faq as $key => $value): ?>
+                  <li>
+                    <div class="faq-top"><p><?php echo $value->faq_question ;?></p></div>
+                    <div class="faq-content"><p><?php echo $value->faq_answer ;?></p></div>
+                  </li> 
+                <?php endforeach; ?>
+              <?php endif; ?>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>

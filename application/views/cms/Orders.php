@@ -19,12 +19,10 @@
                 <thead>
                   <tr>
                     <th>#</th>
+                    <th>Name</th>
+                    <th>Order Images</th>
                     <th>Order Type</th>
                     <th>Order Cost</th>
-                    <th>Status</th>
-                    <th>Order Date</th>
-                    <th>Delivery Date</th>
-                    <th>Delivery Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -34,15 +32,13 @@
                     <?php $i = 1; foreach ($res as $key => $value): ?>
                       <tr>
                         <th scope="row"><?php echo $i++ ?></th>
+                        <td><?php echo $value->name ?></td>
+                        <td></td>
                         <td><?php echo $value->order_type ?></td>
                         <td><?php echo $value->order_cost ?></td>
-                        <td><?php echo $value->status ?></td>
-                        <td><?php echo $value->order_date ?></td>
-                        <td><?php echo $value->delivery_date ?></td>
-                        <td><?php echo $value->delivery_status ?></td>
                         <td>
                           <button type="button"
-                          data-payload='<?php echo json_encode(['order_id' => $value->order_id, 'order_type' => $value->order_type, 'order_cost' => $value->order_cost, 'customer_name' => $value->customer_name, 'customer_email' => $value->customer_email, 'customer_address' => $value->customer_address, 'customer_number' => $value->customer_number, 'status' => $value->status, 'order_date' => $value->order_date, 'delivery_date' => $value->delivery_date, 'delivery_status' => $value->delivery_status])?>'
+                          data-payload='<?php echo json_encode(['name' => $value->name, 'email' => $value->email, 'number' => $value->number, 'address_1' => $value->address_1, 'address_2' => $value->address_2, 'city' => $value->city, 'state_province' => $value->state_province, 'postal_code' => $value->postal_code, 'sender_name' => $value->sender_name, 'sender_email' => $value->sender_email, 'sender_number' => $value->sender_number, 'order_type' => $value->order_type, 'order_cost' => $value->order_cost])?>'
                           class="edit-row btn btn-info btn-xs">Edit</button>
                           <button type="button" data-id='<?php echo $value->order_id; ?>'
                             class="btn btn-delete btn-danger btn-xs">Delete</button>
@@ -79,44 +75,56 @@
 
           <form role="form" method="post" id="main-form" enctype="multipart/form-data">
             <div class="form-group">
+              <label >Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label >Email</label>
+              <input type="text" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label >Contact Number</label>
+              <input type="text" class="form-control" name="number" placeholder="Number">
+            </div>
+            <div class="form-group">
+              <label >Address 1</label>
+              <textarea class="form-control" name="address_1" placeholder="Address 1"></textarea>
+            </div>
+            <div class="form-group">
+              <label >Address 2</label>
+              <textarea type="text" class="form-control" name="address_2" placeholder="Address 2"></textarea>
+            </div>
+            <div class="form-group">
+              <label >City</label>
+              <input type="text" class="form-control" name="city" placeholder="City">
+            </div>
+            <div class="form-group">
+              <label >State/Province</label>
+              <input type="text" class="form-control" name="state_province" placeholder="State/Province">
+            </div>
+            <div class="form-group">
+              <label >Postal Code</label>
+              <input type="text" class="form-control" name="postal_code" placeholder="Postal Code">
+            </div>
+            <div class="form-group">
+              <label >Sender Name</label>
+              <input type="text" class="form-control" name="sender_name" placeholder="Sender Name">
+            </div>
+            <div class="form-group">
+              <label >Sender Email</label>
+              <input type="text" class="form-control" name="sender_email" placeholder="Sender Email">
+            </div>
+            <div class="form-group">
+              <label >Sender Number</label>
+              <input type="text" class="form-control" name="sender_number" placeholder="Sender Number">
+            </div>
+            <div class="form-group">
               <label >Order Type</label>
               <input type="text" class="form-control" name="order_type" placeholder="Order Type">
             </div>
             <div class="form-group">
               <label >Order Cost</label>
               <input type="text" class="form-control" name="order_cost" placeholder="Order Cost">
-            </div>
-            <div class="form-group">
-              <label >Customer Name</label>
-              <input type="text" class="form-control" name="customer_name" placeholder="Customer Name">
-            </div>
-            <div class="form-group">
-              <label >Customer Email</label>
-              <input type="text" class="form-control" name="customer_email" placeholder="customer Email">
-            </div>
-            <div class="form-group">
-              <label >Customer Address</label>
-              <textarea class="form-control" name="customer_address" placeholder="customer Address"></textarea>
-            </div>
-            <div class="form-group">
-              <label >Customer Contact Number</label>
-              <input type="text" class="form-control" name="customer_number" placeholder="customer Number">
-            </div>
-            <div class="form-group">
-              <label >Status</label>
-              <input type="text" class="form-control" name="status" placeholder="Status">
-            </div>
-            <div class="form-group">
-              <label >Order Date</label>
-              <input type="date" class="form-control" name="order_date" placeholder="Order Date">
-            </div>
-            <div class="form-group">
-              <label >Delivery Date</label>
-              <input type="date" class="form-control" name="delivery_date" placeholder="Delivery Date">
-            </div>
-            <div class="form-group">
-              <label >Delivery Status</label>
-              <input type="text" class="form-control" name="delivery_status" placeholder="Delivery Status">
             </div>
 
           </div>

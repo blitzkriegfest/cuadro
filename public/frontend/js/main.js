@@ -16,24 +16,28 @@ $("#mobnav").click(function(){
     if(!$('header').hasClass('active')) {
         $('header .mob-dropdown').slideDown(200);
         $('header').addClass('active');
+        $('body, html').css('overflow-y', 'hidden');
     }
 });
 $("#close-nav").click(function(){
     if ($('header').hasClass('active')) {
         $('header .mob-dropdown').slideUp(200);
         $('header').removeClass('active');
+        $('body, html').css('overflow-y', 'initial');
     }
 });
 
 //desktop open faq
 $(".faq-desk").click(function(){
     $('.faq-desktop').fadeIn(200);
+    $('body, html').css('overflow-y', 'hidden');
 });
 //desktop faq close
 $(".faq-desktop .faq-lbox-cont .clsbtn").click(function(){
     $(".faq-list li.active .faq-content").slideUp(200);
     $(".faq-list li.active").removeClass('active');
     $('.faq-desktop').fadeOut(200);
+    $('body, html').css('overflow-y', 'initial');
 });
 //open faq mobile
 $(".faq").click(function(){
@@ -45,6 +49,7 @@ $(".faq").click(function(){
 $(".faq-footer").click(function(){
     if ($(window).width() > 999) {
         $('.faq-desktop').fadeIn(200);
+        $('body, html').css('overflow-y', 'hidden');
     } 
     else {
         if(!$('header').hasClass('active')) {
@@ -52,6 +57,7 @@ $(".faq-footer").click(function(){
             $("header .mob-dropdown .faqs").fadeIn(100);
             $('header .mob-dropdown').slideDown(400);
             $('header').addClass('active');
+            $('body, html').css('overflow-y', 'hidden');
         }
     }
 });
@@ -62,6 +68,7 @@ $("#close-faq").click(function(){
     $('header .mob-dropdown .faqs').fadeOut(200, function(){
         $('header .mob-dropdown .menu').fadeIn(200);
     })
+    $('body, html').css('overflow-y', 'initial');
 });
 
 //faqs tabs
@@ -160,13 +167,23 @@ $('.pick-options li').click(function(){
 $("input[name='options']").change(function(){
     if($(this).val() === 'for-me') {
         //enable only for me sections
-        $("#special-someone-form").removeClass('active-form');
-        $("#special-someone-checkout").removeClass('active-checkout');
-        $("#for-me-form").addClass('active-form');
-        $("#for-me-checkout").addClass('active-checkout');
+        // $("#special-someone-form").removeClass('active-form');
+        // $("#special-someone-checkout").removeClass('active-checkout');
+        // $("#for-me-form").addClass('active-form');
+        // $("#for-me-checkout").addClass('active-checkout');
+        $("#for-me-form").removeClass('active-form');
+        $("#for-me-checkout").removeClass('active-checkout');
+        $("#special-someone-form").addClass('active-form');
+        $("#special-someone-checkout").addClass('active-checkout');
+        $('.sender').hide();
+        $('.sender input[type=text]').prop('disabled', true);
+        $('.sender input[type=number]').prop('disabled', true);
 
     }else if ($(this).val() === 'special-someone') {
         //enable only special someone sections
+        $('.sender').show();
+        $('.sender input[type=text]').prop('disabled', false);
+        $('.sender input[type=number]').prop('disabled', false);
         $("#for-me-form").removeClass('active-form');
         $("#for-me-checkout").removeClass('active-checkout');
         $("#special-someone-form").addClass('active-form');
@@ -179,36 +196,57 @@ $("input[name='options']").change(function(){
 });
 
 //navigation for steps
+var stepchange = false;
 var steps = $(".steps");
 var current = 0;
 $(".navigation .next-btn").click(function(){
-    if(current < steps.length){
+    if(current < steps.length && !stepchange){
+        stepchange = true;
         $(steps[current]).fadeOut(200,function(){
             $(steps[current]).removeClass('active-step');
             ++current;
             $(steps[current]).fadeIn(200);
             $(steps[current]).addClass('active-step');
+            stepchange = false;
         })
     }
 });
 $(".navigation .back-btn").click(function(){
-    if(current > 0){
+    if(current > 0 && !stepchange){
+        stepchange = true;
         $(steps[current]).fadeOut(200,function(){
             $(steps[current]).removeClass('active-step');
             --current;
             $(steps[current]).fadeIn(200);
             $(steps[current]).addClass('active-step');
+            stepchange = false;
         })
     }
 });
 //CHECKOUT BTN
 $(".checkout-btn").click(function(){
-    if(current < steps.length){
+    if(current < steps.length && !stepchange){
+        stepchange = true;
         $(steps[current]).fadeOut(200,function(){
             $(steps[current]).removeClass('active-step');
             ++current;
             $(steps[current]).fadeIn(200);
             $(steps[current]).addClass('active-step');
+            stepchange = false;
+        })
+    }
+});
+//PLACE ORDER BTN shows thank you
+$(".place-order-btn").click(function(){
+    $(".heading-text").fadeOut(200);
+    if(current < steps.length && !stepchange){
+        stepchange = true;
+        $(steps[current]).fadeOut(200,function(){
+            $(steps[current]).removeClass('active-step');
+            ++current;
+            $(steps[current]).fadeIn(200);
+            $(steps[current]).addClass('active-step');
+            stepchange = false;
         })
     }
 })
@@ -263,19 +301,39 @@ function createFileElement(file) {
 }   
 
 //FRAMES SELECTION
+//boundary
+var frameboundary = $("input[name='frame_options']").data('boundary');
+var framepercent = $("input[name='frame_options']").data('percent-boundary') + '%';
+$('.photo-wrap-big').css('padding', frameboundary);
+$('.photo-wrap-sm').css('padding', framepercent);
+
 $("input[name='frame_options']").change(function(){
     $framesel = $(this);
     //sets name of frame
     $('.frame-result-name').html($(this).val());
 
-    //set frame for ui
+    //set frame for big frame
     $('.frames-container .frame-above.active-frame').removeClass('active-frame');
     $('.frames-container .frame-above').each(function(){
-        console.log($(this).data('frame-name') + ', ' + $framesel.val().toLowerCase());
         if($(this).data('frame-name') === $framesel.val().toLowerCase() && !$(this).hasClass('active-frame')){
             $(this).addClass('active-frame');
         }
     });
+    //setframe for sm frame
+    $('.final-frame').removeClass('active-frame');
+    $('.final-frame').each(function(){
+        if($(this).data('frame-name') === $framesel.val().toLowerCase() && !$(this).hasClass('active-frame')){
+            $(this).addClass('active-frame');
+        }
+    });
+
+
+    //adds boundary
+    frameboundary = $(this).data('boundary');
+    framepercent = $(this).data('percent-boundary') + '%';
+    $('.photo-wrap-big').css('padding', frameboundary);
+    $('.photo-wrap-sm').css('padding', framepercent);
+    console.log(framepercent);
 });
 
 //STEP 3  ADD SINGLE EVENT
@@ -293,9 +351,14 @@ $(".single-input-file").change(function(){
 
 //STEP 3 REMOVE SINGLE EVENT
 $('.remove-photo-btn').click(function(){
-    $removeIndex = $(this).closest('.single-container').index();
-    console.log($removeIndex);
-    $('.step-3 .photos-section .container').slick('slickRemove', $removeIndex);
+    if ($('.photos-section .single-container').length >1){
+        $removeIndex = $(this).closest('.single-container').index();
+        $('.step-3 .photos-section .container').slick('slickRemove', $removeIndex);
+    }
+    //adds disabled
+    if($('.photos-section .single-container').length <= 1){
+        $(".remove-photo-btn").addClass('disabled');
+    }
 });
 
 //STEP 3 SLIDER OPTIONS
@@ -326,6 +389,9 @@ $(".step-3 .photos-section .container").on('afterChange', function(){isSliding =
 $(".add-new-single").click(function(){
     //check if not sliding before adding
     createPaneElement();
+    if($('.remove-photo-btn').hasClass('disabled')) {
+        $('.remove-photo-btn').removeClass('disabled');
+    }
 });
 
 //STEP 3 CREATE NEW PANE ELELEMNT
@@ -343,6 +409,9 @@ function createPaneElement () {
                                 <li><button class="upload-fb"><img src="./images/fb.png" class="logo" alt="camera">Import from Facebook</button></li>
                                 <li><button class="upload-ig"><img src="./images/ig.png"  class="logo"alt="camera">Import from Instagram</button></li>
                             </ul>
+                            <ul class="photo-options">
+                                <li><button class="remove-photo-btn">Remove</button></li>
+                            </ul>
                         </div>
                         <!--IF HAS UPLOADED SHOW THIS-->
                         <div class="photo-pane">
@@ -350,7 +419,9 @@ function createPaneElement () {
                                 <!--ORIGINAL UPLOADED PHOTO FOR CROPPER HIDDEN-->
                                 <img src="./images/sample.jpg" alt="orginal photo" class="pic-original">
                                 <!--RESULT PHOTO FROM CROP-->
-                                <img src="./images/sample.jpg" alt="pic to use" class="pic-used">
+                                <div class="photo-wrap">
+                                  <img src="./images/sample.jpg" alt="pic to use" class="pic-used">
+                                </div>
                                 <!--FRAMES-->
                                 <div class="frames-container">
                                 <img src="./images/best-seller.png" alt="frame to use" data-frame-name="bestseller" class="frame-above active-frame">
@@ -367,8 +438,10 @@ function createPaneElement () {
                         </div>
                     </li>`;
     if(!isSliding) {
-        
         $addindex = $(".step-3 .photos-section .container .single-container").length-1
+        if ($addindex <= 0) {
+            $addindex = 0;
+        }
         $addeventindex = $(".step-3 .photos-section .container .single-container").length;
         $(".step-3 .photos-section .container").slick('slickAdd', paneElement, $addindex);
 
@@ -401,11 +474,38 @@ function createPaneElement () {
 
         //REMOVE EVENT
         $($newel).find('.remove-photo-btn').click(function(){
-            $removeIndex = $(this).closest('.single-container').index();
-            $('.step-3 .photos-section .container').slick('slickRemove', $removeIndex);
+            if ($('.photos-section .single-container').length >1){
+                $removeIndex = $(this).closest('.single-container').index();
+                $('.step-3 .photos-section .container').slick('slickRemove', $removeIndex);
+            }
+            //adds disabled
+            if($('.photos-section .single-container').length <= 1){
+                $(".remove-photo-btn").addClass('disabled');
+            }
         })
+
+        //ADD BOUNDARY
+        $('.photo-wrap-big').css('padding', frameboundary);
     }
 }
+
+//STEP 5 I agree
+//forme
+$("#agreeforme").change(function(){
+    if($(this).prop('checked') === true) {
+        $("#forme-placeorder").prop('disabled', false);
+    }else {
+        $("#forme-placeorder").prop('disabled', true);
+    }
+});
+//special someone
+$("#agreespecial").change(function(){
+    if($(this).prop('checked') === true) {
+        $("#special-placeorder").prop('disabled', false);
+    }else {
+        $("#special-placeorder").prop('disabled', true);
+    }
+})
 
 
 //CROPPER STUFF HERE
@@ -434,7 +534,8 @@ $("#done-crop").click(function(){
     var passcropped = $($('.single-container')[cropindex]).find('.pic-used');
     $("#maincropper").croppie('result', {
         type: 'canvas',
-        size: 'viewport'
+        size: 'original',
+        quality: 1
     }).then(function(resp) {$(passcropped).attr('src', resp)});
     $(".cropper-popup").fadeOut(200);
 });
