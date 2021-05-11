@@ -50,7 +50,7 @@
             <h2>FRAME YOUR TREASURES<br>
             TREASURE YOUR FRAMES</h2>
             <p>Turn your walls into galleries of your most special moments or favorite decor</p>
-            <h6><a href="#">LET'S DO IT!</a></h6>
+            <h6><a href="<?php echo base_url('getStarted');?>">LET'S DO IT!</a></h6>
           </article>
           <aside>
             <div class="video-container">

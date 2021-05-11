@@ -17,7 +17,7 @@ class Rates extends Admin_core_controller {
     $this->wrapper('cms/rates', $data);
   }
 
-  public function update()
+  public function update($id)
   {
     if($this->Rates_model->update($id, $this->input->post(null, true))){
      $this->session->set_flashdata('flash_msg', ['message' => 'Rates updated successfully', 'color' => 'green']);

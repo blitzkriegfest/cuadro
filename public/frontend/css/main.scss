@@ -909,7 +909,7 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
     }
     .faqs{display: none; padding-top: 110px; padding-bottom: 24px; width: 100%; height: 100%;
       h3{width: 100%; text-align: center; color: $orange; font: 36px/42px $fonthead; height: 72px; @extend .flex; @extend .centercenter;}
-      ul.faq-list{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .listn;
+      ul.faq-list{width: 100%; height: calc(80% - 72px); overflow-y: auto; @extend .listn;
         li{width: 100%; border-bottom: 1px solid $offwhite2;
           &.active .faq-top:after{transform: translateY(-50%) rotate(180deg);}
           .faq-top{width: 100%; padding: 10px 15px; position: relative; padding-right: 48px; cursor: pointer;
@@ -1194,22 +1194,27 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
     }
 
     .navigation {width: 100%;@extend .flex; @extend .listn; margin-top: 72px!important;  justify-content: center;
-      .next-btn {font: 22px/22px $fonthead; padding: 16px 56px 16px 24px; color: white; border-radius: 8px;
+      .next-btn {font: 22px/22px $fonthead; padding: 16px 56px 16px 24px; color: white; border-radius: 8px; cursor: pointer;
         background: $dblue url('../images/next.png'); background-size: 11px; background-position: calc(100% - 16px) center; background-repeat: no-repeat;
         transition: opacity 100ms ease-in-out;&:hover{opacity: 0.8;}
         &:disabled{opacity: 0.5!important; pointer-events: none;}
       } 
-      .back-btn {font: 22px/22px $fonthead; padding: 16px 24px 16px 56px; margin-right: 32px; color: white; border-radius: 8px;
+      .back-btn {font: 22px/22px $fonthead; padding: 16px 24px 16px 56px; margin-right: 32px; color: white; border-radius: 8px; cursor: pointer;
         background: $dblue url('../images/back.png'); background-size: 11px; background-position: 16px center; background-repeat: no-repeat;
         transition: opacity 100ms ease-in-out;&:hover{opacity: 0.8;}
         &:disabled{opacity: 0.5!important; pointer-events: none;}
       } 
       .checkout-btn {font: 22px/22px $fonthead; padding: 16px 24px; min-width: 165px; text-align: center; color: white; border-radius: 8px;
-        background: $orange;transition: opacity 100ms ease-in-out;
+        background: $orange;transition: opacity 100ms ease-in-out; cursor: pointer;
         &:hover{opacity: 0.8;}
         &:disabled{opacity: 0.5!important; pointer-events: none;}
       }
+      .reset-selection{@extend .back-btn;}
+      .checkout-clear {@extend .back-btn;}
       .place-order-btn{@extend .checkout-btn;}
+      #initial-images-button{@extend .next-btn;}
+      #check-proceed{@extend .next-btn;}
+
       .iagree-sec{position: relative; width: 100%; @extend .flex; justify-content: center; margin-bottom: 16px;
         .iagree-wrap{padding-left: 42px; }
         input[type='checkbox']{width: 26px; height: 26px; background: white; border: 1px solid $offwhite; position: absolute; left: 0;
@@ -1220,7 +1225,7 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
         }
       }
     }
-    .step-1 {
+    .step-1 {opacity: 0; animation: show 0.5s forwards; animation-delay: 0.5s;
       ul.pick-options{@extend .listn; @extend .flex; @extend .centerstretch; width: 100%; padding-top: 56px;
         li:first-child, li:last-child{width: 280px; height: 280px; transition: border-color 200ms ease-in; overflow: hidden;
           border: 3px solid $dblue; border-radius: 50%; position: relative; @extend .flex; align-items: center; justify-content: center;
@@ -1278,7 +1283,7 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
             img{width: 48px; height: 48px; box-shadow: 0 0 5px rgba(0,0,0,0.5);}
           }
         }
-        .frame-result-name {text-align: center; font: 14px/20px $fontmain;}
+        .frame-result-name {text-align: center; font: 14px/20px $fontmain; text-transform: capitalize;}
       }
 
       .photos-section{width: 100%;
@@ -1288,7 +1293,7 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
             &.result {.upload-pane{display: none;} .photo-pane{display: block;}}
 
             .photo-pane { 
-              .result-photo{width: 240px; height: 240px; overflow: hidden; position: relative; margin-bottom: 10px;
+              .result-photo{width: 240px; height: 240px; overflow: hidden; position: relative; margin-bottom: 10px; user-select: none; pointer-events: none;
                 box-shadow: 0 0 10px rgba(0,0,0,0.75);
                 .pic-original{width: 100%; height: 100%; display: none;}
                 .pic-used{width: 100%; height: 100%;}
@@ -1349,11 +1354,16 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
               font: 18px/24px $fonthead; letter-spacing: 1.5px; color: $orange;
             }
           }
+
         }
+      }
+      .navigation {position: relative;
+        .check-crop-notif{display: none; position: absolute; top: -28px; font: 14px/22px $fontmain; text-align: center;}
       }
     }
 
     .step-4{
+      input[type='submit']{opacity: 0; position: absolute; top: 0; left: 0; pointer-events: none;}
       .forms{display: none; padding: 24px 0;
         &.active-form{display: block;}
         h5{text-align: left; margin-bottom: 10px;}
@@ -1367,7 +1377,9 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
         }
         .sender{margin-bottom: 16px;}
       }
-      .navigation{margin-top: 32px!important;}
+      .navigation{margin-top: 32px!important; position: relative;
+        .form-notif{display: none; position: absolute; top: -28px; font: 14px/22px $fontmain; text-align: center; b{color: red;}}
+      }
     }
 
     .step-5 {
@@ -1434,4 +1446,15 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
         &:hover{opacity: 0.8;}}
     }
   }
+}
+
+.hidden-inputs{opacity: 0; position: absolute; top: 0; left: 0; pointer-events: none; @extend .listn;}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+@keyframes show {
+  100% {opacity: 1;}
 }

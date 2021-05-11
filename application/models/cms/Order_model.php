@@ -11,14 +11,29 @@ class Order_model extends Admin_core_model
     $this->upload_dir = 'orders/'; # Replace these properties on children
     $this->per_page = 15;
     $this->load->model('cms/Rates_model');
+    $this->load->model('cms/Images_model');
+  }
+
+
+  public function updateOrderCost($id, $imagecount, $per_frame, $base_rate)
+  {
+    if( $imagecount > 3 ) {
+      $additional = ($imagecount - 3) * $per_frame;
+      $this->db->where('order_id', $id);
+      $cost = $this->db->update('orders', [
+        'order_cost' => $base_rate + $additional
+      ]);
+    } else{
+      $cost = $this->db->update('orders', [
+        'order_cost' => $base_rate
+      ]);
+    }
+    return $cost;
   }
 
   public function add($data)
   {
-    $rates = $this->Rates_model->getRates();
-    $base_rate = $rates['base_rates'];
-    var_dump($base_rate); die();
-    $this->db->insert('orders', [
+      $this->db->insert('orders', [
       'name' => $data['name'],
       'email' => $data['email'],
       'number' => $data['number'],
@@ -27,11 +42,10 @@ class Order_model extends Admin_core_model
       'city' => $data['city'],
       'state_province' => $data['state_province'],
       'postal_code' => $data['postal_code'],
-      'order_type' => $data['order_type'],
-      'order_cost' => $rates['base_rate'],
-      'sender_name' => $data['sender_name'],
-      'sender_email' => $data['sender_email'],
-      'sender_number' => $data['sender_number']
+      'order_type' => $data['order'],
+      'sender_name' => @$data['sender_name'],
+      'sender_email' => @$data['sender_email'],
+      'sender_number' => @$data['sender_number']
     ]);
     $last_id = $this->db->insert_id();
 
@@ -56,16 +70,59 @@ class Order_model extends Admin_core_model
     return $this->db->get($this->table)->row();
   }
 
-  public function addImages($data, $order_last_id)
+  public function addImages($data, $order_last_id, $cropped)
   {
+    $date = new DateTime();
+    $startdata = $date->format('YmdHis');
+    $newName = str_replace('/', '', $startdata);
+
+      $image = [];
+      $image_name =  $newName;
+        $i = 0;
+        foreach ($cropped['cropped_images'] as $key => $value) {
+        $image[] = $value;
+        file_put_contents(
+            "uploads/orders/".$image_name.$i.".jpg",
+            base64_decode(
+                str_replace('[removed]', '', $value)
+            )
+        );
+        $i++;
+      }
+    $order = $this->Order_model->get($order_last_id);
     if(!$data){
       return false;
     }
-    $res = [];
-    foreach ($data['name'] as $value){
-      $res[] = ['order_images' => $value, 'order_id' => $order_last_id];
-    }
-    return $this->db->insert_batch('orderimages', $res);
+
+    $images = [];
+    $cropped_image = [];
+
+     foreach ($data['name'] as $key => $image){
+        $images[] = $image;
+      }
+
+      foreach ($cropped['cropped_images'] as $keys => $output){
+        $cropped_image[] = $output;
+      }
+
+      $date = new DateTime();
+      $startdata = $date->format('YmdHis');
+      $newName = str_replace('/', '', $startdata);
+      $image_name =  $newName;
+
+      $i = 0;
+      foreach ($images as $key => $value) {
+        $datas[$i]['order_images'] = $value;
+        $datas[$i]['cropped_images'] = $image_name.$i.".jpg";
+        $datas[$i]['order_id'] = $order_last_id;
+        $i++;
+      }
+      // foreach ($data['name'] as $value){
+      //   $res[] = ['order_images' => $value, 
+      //             'order_id' => $order_last_id];
+      // }
+
+    return $this->db->insert_batch('orderimages', $datas);
   }
 
   public function batch_upload($files = [])
@@ -103,20 +160,20 @@ class Order_model extends Admin_core_model
     return $uploaded_files;
   }
 
-  //  public function all()
-  // {
-  //   $res = $this->db->get($this->table)->result();
-  //   return $this->formatResImage($res);
-  // }
+   public function all()
+  {
+    $res = $this->db->get($this->table)->result();
+    return $this->formatResImage($res);
+  }
 
-  // public function formatResImage($res)
-  // {
-  //   $data = [];
-  //   foreach ($res as $key => $value){
-  //     $value->order_images_f = base_url($this->upload_dir) . $value->order_images;
-  //     $data[] = $value;
-  //   }
-  //   return $data;
-  // }
+  public function formatResImage($res)
+  {
+    $data = [];
+    foreach ($res as $key => $value){
+      $value->order_cost = "P ". number_format($value->order_cost,2);
+      $data[] = $value;
+    }
+    return $data;
+  }
 
 }

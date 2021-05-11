@@ -8,10 +8,13 @@ $(document).ready(function() {
 
    $('input[name=frame_type]').removeAttr('required')
    $('input[name=frame_image]').removeAttr('required')
+   $('input[name=data_boundary]').removeAttr('required')
+   $('input[name=data_percentage_boundary]').removeAttr('required')
 
    $('input[name=frame_type]').val(payload.frame_type)
    $('#preview').attr('src', payload.frame_image)
-
+   $('input[name=data_boundary]').val(payload.data_boundary)
+   $('input[name=data_percentage_boundary]').val(payload.data_percentage_boundary)
    // $('select[name=user_type] option').each(function() {
    //   $(this).removeAttr('selected')
    // });
@@ -47,3 +50,4 @@ $(document).ready(function() {
  })
 
 })
+

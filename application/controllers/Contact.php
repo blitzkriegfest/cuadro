@@ -22,7 +22,7 @@ class Contact extends Admin_core_controller {
     $creds = $this->input->post(null, true);
     $this->Email_model->sendInquiry($creds);
     if ($creds) {
-      redirect('contact');
+      $this->load->view('frontend/inquiry_thankyou');
     }
   }
 

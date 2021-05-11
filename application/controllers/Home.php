@@ -21,4 +21,12 @@ class Home extends Admin_core_controller {
 
   }
 
+  public function PrivacyPolicy()
+  {
+    $faq = $this->Faq_model->all();
+    $data['faq'] = $faq;
+    $this->wrapper_frontend('frontend/privacy', $data);
+  }
+
+
 }

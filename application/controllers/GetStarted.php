@@ -11,32 +11,51 @@ class GetStarted extends Admin_core_controller {
     $this->load->model('cms/Order_model');
     $this->load->model('cms/Email_model');
     $this->load->model('cms/Rates_model');
+    $this->load->model('cms/Faq_model');
 
   }
 
   public function index()
   {
+    $faq = $this->Faq_model->all();
   	$frames = $this->Frame_model->all();
+    $rates = $this->Rates_model->all();
+    $data['faq'] = $faq;
     $data['frames'] = $frames;
+    $data['rates'] = $rates;
     $this->wrapper_frontend('frontend/getstarted', $data);
   }
 
   public function addOrder()
   {
     $images = $this->Order_model->batch_upload($_FILES['order_images']);
+    $cropped = $this->input->post(null, true);
     $order_last_id = $this->Order_model->add($this->input->post(null, true));
 
     if ($images)
     {
-      $image_upload_success = $this->Order_model->addImages($images, $order_last_id);
+      $image_upload_success = $this->Order_model->addImages($images, $order_last_id, $cropped);
     }
 
     if(  $order_last_id || @$image_upload_success ){
+      $order = $this->Order_model->get($order_last_id);
+      $attach = $this->Images_model->getImages($order->order_id);
+      $countimages = $this->Images_model->getImageUploadNumber($order->order_id);
+      $rates = $this->Rates_model->getRates();
+      $i = 1; foreach ($rates as $key => $value):
+      $compute = $this->Order_model->updateOrderCost($order->order_id, $countimages, $value->additional_rate_per_frame, $value->base_rate);
+      endforeach;
       $this->Email_model->sendOrderDetails($order_last_id);
-      $this->session->set_flashdata('flash_msg', ['message' => 'New Order added successfully', 'color' => 'green']);
+      redirect('getStarted/thankyou');
     } else {
-      $this->session->set_flashdata('flash_msg', ['message' => 'Error Placing Order', 'color' => 'red']);
+      redirect('oops');
     }
-      redirect('');
   }
+
+  public function thankyou()
+  {
+      $this->load->view('frontend/thankyou');
+  }
+
+
 }

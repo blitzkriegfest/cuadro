@@ -21,7 +21,6 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Contact Number</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -33,10 +32,9 @@
                         <th scope="row"><?php echo $i++ ?></th>
                         <td><?php echo $value->name ?></td>
                         <td><?php echo $value->email ?></td>
-                        <td><?php echo $value->contact ?></td>
                         <td>
                           <button type="button"
-                          data-payload='<?php echo json_encode(['id' => $value->id, 'name' => $value->name, 'email' => $value->email, 'contact' => '$value->contact'])?>'
+                          data-payload='<?php echo json_encode(['id' => $value->id, 'name' => $value->name, 'email' => $value->email])?>'
                           class="edit-row btn btn-info btn-xs">Edit</button>
                           <button type="button" data-id='<?php echo $value->id; ?>'
                             class="btn btn-delete btn-danger btn-xs">Delete</button>

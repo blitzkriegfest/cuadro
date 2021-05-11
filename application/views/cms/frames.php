@@ -34,7 +34,7 @@
                         <td><center><img src="<?php echo $value->frame_image_f ?>" style="height: 100px; width: 100px;"></center></td>
                         <td>
                           <button type="button"
-                          data-payload='<?php echo json_encode(['frame_id' => $value->frame_id, 'frame_type' => $value->frame_type, 'frame_image' => $value->frame_image_f])?>'
+                          data-payload='<?php echo json_encode(['frame_id' => $value->frame_id, 'frame_type' => $value->frame_type, 'frame_image' => $value->frame_image_f, 'data_boundary' => $value->data_boundary, 'data_percentage_boundary' => $value->data_percentage_boundary])?>'
                           class="edit-row btn btn-info btn-xs">Edit</button>
                           <button type="button" data-id='<?php echo $value->frame_id; ?>'
                             class="btn btn-delete btn-danger btn-xs">Delete</button>
@@ -81,6 +81,14 @@
               <label for="exampleInputFile">File input</label>
                 <input type="file" name="frame_image">
                 <p class="help-block">Frame Input here</p>
+            </div>
+            <div class="form-group">
+              <label >Data Boundary</label>
+              <input type="number" class="form-control" name="data_boundary" placeholder="Data Boundary">
+            </div>
+            <div class="form-group">
+              <label >Data Percentage Boundary</label>
+              <input type="number" class="form-control" name="data_percentage_boundary" placeholder="Data Percentage Boundary">
             </div>
           </div>
           <div class="modal-footer">

@@ -55,7 +55,7 @@
 	.get-started .wrap h1{font-size: 36px; line-height: 48px;}
 	.get-started .wrap .steps h5{font-size: 20px; line-height: 32px;}
 	.get-started .wrap .step-1 ul.pick-options li:first-child label, .get-started .wrap .step-1 ul.pick-options li:last-child label{font-size: 36px; line-height: 48px;}
-	.get-started .wrap .navigation{margin-top: 42px!important;}
+	.get-started .wrap .navigation{margin-top: 56px!important;}
 	.get-started .wrap .step-2 ul.upload-options > li label{font-size: 16px; line-height: 22px;}
 
 	.get-started .wrap .step-4 .forms ul.form-list li label{font-size: 16px; line-height: 26px;}
@@ -84,7 +84,7 @@
 	.products .product-list li h5{font-size: 20px; line-height: 30px;}
 	.products .pagination li.active a{font-size: 18px; line-height: 18px;}
 
-	.get-started .wrap .navigation{margin-top: 36px!important;}
+	.get-started .wrap .navigation{margin-top: 56px!important;}
 	.get-started .wrap .step-3 .frame-options-container{padding: 16px 0;}
 
 	.get-started .wrap .step-5 .checkouts .container .right .top{padding: 16px;}
@@ -206,10 +206,10 @@
 
 	.get-started{padding-top: 118px;}
 	.get-started .wrap{padding: 16px 0 56px;}
-	.get-started .wrap .navigation{margin-top: 24px;}
-	.get-started .wrap .navigation .next-btn{font-size: 16px; line-height: 16px; padding: 14px 48px 14px 24px;}
-	.get-started .wrap .navigation .back-btn{font-size: 16px; line-height: 16px; padding: 14px 24px 14px 48px;}
-	.get-started .wrap .navigation .checkout-btn{font-size: 16px; line-height: 16px; padding: 14px 18px 14px 18px;}
+	.get-started .wrap .navigation{margin-top: 64px!important;}
+	.get-started .wrap .navigation .next-btn, .get-started .wrap .navigation #initial-images-button,.get-started .wrap .navigation #check-proceed{font-size: 16px; line-height: 16px; padding: 14px 48px 14px 24px;}
+	.get-started .wrap .navigation .back-btn,.get-started .wrap .navigation .reset-selection{font-size: 16px; line-height: 16px; padding: 14px 24px 14px 48px;}
+	.get-started .wrap .navigation .checkout-btn,.get-started .wrap .navigation .checkout-clear{font-size: 16px; line-height: 16px; padding: 14px 18px 14px 18px;}
 	.get-started .wrap .navigation .place-order-btn{font-size: 16px; line-height: 16px; padding: 14px 18px 14px 18px;}
 	.get-started .wrap .navigation .checkout-btn, .get-started .wrap .navigation .place-order-btn{min-width: initial;}
 

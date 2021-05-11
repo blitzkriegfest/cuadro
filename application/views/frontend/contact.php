@@ -55,7 +55,7 @@
                     </li>
                     <div class="iagree-sec">
                         <input type="checkbox" id="iagree" name="agree" required="required">
-                        <label for="iagree">I agree to the <a href="#">privacy policy</a> of Cuadro.</label>
+                        <label for="iagree">I agree to the <a href="<?php echo base_url('PrivacyPolicy');?>">privacy policy</a> of Cuadro.</label>
                     </div>
                     <input type="submit" value="SEND INQUIRY" class="submit-btn">
                 </ul>

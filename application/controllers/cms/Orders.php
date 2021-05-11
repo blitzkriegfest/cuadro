@@ -12,14 +12,11 @@ class Orders extends Admin_core_controller {
 
   public function index()
   {
-    $this->dashboard();
-  }
-
-  public function dashboard()
-  {
     $res = $this->Order_model->all();
+    $images = $this->Images_model->all();
 
     $data['res'] = $res;
+    $data['images'] = $images;
     $this->wrapper('cms/orders', $data);
   }
 

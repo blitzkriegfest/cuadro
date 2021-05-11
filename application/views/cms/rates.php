@@ -11,16 +11,16 @@
             <?php endif; ?>
           </header>
           <div class="panel-body">
-              <form method="post" id="rates">
+              <form method="POST" id="rates">
                 <label>PHP</label>
                   <?php if (count($res) > 0 ): ?>
                     <?php $i = 1; foreach ($res as $key => $value): ?>
                       <label>Base Rate</label>
-                      <input id="bf2" class="form-control" type="hidden" step="0.01" name="base_rate" value=""><br>
-                      <input id="af2"class="form-control" type="hidden" step="0.01" name="additional_rate_per_frame" value=""><br>
-                      <input id="bf" class="form-control" type="text" step="0.01" value="<?php echo $value->base_rate;?>"><br>
+                      <!-- <input id="bf2" class="form-control" type="hidden" step="0.01" name="base_rate" value=""><br>
+                      <input id="af2"class="form-control" type="hidden" step="0.01" name="additional_rate_per_frame" value=""><br> -->
+                      <input id="bf" class="form-control" type="text" step="0.01" name="base_rate" value="<?php echo $value->base_rate;?>"><br>
                       <label>Additional Rate per Frame</label>
-                      <input id="af" class="form-control" type="text" step="0.01" value="<?php echo $value->additional_rate_per_frame;?>"><br>
+                      <input id="af" class="form-control" type="text" step="0.01" name="additional_rate_per_frame" value="<?php echo $value->additional_rate_per_frame;?>"><br>
                     <?php endforeach; ?>
                   <?php endif; ?>
                       <input class="btn btn-info btn-md" id="upd" type="submit" value="Update Rate" data-payload='<?php echo json_encode(['id' => $value->id,'base_rate' => $value->base_rate, 'additional_rate_per_frame' => $value->additional_rate_per_frame])?>'>

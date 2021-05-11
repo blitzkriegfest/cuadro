@@ -110,7 +110,7 @@ button {
   float: right;
 }
 
-.listn, .mobilenav ul.mobilemenu, .mobilenav ul.mobilemenu li ul.submenu, header .pagewrapper nav ul, header .mob-dropdown .menu nav ul, header .mob-dropdown .menu .bottom ul.privacy-terms, header .mob-dropdown .menu .bottom ul.socials, header .mob-dropdown .faqs ul.faq-list, .faq-desktop .faq-lbox-cont .faq-lbox ul.faq-list, .why-us ul, .projects ul.project-list, footer ul.footer, footer ul.footer li.contact-info ul.cinfo, footer ul.footer li.contact-info ul.cinfo li.contactdet ul.office, footer ul.footer li.footermenu ul.menulist, footer ul.footer li.social-links ul.socials, footer .mobile-footer .mobile-footer-links, .contact-info-main .wrap article .contact-det ul.office, .contact-form .pagewrapper3 .wrap ul, .products .product-list, .products .pagination, ul.accordion, .get-started .wrap .navigation, .get-started .wrap .step-1 ul.pick-options, .get-started .wrap .step-2 ul.upload-options, .get-started .wrap .step-2 ul.upload-options > li ul.files, .get-started .wrap .step-3 .frame-options-container ul.frame-options, .get-started .wrap .step-3 .photos-section .container, .get-started .wrap .step-3 .photos-section .container li.single-container .photo-pane .photo-options, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane ul.inner-upload-options, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane .photo-options, .get-started .wrap .step-4 .forms ul.form-list, .get-started .wrap .step-5 .checkouts .container .right .top .photos-list-final, .get-started .wrap .step-5 .checkouts .container .right .top .costs {
+.listn, .mobilenav ul.mobilemenu, .mobilenav ul.mobilemenu li ul.submenu, header .pagewrapper nav ul, header .mob-dropdown .menu nav ul, header .mob-dropdown .menu .bottom ul.privacy-terms, header .mob-dropdown .menu .bottom ul.socials, header .mob-dropdown .faqs ul.faq-list, .faq-desktop .faq-lbox-cont .faq-lbox ul.faq-list, .why-us ul, .projects ul.project-list, footer ul.footer, footer ul.footer li.contact-info ul.cinfo, footer ul.footer li.contact-info ul.cinfo li.contactdet ul.office, footer ul.footer li.footermenu ul.menulist, footer ul.footer li.social-links ul.socials, footer .mobile-footer .mobile-footer-links, .contact-info-main .wrap article .contact-det ul.office, .contact-form .pagewrapper3 .wrap ul, .products .product-list, .products .pagination, ul.accordion, .get-started .wrap .navigation, .get-started .wrap .step-1 ul.pick-options, .get-started .wrap .step-2 ul.upload-options, .get-started .wrap .step-2 ul.upload-options > li ul.files, .get-started .wrap .step-3 .frame-options-container ul.frame-options, .get-started .wrap .step-3 .photos-section .container, .get-started .wrap .step-3 .photos-section .container li.single-container .photo-pane .photo-options, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane ul.inner-upload-options, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane .photo-options, .get-started .wrap .step-4 .forms ul.form-list, .get-started .wrap .step-5 .checkouts .container .right .top .photos-list-final, .get-started .wrap .step-5 .checkouts .container .right .top .costs, .hidden-inputs {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1532,7 +1532,7 @@ header .mob-dropdown .faqs h3 {
 
 header .mob-dropdown .faqs ul.faq-list {
   width: 100%;
-  height: calc(100% - 72px);
+  height: calc(80% - 72px);
   overflow-y: auto;
 }
 
@@ -2454,11 +2454,12 @@ ul.accordion li .accord-content p {
           justify-content: center;
 }
 
-.get-started .wrap .navigation .next-btn {
+.get-started .wrap .navigation .next-btn, .get-started .wrap .navigation #initial-images-button, .get-started .wrap .navigation #check-proceed {
   font: 22px/22px "ubuntubold", Arial, sans-serif;
   padding: 16px 56px 16px 24px;
   color: white;
   border-radius: 8px;
+  cursor: pointer;
   background: #404b5a url("../images/next.png");
   background-size: 11px;
   background-position: calc(100% - 16px) center;
@@ -2467,21 +2468,22 @@ ul.accordion li .accord-content p {
   transition: opacity 100ms ease-in-out;
 }
 
-.get-started .wrap .navigation .next-btn:hover {
+.get-started .wrap .navigation .next-btn:hover, .get-started .wrap .navigation #initial-images-button:hover, .get-started .wrap .navigation #check-proceed:hover {
   opacity: 0.8;
 }
 
-.get-started .wrap .navigation .next-btn:disabled {
+.get-started .wrap .navigation .next-btn:disabled, .get-started .wrap .navigation #initial-images-button:disabled, .get-started .wrap .navigation #check-proceed:disabled {
   opacity: 0.5 !important;
   pointer-events: none;
 }
 
-.get-started .wrap .navigation .back-btn {
+.get-started .wrap .navigation .back-btn, .get-started .wrap .navigation .reset-selection, .get-started .wrap .navigation .checkout-clear {
   font: 22px/22px "ubuntubold", Arial, sans-serif;
   padding: 16px 24px 16px 56px;
   margin-right: 32px;
   color: white;
   border-radius: 8px;
+  cursor: pointer;
   background: #404b5a url("../images/back.png");
   background-size: 11px;
   background-position: 16px center;
@@ -2490,11 +2492,11 @@ ul.accordion li .accord-content p {
   transition: opacity 100ms ease-in-out;
 }
 
-.get-started .wrap .navigation .back-btn:hover {
+.get-started .wrap .navigation .back-btn:hover, .get-started .wrap .navigation .reset-selection:hover, .get-started .wrap .navigation .checkout-clear:hover {
   opacity: 0.8;
 }
 
-.get-started .wrap .navigation .back-btn:disabled {
+.get-started .wrap .navigation .back-btn:disabled, .get-started .wrap .navigation .reset-selection:disabled, .get-started .wrap .navigation .checkout-clear:disabled {
   opacity: 0.5 !important;
   pointer-events: none;
 }
@@ -2509,6 +2511,7 @@ ul.accordion li .accord-content p {
   background: #f17f3a;
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
+  cursor: pointer;
 }
 
 .get-started .wrap .navigation .checkout-btn:hover, .get-started .wrap .navigation .place-order-btn:hover {
@@ -2557,6 +2560,14 @@ ul.accordion li .accord-content p {
   line-height: inherit;
   color: inherit;
   text-decoration: underline;
+}
+
+.get-started .wrap .step-1 {
+  opacity: 0;
+  -webkit-animation: show 0.5s forwards;
+          animation: show 0.5s forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .get-started .wrap .step-1 ul.pick-options {
@@ -2801,6 +2812,7 @@ ul.accordion li .accord-content p {
 .get-started .wrap .step-3 .frame-options-container .frame-result-name {
   text-align: center;
   font: 14px/20px "open_sansregular", Arial, sans-serif;
+  text-transform: capitalize;
 }
 
 .get-started .wrap .step-3 .photos-section {
@@ -2835,6 +2847,11 @@ ul.accordion li .accord-content p {
   overflow: hidden;
   position: relative;
   margin-bottom: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
 }
@@ -3054,6 +3071,26 @@ ul.accordion li .accord-content p {
   background-repeat: no-repeat;
 }
 
+.get-started .wrap .step-3 .navigation {
+  position: relative;
+}
+
+.get-started .wrap .step-3 .navigation .check-crop-notif {
+  display: none;
+  position: absolute;
+  top: -28px;
+  font: 14px/22px "open_sansregular", Arial, sans-serif;
+  text-align: center;
+}
+
+.get-started .wrap .step-4 input[type='submit'] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
 .get-started .wrap .step-4 .forms {
   display: none;
   padding: 24px 0;
@@ -3100,6 +3137,19 @@ ul.accordion li .accord-content p {
 
 .get-started .wrap .step-4 .navigation {
   margin-top: 32px !important;
+  position: relative;
+}
+
+.get-started .wrap .step-4 .navigation .form-notif {
+  display: none;
+  position: absolute;
+  top: -28px;
+  font: 14px/22px "open_sansregular", Arial, sans-serif;
+  text-align: center;
+}
+
+.get-started .wrap .step-4 .navigation .form-notif b {
+  color: red;
 }
 
 .get-started .wrap .step-5 .checkouts {
@@ -3332,5 +3382,31 @@ ul.accordion li .accord-content p {
 
 .cropper-popup .container .lbox #done-crop:hover {
   opacity: 0.8;
+}
+
+.hidden-inputs {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@-webkit-keyframes show {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=main.css.map */
