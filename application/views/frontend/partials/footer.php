@@ -1,4 +1,30 @@
- <footer>
+ <!-- Messenger Chat Plugin Code -->
+          <div id="fb-root"></div>
+            <script>
+              window.fbAsyncInit = function() {
+                FB.init({
+                  xfbml            : true,
+                  version          : 'v10.0'
+                });
+              };
+
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <!-- Your Chat Plugin code -->
+            <div class="fb-customerchat"
+              attribution="biz_inbox"
+              page_id="102555568620612">
+            </div>
+
+            
+            <footer>
 
         <div class="main-footer">
 
@@ -10,7 +36,7 @@
 
                 <ul class="cinfo">
 
-                  <li class="footerlogo"><a href="#"><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg"></a></li>
+                  <li class="footerlogo"><a href="<?php echo base_url();?>"><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg"></a></li>
 
                   <li class="contactdet">
 
@@ -130,9 +156,12 @@
 
       </footer>
 
+
 <!-- SCRIPTS -->
 
   <script src="<?php echo base_url('public/frontend/'); ?>js/jquery-3.6.0.min.js"></script>
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 
   <script src="<?php echo base_url('public/frontend/'); ?>js/slick.min.js"></script>
 

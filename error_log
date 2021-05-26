@@ -1,0 +1,9 @@
+[10-May-2021 06:12:43 UTC] PHP Fatal error:  Cannot use [] for reading in /home/blitzwor/cuadro.blitzworx.com/application/models/cms/Order_model.php on line 79
+[10-May-2021 06:12:44 UTC] PHP Fatal error:  Cannot use [] for reading in /home/blitzwor/cuadro.blitzworx.com/application/models/cms/Order_model.php on line 79
+[10-May-2021 06:12:44 UTC] PHP Fatal error:  Cannot use [] for reading in /home/blitzwor/cuadro.blitzworx.com/application/models/cms/Order_model.php on line 79
+[10-May-2021 06:12:44 UTC] PHP Fatal error:  Cannot use [] for reading in /home/blitzwor/cuadro.blitzworx.com/application/models/cms/Order_model.php on line 79
+[11-May-2021 04:33:29 UTC] PHP Fatal error:  Cannot use [] for reading in /home/blitzwor/cuadro.blitzworx.com/application/models/cms/Order_model.php on line 80
+[20-May-2021 06:33:04 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 27854768 bytes) in /home/blitzwor/cuadro.blitzworx.com/system/core/Security.php on line 455
+[20-May-2021 06:44:54 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 6171152 bytes) in /home/blitzwor/cuadro.blitzworx.com/system/core/Security.php on line 375
+[21-May-2021 02:18:02 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 37263472 bytes) in /home/blitzwor/cuadro.blitzworx.com/system/libraries/Email.php on line 2432
+[21-May-2021 03:16:14 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 47924920 bytes) in /home/blitzwor/cuadro.blitzworx.com/system/libraries/Email.php on line 2432

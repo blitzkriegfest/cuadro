@@ -14,6 +14,7 @@ class Contact extends Admin_core_controller {
   {
     $faq = $this->Faq_model->all();
     $data['faq'] = $faq;
+    $data['page_title'] = 'Contact Us';
     $this->wrapper_frontend('frontend/contact', $data);
   }
 

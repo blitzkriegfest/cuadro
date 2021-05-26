@@ -833,7 +833,7 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
       }
     }
   }
-  #mobnav {display: none; position: absolute; top: 50%; transform: translateY(-50%); left: 16px;
+  #mobnav {display: none; position: absolute; top: 50%; transform: translateY(-50%); right: 16px;
    padding: 0; @extend .flex; @extend .startcenter;
     span.burg{display: block;  width: 29px; height: 19px; position: relative; margin-right: 5px;
       i{width: 100%; position: absolute; left: 0; height: 3px; background: $orange;transform-origin: center; transition: all 200ms ease-in-out;
@@ -844,7 +844,7 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
     }
     span.text{font:16px/18px $fonthead; color: $orange;}
   }
-  .mob-dropdown{display: none; width: 100%; height: 100vh; position: absolute; left: 0; top: 0; background: white; z-index: 99;
+  .mob-dropdown{display: none; width: 100%; height: 100vh; position: absolute; left: 0; top: 0; background: white; z-index: 999;
     #close-nav{width: 34px; height: 34px; position: absolute; top: 50%; transform: translateY(-50%); right: 16px;
       background: url('../images/close-nav.png'); background-size: contain;
     }
@@ -960,7 +960,7 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
 
 .featured {@extend .wid100; position: relative; height: 100vh; overflow: hidden; z-index: 1;
   img {@extend .coverimg; }
-  h1 {@extend .wid100; position: absolute; top: 170px; left: 0; text-align: center; font: 56px/62px $head1; color: $yellow;
+  h1 {@extend .wid100; position: absolute; top: 170px; left: 0; text-align: center; font: 56px/62px $head1; color: $yellow; text-shadow: 0 0 8px rgba(0,0,0, 0.75);
     span {font-size: inherit; line-height: inherit; font-family: $head2; color: $red;}
   }
 }
@@ -988,9 +988,9 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
           }
         }
       }
-      div.proj:hover {
-        div.overlay {display: block;}
-      }
+      // div.proj:hover {
+      //   div.overlay {display: block;}
+      // }
     }
   }
 }
@@ -1013,7 +1013,7 @@ footer {@extend .wid100; position: relative;padding-top: 40px;
   ul.footer {@extend .wid100; @extend .flex; @extend .betweenstart; @extend .listn; padding-bottom: 24px;
     li.contact-info {width: 58%; position: relative;
       ul.cinfo {@extend .wid100; @extend .listn;
-        li.footerlogo {width: 110px; height: 110px; position: absolute; top: 0; left: 0;
+        li.footerlogo {width: 110px; height: 110px; position: absolute; top: 0; left: 0; z-index: 1;
           a {display: block;}
         }
         li.contactdet {@extend .wid100; padding-left: 140px; min-height: 110px;
@@ -1059,7 +1059,7 @@ footer {@extend .wid100; position: relative;padding-top: 40px;
     }
     .mob-copyright{text-align: center; padding: 10px; font: 16px/24px $fontmain;}
   }
-  .lets-do-it{@extend .wid100;display:none;
+  .lets-do-it{@extend .wid100;display:none; position: fixed; bottom: 0; left: 0; z-index: 900;
         a {font: 24px/30px $fonthead; color: $white; height: 60px; background: $orange; border-bottom: 0;
           @extend .flex; @extend .centercenter;
         }
@@ -1136,7 +1136,10 @@ footer {@extend .wid100; position: relative;padding-top: 40px;
       aside{width: 100%;
         img{width: 100%; height: auto; object-position: center;}
       }
-      h5 {font: 22px/32px $fontbold; text-align: center; padding: 12px;}
+      article{width: 100%; @extend .flex; align-items: center;
+        .logo{width: 110px; height: 110px;}
+        h5{width: calc(100% - 110px); text-align: left;font: 22px/32px $fontbold; padding: 12px 12px 12px 24px;}
+      }
     }
   }
   .pagination{width: 100%; @extend .listn; @extend .flex; align-items: center; justify-content: center;
@@ -1193,7 +1196,7 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
       
     }
 
-    .navigation {width: 100%;@extend .flex; @extend .listn; margin-top: 72px!important;  justify-content: center;
+    .navigation {width: 100%;@extend .flex; @extend .listn; margin-top: 72px!important;  justify-content: center; flex-wrap: nowrap;
       .next-btn {font: 22px/22px $fonthead; padding: 16px 56px 16px 24px; color: white; border-radius: 8px; cursor: pointer;
         background: $dblue url('../images/next.png'); background-size: 11px; background-position: calc(100% - 16px) center; background-repeat: no-repeat;
         transition: opacity 100ms ease-in-out;&:hover{opacity: 0.8;}
@@ -1212,17 +1215,19 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
       .reset-selection{@extend .back-btn;}
       .checkout-clear {@extend .back-btn;}
       .place-order-btn{@extend .checkout-btn;}
+      .submit-payment{@extend .checkout-btn}
       #initial-images-button{@extend .next-btn;}
       #check-proceed{@extend .next-btn;}
 
-      .iagree-sec{position: relative; width: 100%; @extend .flex; justify-content: center; margin-bottom: 16px;
-        .iagree-wrap{padding-left: 42px; }
-        input[type='checkbox']{width: 26px; height: 26px; background: white; border: 1px solid $offwhite; position: absolute; left: 0;
-          &:checked{background: white url('../images/check.png'); background-size: contain;}
-        }
-        label{font: 18px/28px $fontmain; color: black;
-          a{font-size: inherit; line-height: inherit; color: inherit; text-decoration: underline;}
-        }
+    }
+
+    .iagree-sec{position: relative; width: 100%; @extend .flex; justify-content: center; margin-bottom: 16px;
+      .iagree-wrap{padding-left: 42px; }
+      input[type='checkbox']{width: 26px; height: 26px; background: white; border: 1px solid $offwhite; position: absolute; left: 0;
+        &:checked{background: white url('../images/check.png'); background-size: contain;}
+      }
+      label{font: 18px/28px $fontmain; color: black;
+        a{font-size: inherit; line-height: inherit; color: inherit; text-decoration: underline;}
       }
     }
     .step-1 {opacity: 0; animation: show 0.5s forwards; animation-delay: 0.5s;
@@ -1250,7 +1255,7 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
     .step-2 {
       h5{margin-bottom: 5px}
       p{margin-bottom: 24px; text-align: center; font: 15px/22px $fontmain}
-      ul.upload-options{@extend .listn; @extend .flex; @extend .betweenstretch; width: 100%; padding-top: 36px; padding-bottom: 138px;
+      ul.upload-options{@extend .listn; @extend .flex; @extend .betweenstretch; width: 100%; padding-top: 36px; padding-bottom: 24px;
         &>li{width: 31.5%;position: relative;transition: background 100ms ease-in-out;
           &:hover{background: $offwhite3;}
           input[type='file']{opacity: 0; position: absolute; top: 0; left: 0;}
@@ -1258,13 +1263,14 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
             color: $black; font: 18px/24px $fontbold; border-radius: 8px; display: block; text-align: center;
             img.logo{width: auto; height: auto; display: block; margin: 0 auto 24px;}
           }
-          ul.files{@extend .listn; position: absolute; bottom: 0; transform: translateY(calc(100% + 12px)); left: 0; width: 100%; padding: 0 10px; max-height: 145px; overflow-y: auto;
-            li{width: 100%; position: relative; margin-bottom: 8px; padding-right: 24px; 
-              a{color: $black; text-decoration: underline; font: 14px/20px $fontmain; word-break: break-all;}
-              span.remove{width: 18px; height: 18px; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
-                background: url('../images/remove-btn.png'); background-size: contain; background-repeat: no-repeat; cursor: pointer;}
-            }
-          }
+        }
+      }
+      ul.files{@extend .listn;  width: 100%; padding: 0 10px; max-height: 145px; min-height: 145px; overflow-y: auto;
+        // position: absolute; bottom: 0; transform: translateY(calc(100% + 12px)); left: 0;
+        li{width: 100%; position: relative; margin-bottom: 8px; padding-left: 32px; 
+          a{color: $black; text-decoration: underline; font: 14px/20px $fontmain; word-break: break-all;}
+          span.remove{width: 18px; height: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+            background: url('../images/remove-btn.png'); background-size: contain; background-repeat: no-repeat; cursor: pointer;}
         }
       }
     }
@@ -1288,13 +1294,17 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
 
       .photos-section{width: 100%;
         .container{width: 100%; @extend .flex; @extend .listn; @extend .betweenstart; max-width: 823px; margin: 0 auto;
-          li.single-container{ padding: 0 12px;
+          .slick-prev{background: url('../images/photos-left.png'); background-size: contain; background-position: center; background-repeat: no-repeat;
+            &:before{display: none;} width: 24px; height: 24px; z-index: 99;}
+          .slick-next{background: url('../images/photos-right.png'); background-size: contain; background-position: center; background-repeat: no-repeat;
+            &:before{display: none;} width: 24px; height: 24px; z-index: 99;}
+          li.single-container{ padding: 10px 12px;
             .photo-pane{display: none;}
             &.result {.upload-pane{display: none;} .photo-pane{display: block;}}
 
             .photo-pane { 
               .result-photo{width: 240px; height: 240px; overflow: hidden; position: relative; margin-bottom: 10px; user-select: none; pointer-events: none;
-                box-shadow: 0 0 10px rgba(0,0,0,0.75);
+                box-shadow: 0 0 10px rgba(0,0,0,0.6);
                 .pic-original{width: 100%; height: 100%; display: none;}
                 .pic-used{width: 100%; height: 100%;}
                 .frames-container{width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
@@ -1304,10 +1314,10 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
               }
               .photo-options{width: 100%; @extend .listn; @extend .flex; @extend .centercenter;
                 li{padding: 5px 12px 5px 0;
-                  .adjust-crop-btn{ padding-left: 24px; background: white url('../images/crop.png'); background-size: 16px; background-position: left center; background-repeat: no-repeat;
+                  .adjust-crop-btn{ padding-left: 24px; background: white url('../images/crop.png'); background-size: contain; background-position: left center; background-repeat: no-repeat;
                     transition: opacity 100ms ease-in; &:hover{opacity: 0.5;}
                   }
-                  .remove-photo-btn{ padding-left: 24px; background: white url('../images/remove-single.png'); background-size: 16px; background-position: left center; background-repeat: no-repeat;
+                  .remove-photo-btn{ padding-left: 24px; background: white url('../images/remove-single.png'); background-size: contain; background-position: left center; background-repeat: no-repeat;
                     transition: opacity 100ms ease-in; &:hover{opacity: 0.5;}
                     &.disabled {opacity: 0.5;}
                   }
@@ -1346,12 +1356,42 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
 
           //empty pane
           .add-new-single{padding: 0 12px;
+            .upload-pane{display: none;
+              ul.inner-upload-options{@extend .listn; width: 240px; height: 240px; background: url('../images/border-dashed.png'); background-size: 100%;
+                margin-bottom: 10px;
+                li{width: 100%; height: 33.333%; position: relative; border-bottom: 1px solid #f7f7f7;
+                  &:hover{background: $offwhite3;} transition: background 100ms ease-in-out;
+                  .single-input-file{opacity: 0; position: absolute; top: 0; left: 0;}
+
+                  label{width: 100%; height: 100%; padding: 0 30px 0 86px; @extend .flex; align-items: center;
+                    font: 14px/20px $fontbold; cursor: pointer; text-align: left;}
+                  .upload-fb{width: 100%; height: 100%; padding: 0 30px 0 86px; @extend .flex; align-items: center;
+                    font: 14px/20px $fontbold; cursor: pointer; text-align: left;}
+                  .upload-ig{width: 100%; height: 100%; padding: 0 30px 0 86px; @extend .flex; align-items: center;
+                    font: 14px/20px $fontbold; cursor: pointer; text-align: left;}
+                  .logo{width: 50px; height: auto; display: block; position: absolute; top: 50%; transform: translateY(-50%); left: 24px;}
+                  
+                }
+              }
+              .photo-options{width: 100%; @extend .listn; @extend .flex; @extend .centercenter;
+                li{padding: 5px 12px 5px 0;
+                  .remove-photo-btn{ padding-left: 24px; background: white url('../images/remove-single.png'); background-size: 16px; background-position: left center; background-repeat: no-repeat;
+                    transition: opacity 100ms ease-in; &:hover{opacity: 0.5;}
+                    &.disabled {opacity: 0.5;}
+                  }
+                }
+              }
+            }
             .empty-pane{width: 240px; height: 240px; @extend .flex; align-items: center; justify-content: center; flex-direction: column;transition: 100ms background ease-in-out;
               &:hover{background: $offwhite3;}
               background: url('../images/border-dashed.png'); background-size: 100%; cursor: pointer;
               .add-logo{width: 64px; height: 64px; display: block; background: url('../images/add-logo.png'); margin-bottom: 24px;
                 background-size: contain; background-position: center; background-repeat: no-repeat;}
               font: 18px/24px $fonthead; letter-spacing: 1.5px; color: $orange;
+            }
+            &.show-uploads{
+              .empty-pane{display: none;}
+              .upload-pane{display: block;}
             }
           }
 
@@ -1368,7 +1408,7 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
         &.active-form{display: block;}
         h5{text-align: left; margin-bottom: 10px;}
         ul.form-list{width: 100%; @extend .listn; @extend .flex; @extend .betweenstretch;
-          li{width: 47%; margin-bottom: 18px;
+          li{width: 47%; margin-bottom: 18px; position: relative;
             label{font: 18px/28px $fontmain; display: inline-block; margin-bottom: 6px;
               span{color: $red;}
             }
@@ -1383,6 +1423,8 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
     }
 
     .step-5 {
+      .iagree-sec{margin-top: 72px;}
+      .navigation{margin-top: 10px!important;}
       .checkouts{display: none; padding-top: 30px;
         &.active-checkout {display: block;}
         .container {width: 100%; @extend .flex; @extend .startstart;
@@ -1393,9 +1435,9 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
           }
           .right{width: 60%; border: 1px solid $offwhite3;
             .top{padding: 24px;
-              .photos-list-final{@extend .listn; margin: 0 -12px; @extend .flex; @extend .startcenter; margin-bottom: 18px;
-                li{width: 25%; padding: 0 12px;
-                  .photo-wrap{position: relative;}
+              .photos-list-final{@extend .listn; margin: 0 -12px; @extend .flex; @extend .startcenter; 
+                li{width: 25%; padding: 0 12px; margin-bottom: 18px;
+                  .photo-wrap-sm{position: relative; box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);}
 
                   .frames{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
                   img.final-frame{width: 100%; height: auto; position: absolute; top: 0; left: 0; display: none;
@@ -1423,25 +1465,87 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
 
     .step-6{
       p{font: 16px/24px $fontmain; margin-bottom: 12px; text-align: center;}
-      .return-home-btn{display: inline-block; background: $orange;font: 22px/22px $fonthead; padding: 16px 24px; min-width: 165px; text-align: center; color: white; border-radius: 8px;
-        background: $orange;transition: opacity 100ms ease-in-out; position: relative; left: 50%; transform: translateX(-50%);
-        &:hover{opacity: 0.8;}
+      ul.payment_options{@extend .listn; @extend .flex; @extend .betweenstretch; width: 100%; padding-top: 36px; padding-bottom: 24px;
+        &>li{width: 31.5%;position: relative;
+          input[type='radio']{opacity: 0; position: absolute; top: 0; left: 0;
+            &:checked+label{border-color: $orange;}
+          }
+          label{width: 100%; height: 100%;  padding: 24px; border: 3px solid $dblue; cursor: pointer; background: $white;
+            color: $black;  border-radius: 8px; text-align: center;transition: opacity 100ms ease-in-out; position: relative;
+            @extend .flex; align-items: center; justify-content: center;
+            img{width: auto; height: 128px; display: block; margin: 0 auto;}
+            &:hover{border-color: $orange;}
+            p{display: none; font: 18px/24px $fontbold; width: 100%; min-height: 48px; position: absolute; bottom: 16px; left: 0; margin: 0!important; @extend .flex; @extend .centercenter; padding: 0 12px;}
+          }
+          #pesopay+label {position: relative;
+            &::before{content: 'COMING SOON'; padding: 5px 12px; position: absolute; top: 8px; left: 0; text-transform: uppercase; background: $red; color: white; font: 14px/20px $fontbold;}
+            img{width: 100%!important; height: auto!important;}
+          }
+        }
+      }
+      .note{font-style: italic; font: italic 16px/22px $fontbold; margin-bottom: 24px;
+        .imp{color: $red;}
+        a{color: $orange;}
+      }
+      .payment-method-heading{width: 100%; text-align: center; margin-bottom: 24px;
+        h4{font: 28px/36px $fonthead; display: none;}
+      }
+      .payment_content_wrap{width: 100%; @extend .flex; align-items: stretch; justify-content: flex-start;
+        .left{width: 50%; padding-right: 24px;
+          .payment_content{width: 100%; padding: 12px 0;  width: 100%; margin: 0 auto; display: none; min-height: 288px;
+            h5{text-align: left!important; color: $orange;}
+            .details {padding: 12px 0; margin: 0 auto; @extend .listn;
+              li{width: 100%; @extend .flex; align-items: stretch; justify-content: flex-start;
+                label{width: 200px; font: 18px/32px $fontbold; text-align: left!important; color: $orange;}
+                p{width: calc(100% - 200px);font: 18px/32px $fontmain; text-align: left!important;}
+              }
+            }
+          }
+        }
+        .right{width: 50%;
+          .payment_submission{width: 100%; height: 100%;
+            .proof{height: 100%; width: 100%;}
+            h5{text-align: left!important;}
+            p{margin-bottom: 12px; text-align: left!important;}
+            input[type='file'] {position: absolute; top: 0; left: 0; pointer-events: none; opacity: 0;}
+            label{padding: 12px; background: white; border: 3px solid $dblue; border-radius: 10px; cursor: pointer; height: 100%; width: 100%;
+              @extend .flex; @extend .centercenter; flex-direction: column;
+              h5{font: 22px/32px $fontbold; margin-bottom: 12px; text-align: center!important;}
+              img{width: auto; height: 160px;}
+              &:hover{opacity: 0.7;} transition: opacity 100ms ease-in-out;
+            }
+            .upload-result{display: inline-block; font: italic 14px/22px $fontmain; text-align: left;}
+          }
+        }
       }
     }
   }
 }
+.thank-you{
+  h1{margin-bottom: 12px;}
+  h2{font: 32px/40px $fonthead; text-align: center;}
+  p{font: 16px/24px $fontmain; margin-bottom: 12px; text-align: center;}
+  .return-home-btn{display: inline-block; background: $orange;font: 22px/22px $fonthead; padding: 16px 24px; min-width: 165px; text-align: center; color: white; border-radius: 8px;
+    background: $orange;transition: opacity 100ms ease-in-out; position: relative; left: 50%; transform: translateX(-50%); margin-top: 42px;
+    &:hover{opacity: 0.8;}
+  }
+}
 
 //cropper style
+
+.init-cropper-hidden{position: absolute; opacity: 0; top: 0; left: 0; z-index: -99; pointer-events: none;
+  img{display: initial; height: initial; width: initial;}
+}
 .cropper-popup{position: fixed; top: 0; left: 0; z-index: 1001; width: 100%; height: 100%;background: rgba(0,0,0,0.5); display: none;
   .container{width: 100%; height: 100%; @extend .flex; align-items: center; justify-content: center;
     .lbox{background: white; padding: 24px 24px 32px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
       img{display: initial; height: initial; width: initial;}
       h5 {font: 22px/32px $fonthead; text-align: center; width: 100%; margin-bottom: 12px;}
       .buttons-container{width: 100%; @extend .flex; justify-content: space-around;}
-      #back-crop{font: 18px/18px $fonthead; padding: 14px 12px; min-width: 165px; text-align: center; color: white; border-radius: 8px;
+      #back-crop{font: 18px/18px $fonthead; padding: 14px 12px; width: 130px; text-align: center; color: white; border-radius: 8px;
         background: $dblue;transition: opacity 100ms ease-in-out;
         &:hover{opacity: 0.8;}}
-      #done-crop{font: 18px/18px $fonthead; padding: 14px 12px; min-width: 165px; text-align: center; color: white; border-radius: 8px;
+      #done-crop{font: 18px/18px $fonthead; padding: 14px 12px; width: 130px; text-align: center; color: white; border-radius: 8px;
         background: $orange;transition: opacity 100ms ease-in-out;
         &:hover{opacity: 0.8;}}
     }
@@ -1458,3 +1562,14 @@ input[type=number]::-webkit-outer-spin-button {
 @keyframes show {
   100% {opacity: 1;}
 }
+
+.loading-wrap{width: 100%; height: 100%; text-align: center; position: absolute; top: 0; left: 0; z-index: 9; background: white;
+  .spinner{width: auto; height: auto; margin: 0 auto;}
+}
+
+.fb_reset{z-index: 100;}
+
+.email-notif{display: none; z-index: 1; position: absolute; top: 0; right: 0; padding: 5px 10px; background: white; border-radius: 6px; 
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4); text-align: center; font: 12px/18px $fontmain; color: red;}
+
+#upload-progress {color: $orange; font: 36px/42px $fontbold;}

@@ -17,6 +17,7 @@ class Home extends Admin_core_controller {
     $project = $this->Project_model->all();
     $data['faq'] = $faq;
     $data['project'] = $project;
+    $data['page_title'] = 'Home';
     $this->wrapper_frontend('frontend/home', $data);
 
   }
@@ -25,7 +26,16 @@ class Home extends Admin_core_controller {
   {
     $faq = $this->Faq_model->all();
     $data['faq'] = $faq;
+    $data['page_title'] = 'Privacy Policy';
     $this->wrapper_frontend('frontend/privacy', $data);
+  }
+
+  public function TermsandConditions()
+  {
+    $faq = $this->Faq_model->all();
+    $data['faq'] = $faq;
+    $data['page_title'] = 'Terms and Conditions';
+    $this->wrapper_frontend('frontend/terms', $data);
   }
 
 

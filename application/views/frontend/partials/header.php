@@ -6,7 +6,7 @@
 
         <meta charset="utf-8">
 
-            <title>Cuadro | Homepage</title>
+            <title>Cuadro | <?php if (!empty($page_title)) echo $page_title;?></title>
 
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,6 +22,13 @@
             <link rel="stylesheet" href="<?php echo base_url('public/frontend/'); ?>css/main.css">
 
             <link rel="stylesheet" href="<?php echo base_url('public/frontend/'); ?>css/responsive.css">
+            <!-- for single -->
+            <!-- <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script> -->
+            <!-- undefined -->
+            <!-- <script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script> -->
+            <!-- for v3 -->
+            <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+            <meta name="robots" content="noindex, nofollow">
 
     </head>
 
@@ -31,7 +38,7 @@
 
         <div class="pagewrapper">
 
-          <aside><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></aside>
+          <aside><a href="<?php echo base_url();?>"><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></a></aside>
 
 
 
@@ -67,7 +74,7 @@
 
             <div class="top">
 
-              <aside><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></aside>
+              <aside><a href="<?php echo base_url();?>"><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></a></aside>
 
               <button id="close-nav"><span></span></button>
 
@@ -85,7 +92,7 @@
 
                 <li class="cus"><a href="<?php echo base_url('contact');?>">Contact Us</a></li>
 
-                <li class="cwu"><a href="#">Chat with Us</a></li>
+                <!-- <li class="cwu"><a href="#">Chat with Us</a></li> -->
 
               </ul>
 

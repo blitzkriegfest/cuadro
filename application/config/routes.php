@@ -63,6 +63,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['cms'] = 'cms/dashboard';
 $route['TermsandConditions'] = 'home/TermsandConditions';
 $route['PrivacyPolicy'] = 'home/PrivacyPolicy';
+$route['thankyou'] = 'getStarted/thankyou';
 
 # My routes
 $route['api/example/(:num)'] = 'api/example/single/$1';

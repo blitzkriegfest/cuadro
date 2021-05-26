@@ -5,7 +5,7 @@
 
 @media screen and (max-width: 1440px) {
 
-	.get-started .wrap .step-2 ul.upload-options{padding-bottom: 72px; padding-top: 16px;}
+	.get-started .wrap .step-2 ul.upload-options{padding-top: 16px;}
 	.get-started .wrap .step-2 p{margin-bottom: 16px;}
 }
 
@@ -67,7 +67,11 @@
 	.get-started .wrap .step-5 .checkouts .container .right .total label,
 	.get-started .wrap .step-5 .checkouts .container .right .total .value-total,
 	.get-started .wrap .step-5 .checkouts .container .right .top .costs li .quantity{font-size: 18px; line-height: 32px;}
-	.get-started .wrap .navigation .iagree-sec .iagree-wrap label{font-size: 16px; line-height: 24px;}
+	.get-started .wrap .iagree-sec .iagree-wrap label{font-size: 16px; line-height: 24px;}
+
+	
+	.get-started .wrap .step-6 .payment_content_wrap .payment_content .details li label,
+	.get-started .wrap .step-6 .payment_content_wrap .payment_content .details li p{width: 100%; font-size: 18px; line-height: 22px;}
 }
 
 @media screen and (max-height: 768px) {
@@ -98,11 +102,11 @@
 	header .mainnav{display: none;}
 	header .lets-do-it {display: flex;}
 	header #mobnav{display: flex;}
-	header{height: auto; padding-bottom: 10px;}
+	header{height: auto; padding-bottom: 0; padding-top: 0;}
 	header .pagewrapper{height: 108px;}
-	header .pagewrapper aside{right: 0; left: auto;}
+	header .pagewrapper aside{left: 0; right: auto; padding: 8px;}
 	
-	.featured{height: auto; padding: 128px 24px 32px;}
+	.featured{height: auto; padding: 110px 24px 32px;}
 	.featured h1{font-size: 48px; line-height: 54px; position: relative; top: auto; padding: 20px 12px;}
 	.featured{width: 100%; height: auto;}
 
@@ -122,14 +126,15 @@
 	footer ul.footer li.contact-info ul.cinfo li.contactdet,
 	footer ul.footer li.footermenu, footer ul.footer li.social-links{display: none;}
 	
+	footer{padding-bottom: 64px;}
 	footer .mobile-footer{display: block;}
 	footer .lets-do-it {display: block!important;}
 	footer p.copyright{display: none;}
 	/* footer ul.footer li.footermenu{width: 70%;}
 	footer ul.footer li.social-links{width: 30%;} */
 
-	.contact-info-main{padding-top: 128px;}
-	.short-banner{padding-top: 128px;}
+	.contact-info-main{padding-top: 110px;}
+	.short-banner{padding-top: 110px;}
 	.contact-info-main .wrap{padding-top: 0;}
 	.contact-info-main .wrap .gmaps {width: 100%; height: 306px; padding-top: 72px;}
 	.contact-info-main .wrap article{width: 100%;}
@@ -142,31 +147,43 @@
 	.products .product-list{margin: 0 -12px;}
 	.products .product-list li{width: 50%; padding: 0 12px;}
 
-	.get-started{padding-top: 128px;}
+	.get-started{padding-top: 110px;}
 	.get-started .wrap .step-1 ul.pick-options li.divider{font-size: 20px; line-height: 28px; padding: 0 24px;}
 	.get-started .wrap .step-1 ul.pick-options li:first-child, .get-started .wrap .step-1 ul.pick-options li:last-child{width: 250px; height: 250px;}
 
 	.get-started .wrap .step-5 .checkouts .container .left{width: 100%; padding-right: 0; order: 2;}
 	.get-started .wrap .step-5 .checkouts .container .right {width: 100%; order: 1; margin-bottom: 24px;}
-	.get-started .wrap .navigation{order: 3;}
+	.get-started .step-5 .navigation{order: 4;}
+	.get-started .wrap .step-5 .iagree-sec {order: 3;}
+
+	.terms ul ul {padding-left: 24px!important;}
+	.get-started .wrap .step-6 .payment_content_wrap .payment_content .details li {display: block;}
+	.get-started .wrap .step-6 .payment_content_wrap .payment_content .details li label,
+	.get-started .wrap .step-6 .payment_content_wrap .payment_content .details li p{width: 100%!important;}
+
+	.products .product-list li article .logo{width: 86px; height: 86px;}
+	.products .product-list li article h5 {width: calc(100% - 86px); font-size: 18px; line-height: 28px; padding: 12px 0 12px 12px;}
+
+	body:not(.get-started-page) .fb_customer_chat_icon{bottom: 72px!important;}
+	body:not(.get-started-page) .fb_mpn_mobile_landing_page_slide_up{bottom: 72px!important;}
 }
 
 /*Modern Phones*/
 @media screen and (max-width: 600px) {
 	.pagewrapper, .pagewrapper2, .pagewrapper3, .pagewrapper7{padding: 0 15px;}
 	header .pagewrapper{height: 98px;}
-	header .pagewrapper aside{width: 98px; height: 98px; right: 0; left: auto;}
+	header .pagewrapper aside{width: 98px; height: 98px; left: 0; right: auto;}
 	header .mob-dropdown ul li a{font-size: 18px; line-height: 26px;}
 
 	header .mob-dropdown .faqs ul.faq-list li .faq-top p{font-size: 16px; line-height: 24px;}
 	ul.accordion li .accord-top p{font-size: 16px; line-height: 24px;}
 
-	.featured{padding: 128px 15px 32px;}
+	.featured{padding: 110px 15px 32px;}
 	.featured h1{font-size: 42px; line-height: 52px;}
 	.featured h1 span{display: block;}
 
 	.projects ul.project-list {justify-content: center;}
-	.projects ul.project-list li{width: 80%;}
+	.projects ul.project-list li{width: 100%;}
 	.projects ul.project-list li div.proj {height: 212px;}
 
 	.why-us ul li {width: 100%; margin-bottom: 32px;}
@@ -204,14 +221,13 @@
 	.products .product-list li h5{font-size: 16px; line-height: 24px;}
 	.products .pagination li a{font-size: 16px; line-height: 16px;}
 
-	.get-started{padding-top: 118px;}
+	.get-started{padding-top: 118px; padding-bottom: 56px;}
 	.get-started .wrap{padding: 16px 0 56px;}
 	.get-started .wrap .navigation{margin-top: 64px!important;}
-	.get-started .wrap .navigation .next-btn, .get-started .wrap .navigation #initial-images-button,.get-started .wrap .navigation #check-proceed{font-size: 16px; line-height: 16px; padding: 14px 48px 14px 24px;}
-	.get-started .wrap .navigation .back-btn,.get-started .wrap .navigation .reset-selection{font-size: 16px; line-height: 16px; padding: 14px 24px 14px 48px;}
-	.get-started .wrap .navigation .checkout-btn,.get-started .wrap .navigation .checkout-clear{font-size: 16px; line-height: 16px; padding: 14px 18px 14px 18px;}
-	.get-started .wrap .navigation .place-order-btn{font-size: 16px; line-height: 16px; padding: 14px 18px 14px 18px;}
-	.get-started .wrap .navigation .checkout-btn, .get-started .wrap .navigation .place-order-btn{min-width: initial;}
+	.get-started .wrap .navigation .next-btn, .get-started .wrap .navigation #initial-images-button,.get-started .wrap .navigation #check-proceed{font-size: 14px; line-height: 16px; padding: 14px 48px 14px 24px; height: 44px;}
+	.get-started .wrap .navigation .back-btn,.get-started .wrap .navigation .reset-selection,.get-started .wrap .navigation .checkout-clear{font-size: 14px; line-height: 16px; padding: 14px 24px 14px 48px; margin-right: 5px!important; height: 44px;}
+	.get-started .wrap .navigation .checkout-btn, .get-started .wrap .navigation .submit-payment,.get-started .wrap .navigation .place-order-btn{font-size: 14px; line-height: 16px; padding: 14px 18px 14px 18px; height: 44px;}
+	.get-started .wrap .navigation .checkout-btn, .get-started .wrap .navigation .place-order-btn,  .get-started .wrap .navigation .submit-payment{min-width: initial!important;}
 
 	.get-started .wrap .step-1 ul.pick-options{flex-direction: column;}
 	.get-started .wrap .step-1 ul.pick-options li.divider{padding: 0; margin: 24px 0; font-size: 15px; line-height: 24px; width: 100%; position: relative;}
@@ -226,14 +242,17 @@
 	.get-started .wrap .step-2 ul.upload-options > li:hover{background: transparent!important;}
 	.get-started .wrap .step-2 ul.upload-options > li label{padding: 20px 16px; height: auto;}
 	.get-started .wrap .step-2 ul.upload-options > li label img.logo{margin-bottom: 12px;}
-	.get-started .wrap .step-2 ul.upload-options > li ul.files{position: relative; transform: none; top: auto; left: auto;}
-	.get-started .wrap .step-2 ul.upload-options > li ul.files li {margin: 5px 0;}
+	/* .get-started .wrap .step-2 ul.files{position: relative; transform: none; top: auto; left: auto;} */
+	.get-started .wrap .step-2 ul.files li {margin: 5px 0;}
 
 	.get-started .wrap .step-3 .frame-options-container ul.frame-options{width: 100%;}
 	.get-started .wrap .step-3 .frame-options-container ul.frame-options li{width: 20%;}
 	.get-started .wrap .step-3 .frame-options-container ul.frame-options li label img{width: 100%; height: auto;}
 	.cropper-popup .container .lbox #back-crop,.cropper-popup .container .lbox #done-crop{min-width: 120px; font-size: 14px; line-height: 14px;}
-	.cropper-popup .container .lbox{padding: 20px 5px 20px;}
+	.cropper-popup .container .lbox{padding: 20px 5px 32px}
+
+	.get-started .wrap .step-3 .photos-section .container .slick-prev {left: -16px!important;}
+	.get-started .wrap .step-3 .photos-section .container .slick-next {right: -16px!important;}
 
 	.get-started .wrap .step-4 .forms ul.form-list li{width: 100%; margin-bottom: 12px;}
 	.get-started .wrap .step-4 .forms{padding-bottom: 0;}
@@ -247,7 +266,35 @@
 	.get-started .wrap .step-5 .checkouts .container .left p{font-size: 14px; line-height: 20px;}
 	.get-started .wrap .step-5 .checkouts .container .right .top .photos-list-final{margin: 0 -6px 12px;}
 	.get-started .wrap .step-5 .checkouts .container .right .top .photos-list-final li{padding: 0 6px;}
-	.get-started .wrap .navigation .iagree-sec .iagree-wrap label{font-size: 15px; line-height: 24px;}
+	.get-started .wrap .iagree-sec .iagree-wrap label{font-size: 15px; line-height: 24px;}
+
+	.get-started .wrap .step-6 .payment-method-heading{margin-bottom: 12px;}
+	.get-started .wrap .step-6 .payment_content_wrap .left .payment_content h5{text-align: center!important;}
+	.get-started .wrap .step-6 .payment_content_wrap .left,
+	.get-started .wrap .step-6 .payment_content_wrap .right{width: 100%!important;}
+	.get-started .wrap .step-6 .payment_content_wrap .left .payment_content .details li label,
+	.get-started .wrap .step-6 .payment_content_wrap .left .payment_content .details li p{font-size: 14px; line-height: 20px;}
+
+	.get-started .wrap .step-6 ul.payment_options > li{width: 100%; margin-bottom: 18px;}
+	.get-started .wrap .step-6 ul.payment_options > li:last-child{margin-bottom: 0;}
+	.get-started .wrap .step-6 ul.payment_options > li label{padding: 24px 20px;}
+	.get-started .wrap .step-6 ul.payment_options > li label img{height: 120px; margin-bottom: 12px;}
+	.get-started .wrap .step-6 ul.payment_options > li label p{position: relative; bottom: auto; left: auto; min-height: initial!important;}
+
+	.get-started .wrap .step-6 ul.payment_options > li #pesopay + label{padding: 56px 20px 24px;}
+
+	.get-started .wrap .step-6 .payment_content_wrap .left .payment_content{min-height: initial!important;}
+	.get-started .wrap .step-6 .payment_content_wrap .right .payment_submission label h5{font-size: 16px; line-height: 24px;}
+
+	.get-started .wrap .step-6 .note{font-size: 14px; line-height: 22px;}
+
+	.thank-you h1{font-size: 28px!important; line-height: 32px!important;}
+	.thank-you h2{font-size: 20px; line-height: 30px;}
+
+	.products .product-list li article .logo{width: 56px; height: 56px;}
+	.products .product-list li article h5{width: calc(100% - 56px);}
+
+	.checkout-clear{margin-right: 9px;}
 }
 
 /*SE Phones*/
@@ -266,5 +313,11 @@
 	.video article h2{font-size: 24px; line-height: 32px;}
 	.video article p{font-size: 14px; line-height: 30px;}
 	.video article h6 a{font-size: 18px; line-height: 24px;}
+
+}
+
+@media screen and (max-width: 350px) and (max-height: 600px) {
+	header .mob-dropdown .menu .bottom ul.privacy-terms{margin-bottom: 12px;}
+	.mob-dropdown .menu nav ul{ max-height: 250px; overflow-y: scroll;}
 
 }

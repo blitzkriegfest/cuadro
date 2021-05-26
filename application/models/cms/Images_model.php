@@ -8,7 +8,7 @@ class Images_model extends Admin_core_model
     parent::__construct();
 
     $this->table = 'orderimages'; # Replace these properties on children
-    $this->upload_dir = 'orders/'; # Replace these properties on children
+    $this->upload_dir = 'uploads/orders/'; # Replace these properties on children
     $this->per_page = 15;
   }
 

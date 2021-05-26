@@ -16,6 +16,7 @@ class Products extends Admin_core_controller {
     $faq = $this->Faq_model->all();
     $data['prods'] = $prods;
     $data['faq'] = $faq;
+    $data['page_title'] = 'Products';
     $this->wrapper_frontend('frontend/products', $data);
   }
 

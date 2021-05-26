@@ -26,7 +26,7 @@
 
                                 <input type="radio" name="options" id="special-someone" value="special-someone">
 
-                                <label for="special-someone">For Special Someone</label>
+                                <label for="special-someone">For Someone Special</label>
 
                             </li>
 
@@ -42,11 +42,11 @@
 
 
 
-                  <form action="<?php echo base_url('getStarted/addOrder'); ?>" method="POST" enctype="multipart/form-data" id="ordetails">
+                  <form action="<?php echo base_url('getStarted/addOrder'); ?>" method="POST" enctype="multipart/form-data" id="ordetails" autocomplete="off">
 
                   <div class="step-2 steps" style="display: none">
 
-                        <h5>Step 2: Select your photos (min of 3)</h5>
+                        <h5>Step 2: Select your photos (min&nbsp;of&nbsp;3)</h5>
 
                         <p>Please upload high resolution photos<br/>Suggested size: 499 x 499 pixels</p>
 
@@ -58,11 +58,13 @@
 
                                 <label for="computer-upload" class="upload-el"><img src="<?php echo base_url('public/frontend/'); ?>images/cam.png" class='logo'/>Upload photos from my phone or computer</label>
 
-                                <ul class="files">
+                            </li>
 
-                                    <!-- <li><a href="#" target="_blank">sample.jpg</a><span class="remove"></span></li> -->
+                            <li>
 
-                                </ul>
+                                <!-- <input type="file" name="options" id="computer-upload"> -->
+
+                                <label for="fb-upload" class="upload-el fbook"><img src="<?php echo base_url('public/frontend/'); ?>images/fb.png"/ class='logo'>Import from Facebook</label>
 
                             </li>
 
@@ -70,17 +72,15 @@
 
                                 <!-- <input type="file" name="options" id="computer-upload"> -->
 
-                                <label for="fb-upload" id= "facebookUpload" class="upload-el"><img src="<?php echo base_url('public/frontend/'); ?>images/fb.png"/ class='logo'>Import from Facebook</label>
+                                <label for="ig-upload" class="upload-el instag"><img src="<?php echo base_url('public/frontend/'); ?>images/ig.png"/ class='logo'>Import from Instagram</label>
 
                             </li>
 
-                            <li>
+                        </ul>
+                        
+                        <ul class="files">
 
-                                <!-- <input type="file" name="options" id="computer-upload"> -->
-
-                                <label for="ig-upload" class="upload-el"><img src="<?php echo base_url('public/frontend/'); ?>images/ig.png"/ class='logo'>Import from Instagram</label>
-
-                            </li>
+                        <!-- <li><a href="#" target="_blank">sample.jpg</a><span class="remove"></span></li> -->
 
                         </ul>
 
@@ -169,7 +169,7 @@
 
                         <ul class="navigation">
 
-                            <span class="check-crop-notif">Please make sure all images are cropped before proceeding</span>
+                            <span class="check-crop-notif">Please upload minimum of 3.</span>
 
                             <button type="button" class="reset-selection">BACK</button>
 
@@ -185,92 +185,6 @@
 
                         <h5>Step 4: Checkout</h5>
 
-                        <!-- <div id="for-me-form" class="forms">
-
-                            <form action="getstarted/addOrder" method="POST" enctype="multipart/form-data" id="forme">
-
-                                <div class="recipient">
-
-                                    <h5>Recipient Details</h5>
-
-                                    <ul class="form-list">
-
-                                        <li>
-
-                                            <label for="fm-recipient-name">Name<span>*</span></label>
-
-                                            <input type="text" name="name" id="fm-recipient-name" required="required">
-
-                                        </li>
-
-                                        <li>
-
-                                            <label for="fm-recipient-email">Email Address<span>*</span></label>
-
-                                            <input type="text" name="email" id="fm-recipient-email" required="required">
-
-                                        </li>
-
-                                        <li>
-
-                                            <label for="fm-recipient-address-1">Address 1 (House/Unit #, Street Name)<span>*</span></label>
-
-                                            <input type="text" name="address_1" id="fm-recipient-address-1" required="required">
-
-                                        </li>
-
-                                        <li>
-
-                                            <label for="fm-recipient-address-2">Address 2 (Village or Building Name, Barangay)<span>*</span></label>
-
-                                            <input type="text" name="address_2" id="fm-recipient-address-2" required="required">
-
-                                        </li>
-
-                                        <li>
-
-                                            <label for="fm-recipient-city">City<span>*</span></label>
-
-                                            <input type="text" name="city" id="fm-recipient-city" required="required">
-
-                                        </li>
-
-                                        <li>
-
-                                            <label for="fm-recipient-state">State/Province<span>*</span></label>
-
-                                            <input type="text" name="state_province" id="fm-recipient-state" required="required">
-
-                                        </li>
-
-                                        <li>
-
-                                            <label for="fm-recipient-postal">Postal Code</label>
-
-                                            <input type="text" name="postal_code" id="fm-recipient-postal">
-
-                                        </li>
-
-                                        <li>
-
-                                            <label for="fm-recipient-number">Contact Number<span>*</span></label>
-
-                                            <input type="number" name="number" id="fm-recipient-number" required="required">
-
-                                        </li>
-
-
-
-                                        <input type="submit" name="">
-
-                                    </ul>
-
-                                </div>
-
-                            </form>
-
-                        </div> -->
-
                         <div id="special-someone-form" class="forms">
 
                             
@@ -285,15 +199,16 @@
 
                                             <label for="ss-sender-name">Name<span>*</span></label>
 
-                                            <input type="text" name="sender_name" id="ss-sender-name" required="required">
+                                            <input type="text" name="sender_name" id="ss-sender-name" required="required"  autocomplete="off">
 
                                         </li>
 
                                         <li>
-
+                                            <span class="email-notif">Not a valid email.</span>
+                                            
                                             <label for="ss-sender-email">Email Address<span>*</span></label>
 
-                                            <input type="text" name="sender_email" id="ss-sender-email" required="required">
+                                            <input type="text" name="sender_email" id="ss-sender-email" required="required"  autocomplete="off">
 
                                         </li>
 
@@ -301,7 +216,7 @@
 
                                             <label for="ss-sender-number">Contact Number<span>*</span></label>
 
-                                            <input type="number" name="sender_number" id="ss-sender-number" required="required">
+                                            <input type="number" name="sender_number" id="ss-sender-number" required="required"  autocomplete="off">
 
                                         </li>
 
@@ -319,15 +234,16 @@
 
                                             <label for="ss-recipient-name">Name<span>*</span></label>
 
-                                            <input type="text" name="name" id="ss-recipient-name" required="required">
+                                            <input type="text" name="name" id="ss-recipient-name" required="required" autocomplete="off">
 
                                         </li>
 
                                         <li>
+                                            <span class="email-notif">Not a valid email.</span>
 
                                             <label for="ss-recipient-email">Email Address<span>*</span></label>
 
-                                            <input type="text" name="email" id="ss-recipient-email" required="required">
+                                            <input type="text" name="email" id="ss-recipient-email" required="required" autocomplete="off">
 
                                         </li>
 
@@ -335,7 +251,7 @@
 
                                             <label for="ss-recipient-address-1">Address 1 (House/Unit #, Street Name)<span>*</span></label>
 
-                                            <input type="text" name="address_1" id="ss-recipient-address-1" required="required">
+                                            <input type="text" name="address_1" id="ss-recipient-address-1" required="required" autocomplete="off">
 
                                         </li>
 
@@ -343,7 +259,7 @@
 
                                             <label for="ss-recipient-address-2">Address 2 (Village or Building Name, Barangay)<span>*</span></label>
 
-                                            <input type="text" name="address_2" id="ss-recipient-address-2" required="required">
+                                            <input type="text" name="address_2" id="ss-recipient-address-2" required="required" autocomplete="off">
 
                                         </li>
 
@@ -351,7 +267,7 @@
 
                                             <label for="ss-recipient-city">City<span>*</span></label>
 
-                                            <input type="text" name="city" id="ss-recipient-city" required="required">
+                                            <input type="text" name="city" id="ss-recipient-city" required="required" autocomplete="off">
 
                                         </li>
 
@@ -359,7 +275,7 @@
 
                                             <label for="ss-recipient-state">State/Province<span>*</span></label>
 
-                                            <input type="text" name="state_province" id="ss-recipient-state" required="required">
+                                            <input type="text" name="state_province" id="ss-recipient-state" required="required" autocomplete="off">
 
                                         </li>
 
@@ -367,7 +283,7 @@
 
                                             <label for="ss-recipient-postal">Postal Code</label>
 
-                                            <input type="text" name="postal_code" id="ss-recipient-postal">
+                                            <input type="text" name="postal_code" id="ss-recipient-postal" autocomplete="off">
 
                                         </li>
 
@@ -375,11 +291,9 @@
 
                                             <label for="ss-recipient-number">Contact Number<span>*</span></label>
 
-                                            <input type="number" name="number" id="ss-recipient-number" required="required">
+                                            <input type="number" name="number" id="ss-recipient-number" required="required" autocomplete="off">
 
                                         </li>
-
-                                        <input type="submit" name="">
 
                                     </ul>
 
@@ -392,7 +306,7 @@
 
                             <button type="button" class="back-btn">BACK</button>
 
-                            <span class="checkout-btn">CHECKOUT</span>
+                            <span class="checkout-btn" style="pointer-events: none;" >CHECKOUT</span>
 
                         </ul>
 
@@ -402,175 +316,6 @@
                   <div class="step-5 steps" style="display: none">
 
                       <h5>Step 5: Order Summary</h5>
-
-                      <!-- <div id="for-me-checkout" class="checkouts">
-
-                        <div class="container">
-
-                          <div class="left">
-
-                              <h5>Recipient:</h5>
-
-                              <p id="fm-name">Amara Chloe Sandoval</p>
-
-                              <p id="fm-email">achloesand@gmail.com</p>
-
-                              <p id="fm-address">Address 1, Address 2</p>
-
-                              <p id="fm-city">City</p>
-
-                              <p id="fm-contact">09172167246</p>
-
-                          </div>
-
-                          <div class="right">
-
-                              <div class="top">
-
-                                <ul class="photos-list-final">
-
-                                  <li>
-
-                                    <div class="photo-wrap-sm">
-
-                                      <div class="frames">
-
-
-                                        <img class="final-frame active-frame" src="./images/best-seller.png" data-frame-name="bestseller"/>
-
-                                        <img class="final-frame" src="./images/midnight.png" data-frame-name="midnight"/>
-
-                                        <img class="final-frame" src="./images/natural.png" data-frame-name="natural"/>
-
-                                        <img class="final-frame" src="./images/snow.png" data-frame-name="snow"/>
-
-                                        <img class="final-frame" src="./images/infinity.png" data-frame-name="infinity"/>
-
-                                      </div>
-
-                                      <img class="final-image" src="./images/sample-photo.png"/>
-
-                                    </div>
-
-                                  </li>
-
-                                  <li>
-
-                                    <div class="photo-wrap-sm">
-
-                                      <div class="frames">
-
-
-                                        <img class="final-frame active-frame" src="./images/best-seller.png" data-frame-name="bestseller"/>
-
-                                        <img class="final-frame" src="./images/midnight.png" data-frame-name="midnight"/>
-
-                                        <img class="final-frame" src="./images/natural.png" data-frame-name="natural"/>
-
-                                        <img class="final-frame" src="./images/snow.png" data-frame-name="snow"/>
-
-                                        <img class="final-frame" src="./images/infinity.png" data-frame-name="infinity"/>
-
-                                      </div>
-
-                                      <img class="final-image" src="./images/sample-photo.png"/>
-
-                                    </div>
-
-                                  </li>
-
-                                  <li>
-
-                                    <div class="photo-wrap-sm">
-
-                                      <div class="frames">
-
-                                        <img class="final-frame active-frame" src="./images/best-seller.png" data-frame-name="bestseller"/>
-
-                                        <img class="final-frame" src="./images/midnight.png" data-frame-name="midnight"/>
-
-                                        <img class="final-frame" src="./images/natural.png" data-frame-name="natural"/>
-
-                                        <img class="final-frame" src="./images/snow.png" data-frame-name="snow"/>
-
-                                        <img class="final-frame" src="./images/infinity.png" data-frame-name="infinity"/>
-
-                                      </div>
-
-                                      <img class="final-image" src="./images/sample-photo.png"/>
-
-                                    </div>
-
-                                  </li>
-
-                                  <li>
-
-                                    <div class="photo-wrap-sm">
-
-                                      <div class="frames">
-
-
-                                        <img class="final-frame active-frame" src="./images/best-seller.png" data-frame-name="bestseller"/>
-
-                                        <img class="final-frame" src="./images/midnight.png" data-frame-name="midnight"/>
-
-                                        <img class="final-frame" src="./images/natural.png" data-frame-name="natural"/>
-
-                                        <img class="final-frame" src="./images/snow.png" data-frame-name="snow"/>
-
-                                        <img class="final-frame" src="./images/infinity.png" data-frame-name="infinity"/>
-
-                                      </div>
-
-                                      <img class="final-image" src="./images/sample-photo.png"/>
-
-                                    </div>
-
-                                  </li>
-
-                                </ul>
-
-                                <ul class="costs">
-
-                                    <li><label>Set of 3 Frames (<span class="frame-result-name">Best Seller</span>)</label><span class="value">P1,800.00</span></li>
-
-                                    <li><label>Additional Frame</label><span class="quantity">x1</span><span class="value">P450.00</span></li>
-
-                                </ul>
-
-                              </div>
-
-                              <div class="total">
-
-                                  <label>Total</label>
-
-                                  <span class="value-total">P2,250.00</span>
-
-                              </div>
-
-                          </div>
-
-                          <ul class="navigation">
-
-                              <div class="iagree-sec">
-
-                                <div class="iagree-wrap">
-
-                                  <input type="checkbox" name="agree-place-order" id="agreeforme"><label for="agreeforme">I agree to the <a href="#">terms and conditions</a> by Cuadro Corporation.</label>
-
-                                </div>
-
-                              </div>
-
-                              <button class="back-btn">BACK</button>
-
-                              <button class="place-order-btn" id="forme-placeorder" disabled>PLACE ORDER</button>
-
-                          </ul>
-
-                        </div>
-
-                      </div> -->
 
                       <div id="special-someone-checkout" class="checkouts">
 
@@ -601,6 +346,8 @@
                                     <p id="fs-raddress">Address 1, Address 2</p>
 
                                     <p id="fs-rcity">City</p>
+                                    <p id="fs-rstateprovince">State/Province</p>
+                                    <p id="fs-rpostalcode">Postal Code</p>
 
                                     <p id="fs-rcontact">Recipient Contact Number</p>
 
@@ -622,10 +369,11 @@
 
                                     <?php $i = 1; foreach ($rates as $key => $value): ?>
 
-                                    <li><label>Set of 3 Frames (<span class="frame-result-name">Best Seller</span>)</label><span class="value">P <?php echo number_format($value->base_rate, 2);?></span></li>
+                                    <li><label>Set of 3 Frames (<span class="frame-result-name">Best Seller</span>)</label><span class="value">₱ <?php echo number_format($value->base_rate, 2);?></span></li>
+                                    <li><label>Shipping Fee</label><span class="value">FREE-OF-CHARGE</span></li>
                                     <input type="hidden" value="<?php echo $value->base_rate;?>" id="base">
 
-                                    <li id="greater3"><label>Additional Frame</label><span class="quantity">x1</span><span class="value">P <?php echo number_format($value->additional_rate_per_frame, 2);?></span></li>
+                                    <li id="greater3"><label>Additional Frame</label><span class="quantity">x1</span><span class="value adds">₱ <?php echo number_format($value->additional_rate_per_frame, 2);?></span></li>
                                     <input type="hidden" value="<?php echo $value->additional_rate_per_frame;?>" id="perframe">
 
                                 <?php endforeach ;?>
@@ -646,21 +394,21 @@
 
                             </div>
 
+                            <div class="iagree-sec">
+
+                            <div class="iagree-wrap">
+
+                                <input type="checkbox" id="agreespecial"><label for="agreespecial">I agree to the <a href="<?php echo base_url('TermsandConditions'); ?>" target="_blank">terms and conditions</a> of Cuadro.</label>
+
+                            </div>
+
+                            </div>
+
                             <ul class="navigation">
-
-                                <div class="iagree-sec">
-
-                                  <div class="iagree-wrap">
-
-                                    <input type="checkbox" id="agreespecial"><label for="agreespecial">I agree to the <a href="<?php echo base_url('PrivacyPolicy'); ?>">terms and conditions</a> by Cuadro Corporation.</label>
-
-                                  </div>
-
-                                </div>
 
                                 <button type="button" class="checkout-clear">BACK</button>
 
-                                <button class="place-order-btn" id="special-placeorder" disabled>PLACE ORDER</button>
+                                <button  type="button" class="place-order-btn" id="special-placeorder" disabled>PLACE ORDER</button>
 
                             </ul>
 
@@ -674,17 +422,97 @@
 
                   </div>
 
-                  </form>
+                  <div class="step-6 steps" style="display: none">
 
-                  <!-- <div class="step-6 steps" style="display: none">
+                        <h5>Please choose your payment method</h5>
 
-                        <h1>Thank You!</h1>
+                        <!-- <p>Please choose payment method to use.</p> -->
 
-                        <p>We've now recieved your order, please wait as we process it.</p>
+                        <ul class="payment_options">
+                            <li class="item">
+                                <input type="radio" name="payment_option" id="banktransfer" value="bank_transfer" class="mops" data-value="Bank Transfer" checked>
+                                <label for="banktransfer">
+                                    <img src="<?php echo base_url('public/frontend/'); ?>images/bank-transf-logo.png" class='logo'/>
+                                    <p>Bank Transfer</p>
+                                </label>
+                            </li>
+                            <li class="item">
+                                <input type="radio" name="payment_option" id="gcash" value="gcash_transfer" class="mops" data-value="Gcash">
+                                <label for="gcash">
+                                    <img src="<?php echo base_url('public/frontend/'); ?>images/gcash-logo.png" class='logo'/>
+                                    <p>Gcash</p>
+                                </label>
+                            </li>
+                            <li class="item">
+                                <input type="radio" name="payment_option" id="pesopay" value="peso_pay" class="mops" data-value="PesoPay" disabled>
+                                <label for="pesopay">
+                                    <img src="<?php echo base_url('public/frontend/'); ?>images/logo_pesopay.png" class='logo'/>
+                                    <p>PesoPay<br/>(Coming soon)</p>
+                                </label>
+                            </li>
+                        </ul>
 
-                        <a href="./index.html" class="return-home-btn">RETURN</a>
+                        <p class="note"><span class="imp">* </span>Cuadro will soon be accepting Credit Card payments. Please follow us on our <a href="https://www.facebook.com/cuadroframes" target="_blank">FB Page</a> for more updates.</p>
 
+                        <div class="payment-method-heading">
+                            <h4 id="bank-transfer-head" class="active" style="display:block" >Bank Transfer</h4>
+                            <h4 id="gcash-head" >Gcash</h4>
+                            <h4 id="pesopay-head">PesoPay</h4>
+                            <input type="hidden" name="mode_of_payment" id="mop" value="Bank Transfer">
+                        </div>
+                            <div class="payment_content_wrap">
+                                <div class="left">
+                                    <div class="payment_content active" id="bank-transfer-content" style="display: block">
+                                        <h5>Bank Account Details</h5>
+                                        <ul class="details">
+                                            <li><label>Amount to Pay: </label><p class="amounts">N/A</p></li>
+                                            <li><label>Account Name: </label><p>CESAR III C MELLA</p></li>
+                                            <li><label>Account Number: </label><p>002030231653</p></li>
+                                            <li><label>Bank Name: </label><p>BDO</p></li>
+                                            <li><label>Bank Branch: </label><p>Marcos Highway</p></li>
+                                        </ul>
+                                    </div>
+                                    <div class="payment_content" id="gcash-content">
+                                        <h5>Gcash Account Details</h5>
+                                        <ul class="details">
+                                        <li><label>Amount to Pay: </label><p class="amounts">N/A</p></li>
+                                            <li><label>Account Name: </label><p>Katherine Mella</p></li>
+                                            <li><label>Account Number: </label><p>09995851756</p></li>
+                                        </ul>
+                                    </div>
+                                    <div class="payment_content" id="peso-pay-content">
+                                        <!-- <h5>PesoPay</h5> -->
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="payment_submission">
+                                        <div class="proof">
+                                            <input type="file" id="payment_proof" name="proof_of_payment" accept="image/*">
+                                            <label for="payment_proof">
+                                                <img src="<?php echo base_url('public/frontend/'); ?>images/upload-logo.png" alt="upload-logo" class="logo">
+                                                <h5>Upload Proof of Payment</h5>
+                                                <span class="upload-result">No upload.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navigation">
+                                <button type="button" class="back-btn">Back</button>
+                                <button type="submit" class="submit-payment" disabled>Submit</button>
+                            </div>
+                            <div class="loading-wrap" style="display: none;">
+                                <h1 id="process-heading">Uploading your Images</h1>
+                                <p>Please do not refresh, back or close your browser during upload.</p>
+                                <h2 id="upload-progress">0%</h2>
+                                <!-- <img class="spinner" src="<?php echo base_url('public/frontend/'); ?>images/Spinner-1s-200px.gif" alt=""> -->
+                            </div>
+                  </div>
+
+                  <!-- <div class="step-7 steps" style="display: none">
                   </div> -->
+
+                </form>
 
               </div>
 
@@ -692,7 +520,10 @@
 
       </section>
 
-
+      <!--HIDDEN INNIT CROPPER-->
+      <section class="init-cropper-hidden">
+        <div id="init-cropper"></div>
+      </section>
 
       <!--CROPPER ELEMENT-->
 
@@ -722,54 +553,32 @@
 
       <script src="<?php echo base_url('public/frontend/'); ?>js/jquery-3.6.0.min.js"></script>
 
-        <script src="<?php echo base_url('public/frontend/'); ?>js/slick.min.js"></script>  
-        <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
-  
-        <script type="text/javascript">
-          $('.ord_type').each(function(){
-            $(this).click(function(){
-                $('#ordertype').val( $(this).val() );
-            });
-          });
+      <script src="<?php echo base_url('public/frontend/'); ?>js/jquery.form.min.js"></script>
 
-            filepicker.setKey("AfLddltxlRFyI7PzHfgR4z");
-            
-            document.getElementById('facebookUpload').onclick = function(){
+    <script src="<?php echo base_url('public/frontend/'); ?>js/slick.min.js"></script>  
 
-                filepicker.pick(
-                {
-                    mimetype: 'image/*',
-                    services: ['COMPUTER','FACEBOOK','INSTAGRAM'],
-                    maxFiles: 100
-                },
-                function(Blob){
-                    console.log(JSON.stringify(Blob));
-                }
-                );
-            }; 
-
-             $('.checkout-btn').click(function(){
-                var countimages = $('.photo-pane').length;
-                if (countimages > 3){
-                    $('.quantity').text( "x" + countimages);
-                    var base = Number($('#base').val());
-                    var perframe = Number($('#perframe').val()) * countimages;
-                    var total = base + perframe;
-                    var format = parseFloat(total);
-                    $('.value-total').text( "P " + format.toFixed(2));
-                }else{
-                    $('#greater3').hide();
-                    $('.value-total').text("P" + parseFloat($('#base').val().toFixed(2)));
-                };
-             });
-
-      </script>
+    <script src="<?php echo base_url('public/frontend/'); ?>js/exif.js"></script>  
 
       <script src="<?php echo base_url('public/frontend/'); ?>js/croppie.js"></script>
 
+    <script src="<?php echo base_url('public/frontend/'); ?>js/main.js"></script>
+
+    <script src="<?php echo base_url('public/admin/js/custom/'); ?>getstarted_management.js"></script>
+
         <!--NATH GET STARTED CODE-->
         <script type="text/javascript">
+
+        //GLOBAL VARIABLES
+        var filesUploaded = [];
+        var frameboundary = $("input[name='order_type']:checked").data('boundary');
+        var framepercent = $("input[name='order_type']:checked").data('percent-boundary') + '%';
+
+
         $(document).ready(function(){
+        //remove footer
+        if (window.location.pathname === "/getStarted") {
+            $('footer').css('display', 'none');
+        }
         if(window.location.pathname.indexOf('get-started') > 0 && $("footer").length) {
             $('footer').css('display', 'none')
         }
@@ -779,68 +588,43 @@
                 $('.pick-options li').removeClass('active');
                 $(this).addClass('active');
             }
-        })
-        //picking for me or someone else
-        // $("input[name='options']").change(function(){
-        //     if($(this).val() === 'for-me') {
-        //         //enable only for me sections
-        //         $("#special-someone-form").removeClass('active-form');
-        //         $("#special-someone-checkout").removeClass('active-checkout');
-        //         $("#for-me-form").addClass('active-form');
-        //         $("#for-me-checkout").addClass('active-checkout');
-
-        //     }else if ($(this).val() === 'special-someone') {
-        //         //enable only special someone sections
-        //         $("#for-me-form").removeClass('active-form');
-        //         $("#for-me-checkout").removeClass('active-checkout');
-        //         $("#special-someone-form").addClass('active-form');
-        //         $("#special-someone-checkout").addClass('active-checkout');
-        //     }
-        //     //enable button
-        //     if($(this).val() !== "" && $(".step-1 .navigation .next-btn").is(':disabled')) {
-        //         $(".step-1 .navigation .next-btn").prop('disabled', false);
-        //     }
-        // });
-        // 
+        });
         
         $("input[name='options']").change(function(){
-    if($(this).val() === 'for-me') {
-        //enable only for me sections
-        // $("#special-someone-form").removeClass('active-form');
-        // $("#special-someone-checkout").removeClass('active-checkout');
-        // $("#for-me-form").addClass('active-form');
-        // $("#for-me-checkout").addClass('active-checkout');
-        $("#for-me-form").removeClass('active-form');
-        $("#for-me-checkout").removeClass('active-checkout');
-        $("#special-someone-form").addClass('active-form');
-        $("#special-someone-checkout").addClass('active-checkout');
-        $('.sender').hide();
-        $('.sender input[type=text]').prop('disabled', true);
-        $('.sender input[type=number]').prop('disabled', true);
+            if($(this).val() === 'for-me') {
+                $("#for-me-form").removeClass('active-form');
+                $("#for-me-checkout").removeClass('active-checkout');
+                $("#special-someone-form").addClass('active-form');
+                $("#special-someone-checkout").addClass('active-checkout');
+                $('.sender').hide();
+                $('.sender input[type=text]').prop('disabled', true);
+                $('.sender input[type=number]').prop('disabled', true);
 
-    }else if ($(this).val() === 'special-someone') {
-        //enable only special someone sections
-        $('.sender').show();
-        $('.sender input[type=text]').prop('disabled', false);
-        $('.sender input[type=number]').prop('disabled', false);
-        $("#for-me-form").removeClass('active-form');
-        $("#for-me-checkout").removeClass('active-checkout');
-        $("#special-someone-form").addClass('active-form');
-        $("#special-someone-checkout").addClass('active-checkout');
-    }
-    //enable button
-    if($(this).val() !== "" && $(".step-1 .navigation .next-btn").is(':disabled')) {
-        $(".step-1 .navigation .next-btn").prop('disabled', false);
-    }
-});
+            }else if ($(this).val() === 'special-someone') {
+                //enable only special someone sections
+                $('.sender').show();
+                $('.sender input[type=text]').prop('disabled', false);
+                $('.sender input[type=number]').prop('disabled', false);
+                $("#for-me-form").removeClass('active-form');
+                $("#for-me-checkout").removeClass('active-checkout');
+                $("#special-someone-form").addClass('active-form');
+                $("#special-someone-checkout").addClass('active-checkout');
+            }
+            //enable button
+            if($(this).val() !== "" && $(".step-1 .navigation .next-btn").is(':disabled')) {
+                $(".step-1 .navigation .next-btn").prop('disabled', false);
+            }
+        });
 
         //navigation for steps
         var stepchange = false;
         var steps = $(".steps");
         var current = 0;
+        var total = $('.photo-pane').length;
         $(".navigation .next-btn").click(function(){
             if(current < steps.length && !stepchange){
                 stepchange = true;
+                $("html, body").animate({ scrollTop: 0 }, 100);
                 $(steps[current]).fadeOut(200,function(){
                     $(steps[current]).removeClass('active-step');
                     ++current;
@@ -853,6 +637,7 @@
         $(".navigation .back-btn").click(function(){
             if(current > 0 && !stepchange){
                 stepchange = true;
+                $("html, body").animate({ scrollTop: 0 }, 100);
                 $(steps[current]).fadeOut(200,function(){
                     $(steps[current]).removeClass('active-step');
                     --current;
@@ -866,8 +651,10 @@
         //STEP 3 CHECK IF CROPPED
         $("#check-proceed").click(function(){
             if(current > 0 && !stepchange){
-                if ($('.not-cropped').length <= 0) {
+                //TEMPORARILY DISABLED UNCROPPED SINCE ALL PICS ARE NOW CROPPED INITIALY
+                if (filesUploaded.length >= 3) {
                     stepchange = true;
+                $("html, body").animate({ scrollTop: 0 }, 100);
                     $(steps[current]).fadeOut(200,function(){
                         $(steps[current]).removeClass('active-step');
                         ++current;
@@ -888,6 +675,8 @@
         $(".reset-selection").click(function(){
             if(current > 0 && !stepchange){
                 stepchange = true;
+                $('.email-notif').css('display', 'none');
+                $("html, body").animate({ scrollTop: 0 }, 100);
                 $(steps[current]).fadeOut(200,function(){
                     $(steps[current]).removeClass('active-step');
                     --current;
@@ -907,7 +696,7 @@
                     $("#computer-upload").val('');
 
                     //clear files
-                    $(".get-started .wrap .step-2 ul.upload-options > li ul.files").empty();
+                    $(".step-2 ul.files").empty();
                     
                     //clear array
                     filesUploaded = [];
@@ -917,6 +706,58 @@
         })
 
         //CHECKOUT BTN
+        function validateEmail(email) {
+          const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(email);
+        }
+
+        function validate() {
+          const email = $("#ss-recipient-email").val();
+          if ($('#for-me').is(':checked')){
+              if (validateEmail(email)) {
+                $('.email-notif').fadeOut(200);
+                $( ".checkout-btn").css( {"pointer-events":"all", "opacity" : "1"} );
+              } else {
+                $('.email-notif').fadeIn(200);
+                $( ".checkout-btn").css( {"pointer-events":"none", "opacity" : "0.7"} );
+                
+              }
+          }
+          return false;
+        }
+         $("#ss-recipient-email").on("keyup", validate);
+
+         function validates() {
+          const email = $(".recipient #ss-recipient-email").val();
+          if ($('#special-someone').is(':checked')){
+              if (validateEmail(email)) {
+                $(".recipient #ss-recipient-email").closest('li').find('.email-notif').fadeOut(200);
+                $( ".checkout-btn").css( {"pointer-events":"all"} );
+              } else {
+                $(".recipient #ss-recipient-email").closest('li').find('.email-notif').fadeIn(200);
+                $( ".checkout-btn").css( {"pointer-events":"none"} );
+              }
+          }
+          return false;
+        }
+         $(".recipient #ss-recipient-email").on("keyup", validates);
+
+         function validatess() {
+          const semail = $("#ss-sender-email").val();
+          if ($('#special-someone').is(':checked')){
+              if (validateEmail(semail)) {
+                $("#ss-sender-email").closest('li').find('.email-notif').fadeOut(200);
+                $( ".checkout-btn").css( {"pointer-events":"all"} );
+              } else {
+                $("#ss-sender-email").closest('li').find('.email-notif').fadeIn(200);
+                $( ".checkout-btn").css( {"pointer-events":"none"} );
+              }
+          }
+          return false;
+        }
+         $("#ss-sender-email").on("keyup", validatess);
+
+
         $(".checkout-btn").click(function(){
             if(current < steps.length && !stepchange){
                 var checkinputs = true;
@@ -948,6 +789,7 @@
                     })
 
                     stepchange = true;
+                    $("html, body").animate({ scrollTop: 0 }, 100);
                     $(steps[current]).fadeOut(200,function(){
                         $(steps[current]).removeClass('active-step');
                         ++current;
@@ -963,11 +805,76 @@
             }
         });
 
+        //enables button
+        $('.step-4 .forms ul.form-list li input').change(function(){
+            
+        })
+
+        $("#ordetails").ajaxForm({
+            beforeSend: function() {
+                $("html, body").animate({ scrollTop: 0 }, 100);
+                $(".loading-wrap").css('display', 'block');
+            },
+            uploadProgress: function(event, position, total, percentComplete) {
+                var percentVal = percentComplete + '%';
+                if (percentComplete >= 100) {
+                    $("#process-heading").html('Please Wait');
+                    $("#upload-progress").html(percentVal);
+                }else {
+                    $("#upload-progress").html(percentVal);
+                }
+            },
+            complete: function(xhr) {
+                window.location.replace('thankyou');
+            }
+        });
+
+
+        // $("#ordetails").submit(function(e){
+        //     // $("html, body").animate({ scrollTop: 0 }, 100);
+        //     // $(".loading-wrap").css('display', 'block');
+        //     $("html, body").animate({ scrollTop: 0 }, 100);
+        //     $(".loading-wrap").css('display', 'block');
+        //     var form = this;
+        //     e.preventDefault();
+
+            
+            // var bar = $('.bar');
+            // var percent = $('.percent');
+            // var status = $('#status');
+
+            // $("#ordetails").ajaxForm({
+            //     beforeSend: function() {
+            //         console.log('before send')
+            //         status.empty();
+            //         var percentVal = '0%';
+            //         bar.width(percentVal);
+            //         percent.html(percentVal);
+            //     },
+            //     uploadProgress: function(event, position, total, percentComplete) {
+            //         var percentVal = percentComplete + '%';
+            //         bar.width(percentVal);
+            //         percent.html(percentVal);
+            //     },
+            //     complete: function(xhr) {
+            //         status.html(xhr.responseText);
+            //     }
+            // });
+            
+        //     setTimeout(function () {
+        //         form.submit();
+        //     }, 500); // in milliseconds
+        // })
+
+        $(".submit-payment").click(function(){
+        });
+
         //clears images and input hidden in checkout step
         $('.checkout-clear').click(function(){
 
             if(current > 0 && !stepchange){
                 stepchange = true;
+                $("html, body").animate({ scrollTop: 0 }, 100);
                 $(steps[current]).fadeOut(200,function(){
                     $(steps[current]).removeClass('active-step');
                     --current;
@@ -987,6 +894,7 @@
             $(".heading-text").fadeOut(200);
             if(current < steps.length && !stepchange){
                 stepchange = true;
+                $("html, body").animate({ scrollTop: 0 }, 100);
                 $(steps[current]).fadeOut(200,function(){
                     $(steps[current]).removeClass('active-step');
                     ++current;
@@ -1008,8 +916,6 @@
 
         //file upload step 2
         //use [0] when accessing properties
-        var filesUploaded = [];
-
         var filechanged = 0;
 
         $("#computer-upload").change(function(){
@@ -1022,36 +928,32 @@
                 filesUploaded.push({name: $files.files.item(i).name, src: URL.createObjectURL($files.files.item(i))});
             }
 
-            
-            //adds remove file uploaded event
-            $(".files .remove").each(function(){
-                if(!$(this).hasClass('has-event')) {
-                    
-                    //remove file function
-                    $(this).click(function(){
-                        $(this).closest('li').remove();
-                        //checks if empty, disable next button
-                        if($('.files li').length <= 0) {
-                            $("#initial-images-button").prop('disabled', true);
-                        }
-
-                        //remove stored file
-                        for (var i = 0; i <= filesUploaded.length; i++) {
-                            if (filesUploaded[i].name === $(this).prev().text()) {
-                                filesUploaded.splice(i, 1);
-                            }
-                        }
-                    });
-
-                    $(this).addClass('has-event');
-                }
-            });
-
-            //enable next button
-            if($('.files li').length > 0) {
-                $("#initial-images-button").prop('disabled', false);
-            }
+            checkUploads();
         });
+
+        //REMOVE FILE FROM UPLOADS
+        $(document).on('click', '.files .remove', function(){
+            //removes ui files element
+            $(this).closest('li').remove();
+
+            //remove stored file
+            for (var i = 0; i <= filesUploaded.length; i++) {
+                if (filesUploaded[i].name === $(this).prev().text()) {
+                    filesUploaded.splice(i, 1);
+                }
+            }
+
+            checkUploads();
+        });
+
+        //UPLOAD STATUS CHECKER
+        function checkUploads () {
+            if (filesUploaded.length > 0) {
+                $("#initial-images-button").prop('disabled', false);
+            }else {
+                $("#initial-images-button").prop('disabled', true);
+            }
+        }
 
         //CREATE FILE ELEMENT STEP 2
         function createFileElement(file) {
@@ -1063,8 +965,6 @@
 
         //FRAMES SELECTION
         //boundary
-        var frameboundary = $("input[name='order_type']").data('boundary');
-        var framepercent = $("input[name='order_type']").data('percent-boundary') + '%';
         $('.photo-wrap-big').css('padding', frameboundary);
         $('.photo-wrap-sm').css('padding', framepercent);
 
@@ -1076,14 +976,15 @@
             //set frame for big frame
             $('.frames-container .frame-above.active-frame').removeClass('active-frame');
             $('.frames-container .frame-above').each(function(){
-                if($(this).data('frame-name') === $framesel.val().toLowerCase() && !$(this).hasClass('active-frame')){
+                console.log(String($(this).data('frame-name')).toLowerCase());
+                if(String($(this).data('frame-name')).toLowerCase() === $framesel.val().toLowerCase() && !$(this).hasClass('active-frame')){
                     $(this).addClass('active-frame');
                 }
             });
             //setframe for sm frame
             $('.final-frame').removeClass('active-frame');
             $('.final-frame').each(function(){
-                if($(this).data('frame-name') === $framesel.val().toLowerCase() && !$(this).hasClass('active-frame')){
+                if(String($(this).data('frame-name')).toLowerCase() === $framesel.val().toLowerCase() && !$(this).hasClass('active-frame')){
                     $(this).addClass('active-frame');
                 }
             });
@@ -1104,6 +1005,7 @@
             infinite: false,
             variableWidth: true,
             swipe: true,
+            arrows: true,
             responsive : [
                 {
                     breakpoint: 1000,
@@ -1121,152 +1023,169 @@
         $(".step-3 .photos-section .container").on('beforeChange', function(){isSliding = true});
         $(".step-3 .photos-section .container").on('afterChange', function(){isSliding = false});
 
+        //CROPPER STUFF HERE
+        //INIT CROPPER
+        $("#init-cropper").croppie({
+            viewport: {
+                width: 240,
+                height: 240,
+                type: 'square'
+            },
+            enableOrientation: true,
+            // boundary: { width: 300, height: 300},
+            enableZoom: false,
+            enableExif: true
+        });
+
+        //CROPPER INITIALIZE
+        $("#maincropper").croppie({
+            viewport: {
+                width: 240,
+                height: 240,
+                type: 'square'
+            },
+            boundary: { width: 300, height: 300},
+            enableOrientation: true,
+            showZoomer: true,
+            enableExif: true
+        });
+
+        
+        //adjust crop button
+        var cropindex = 0;
+        $(document).on('click', '.adjust-crop-btn', function(){
+            cropindex = $(this).closest('.single-container').index();
+            var $image = $(this).closest('.photo-pane').find('.pic-original');
+
+            //UPDATE CROPPER TO CROP IMAGE
+            $("#maincropper").croppie("bind", {
+                url: $image.attr('src'),
+                orientation: '1',
+                setZoom: '0'
+            });
+            $(".cropper-popup").fadeIn(200);
+        });
+
+        //CROPPER GET RESULT
+        $("#done-crop").click(function(){
+            var passcropped = $($('.single-container')[cropindex-1]).find('.pic-used');
+
+            $("#maincropper").croppie('result', {
+                type: 'canvas',
+                size: {width: 768, height: 768}
+            }).then(function(resp) {
+                $(passcropped).attr('src', resp)
+
+                //update files uploaded src after cropping
+                filesUploaded[cropindex-1].src = resp;
+                $($('.single-container')[cropindex-1]).removeClass('not-cropped');
+                    
+            });
+            $(".cropper-popup").fadeOut(200);
+
+        });
+
+        //HIDE CROPPER
+        $("#back-crop").click(function(){
+            $(".cropper-popup").fadeOut(200);
+        });
+
         //STEP 3 ADDING NEW PANES
         $(document).on('click', ".add-new-single", function(){
-            createPaneElement();
-
-            // if($('.remove-photo-btn').hasClass('disabled')) {
-            //     $('.remove-photo-btn').removeClass('disabled');
-            // }
+            // createPaneElement();
+            $(this).addClass('show-uploads');
         });
 
         var elCounter = 0
-        //STEP 3 CREATE NEW PANE ELELEMNT
-        function createPaneElement () {
-            //counter for ids
-            var paneElement = `<li class="single-container">
-                                <!--UPLOAD-->
-                                <div class="upload-pane">
-                                    <ul class="inner-upload-options">
-                                        <!--INCREMENT COUNTER PER PHOTO SECTION-->
-                                        <li><input type="file" accept="image/*" name="order_images[]" id="photo-cp-upload-`+elCounter+`" class="single-input-file">
-                                            <label for="photo-cp-upload-`+elCounter+`" class="upload-pc"><img src="<?php echo base_url('public/frontend/'); ?>images/cam.png" class="logo" alt="camera">Upload photos from my phone or computer</label>
-                                        </li>
-                                        <li><button type="button" class="upload-fb"><img src="<?php echo base_url('public/frontend/'); ?>images/fb.png" class="logo" alt="camera">Import from Facebook</button></li>
-                                        <li><button type="button" class="upload-ig"><img src="<?php echo base_url('public/frontend/'); ?>images/ig.png"  class="logo"alt="camera">Import from Instagram</button></li>
-                                    </ul>
-                                    <ul class="photo-options">
-                                        <li><button type="button" class="remove-photo-btn">Remove</button></li>
-                                    </ul>
-                                </div>
-                                <!--IF HAS UPLOADED SHOW THIS-->
-                                <div class="photo-pane" data-name="">
-                                    <div class="result-photo">
-                                        <!--ORIGINAL UPLOADED PHOTO FOR CROPPER HIDDEN-->
-                                        <img src="./images/sample.jpg" alt="orginal photo" class="pic-original">
-                                        <!--RESULT PHOTO FROM CROP-->
-                                        <div class="photo-wrap-big" style="padding: `+frameboundary+`px">
-                                        <img src="./images/sample.jpg" alt="pic to use" class="pic-used">
-                                        </div>
-                                        <!--FRAMES-->
-                                        <div class="frames-container">
-                                        <?php if (count($frames) > 0 ): ?>
 
-                                        <?php $c = 1;?>
-
-                                        <?php $i = 1; foreach ($frames as $key => $value): ?>
-
-                                            <?php if ( $c == 1 ) { ?>
-
-                                                <img src="<?php echo $value->frame_image_f;?>" alt="frame to use" data-frame-name="<?php echo $value->frame_type;?>" class="frame-above active-frame">
-
-                                                <?php $c++ ;?>
-
-                                            <?php } else { ?>
-
-                                                <img src="<?php echo $value->frame_image_f;?>" alt="frame to use" data-frame-name="<?php echo $value->frame_type;?>" class="frame-above">
-
-                                                <?php $c++ ;?>
-
-                                            <?php } ?>
-
-                                        <?php endforeach; ?>
-
-                                        <?php endif; ?>
-                                        </div>
-                                    </div>
-                                    <ul class="photo-options">
-                                        <li><button type="button" class="adjust-crop-btn">Adjust Crop</button></li>
-                                        <li><button type="button" class="remove-photo-btn">Remove</button></li>
-                                    </ul>
-                                </div>
-                            </li>`;
-            
-
-            //if not sliding add the element
-            if(!isSliding) {
-                var addindex = 0
-                if($(".single-container").length){
-                    addindex = $(".single-container").length;
-                }else{
-                    addindex = 0}
-                $(".step-3 .photos-section .container").slick('slickAdd', paneElement, addindex);
-            }
-            ++elCounter;
+        //STEP 2 INITIALIZE CROP
+        function initializeCrop (file, updateind) {
+            var src = file[0].src;
+            $("#init-cropper").croppie("bind", {
+                url: src,
+                orientation: '1',
+                setZoom: '0'
+            }).then(function(){
+                $("#init-cropper").croppie("result", {
+                    type: "canvas",
+                    size: {width: 768, height: 768}
+                }).then(function(resp){
+                    // console.log(resp);
+                    //update filesUploaded src to cropped
+                    var newfile = {name: file[0].name, src: resp, original: file[0].src}
+                    initializeUploads(newfile);
+                    filesUploaded[updateind].src = resp;
+                })
+            })
         }
 
-        //STEP 2 INITIALIZE UPLOADED
-        function initializeUploads (file) {
+        //STEP 3 INITIALIZE CROP (file) 
+        function initializeCropSingle (file) {
+            var src = file.src;
+            $("#init-cropper").croppie("bind", {
+                url: src,
+                orientation: '1',
+                setZoom: '0'
+            }).then(function(){
+                $("#init-cropper").croppie("result", {
+                    type: "canvas",
+                    size: {width: 768, height: 768}
+                }).then(function(resp){
+                    var newfile = {name: file.name, src: resp, original: file.src}
+                    //push to files uploaded
+                    filesUploaded.push({name: file.name, src: resp});
+                    singleInitialize(newfile);
+                })
+            })
+        }
+
+        //initialize upload single
+        function singleInitialize (file) {
             //crop on initial
-            var usesrc = file[0].src;
-
+            // var usesrc = file[0].src;
             var paneElement = `<li class="single-container result not-cropped">
-            <!--UPLOAD-->
-            <div class="upload-pane">
-                <ul class="inner-upload-options">
-                    <!--INCREMENT COUNTER PER PHOTO SECTION-->
-                    <li><input type="file" accept="image/*" name="order_images[]" id="photo-cp-upload-`+elCounter+`" class="single-input-file">
-                        <label for="photo-cp-upload-`+elCounter+`" class="upload-pc"><img src="./images/cam.png" class="logo" alt="camera">Upload photos from my phone or computer</label>
-                    </li>
-                    <li><button type="button" class="upload-fb"><img src="./images/fb.png" class="logo" alt="camera">Import from Facebook</button></li>
-                    <li><button type="button" class="upload-ig"><img src="./images/ig.png"  class="logo"alt="camera">Import from Instagram</button></li>
-                </ul>
-                <ul class="photo-options">
-                    <li><button type="button" class="remove-photo-btn">Remove</button></li>
-                </ul>
-            </div>
-            <!--IF HAS UPLOADED SHOW THIS-->
-            <div class="photo-pane" data-name="`+file[0].name+`">
-                <div class="result-photo">
-                    <!--ORIGINAL UPLOADED PHOTO FOR CROPPER HIDDEN-->
-                    <img src="`+usesrc+`" alt="orginal photo" class="pic-original">
-                    <!--RESULT PHOTO FROM CROP-->
-                    <div class="photo-wrap-big" style="padding: `+frameboundary+`px">
-                    <img src="`+usesrc+`" alt="pic to use" class="pic-used">
+                <!--IF HAS UPLOADED SHOW THIS-->
+                <div class="photo-pane" data-name="`+file.name+`">
+                    <div class="result-photo">
+                        <!--ORIGINAL UPLOADED PHOTO FOR CROPPER HIDDEN-->
+                        <img src="`+file.original+`" alt="orginal photo" class="pic-original">
+                        <!--RESULT PHOTO FROM CROP-->
+                        <div class="photo-wrap-big" style="padding: `+frameboundary+`px">
+                        <img src="`+file.src+`" alt="pic to use" class="pic-used">
+                        </div>
+                        <!--FRAMES-->
+                        <div class="frames-container">
+                        <?php if (count($frames) > 0 ): ?>
+
+                        <?php $c = 1;?>
+
+                        <?php $i = 1; foreach ($frames as $key => $value): ?>
+
+                            <?php if ( $c == 1 ) { ?>
+
+                                <img src="<?php echo $value->frame_image_f;?>" alt="frame to use" data-frame-name="<?php echo $value->frame_type;?>" class="frame-above active-frame">
+
+                                <?php $c++ ;?>
+
+                            <?php } else { ?>
+
+                                <img src="<?php echo $value->frame_image_f;?>" alt="frame to use" data-frame-name="<?php echo $value->frame_type;?>" class="frame-above">
+
+                                <?php $c++ ;?>
+
+                            <?php } ?>
+
+                        <?php endforeach; ?>
+
+                        <?php endif; ?>
+                        </div>
                     </div>
-                    <!--FRAMES-->
-                    <div class="frames-container">
-                    <?php if (count($frames) > 0 ): ?>
-
-                    <?php $c = 1;?>
-
-                    <?php $i = 1; foreach ($frames as $key => $value): ?>
-
-                        <?php if ( $c == 1 ) { ?>
-
-                            <img src="<?php echo $value->frame_image_f;?>" alt="frame to use" data-frame-name="<?php echo $value->frame_type;?>" class="frame-above active-frame">
-
-                            <?php $c++ ;?>
-
-                        <?php } else { ?>
-
-                            <img src="<?php echo $value->frame_image_f;?>" alt="frame to use" data-frame-name="<?php echo $value->frame_type;?>" class="frame-above">
-
-                            <?php $c++ ;?>
-
-                        <?php } ?>
-
-                    <?php endforeach; ?>
-
-                    <?php endif; ?>
-                    </div>
+                    <ul class="photo-options">
+                        <li><button type="button" class="adjust-crop-btn">Adjust Crop</button></li>
+                        <li><button type="button" class="remove-photo-btn">Remove</button></li>
+                    </ul>
                 </div>
-                <ul class="photo-options">
-                    <li><button type="button" class="adjust-crop-btn">Adjust Crop</button></li>
-                    <li><button type="button" class="remove-photo-btn">Remove</button></li>
-                </ul>
-            </div>
-        </li>`;
+            </li>`;
 
             var addindex = 0
             if($(".single-container").length){
@@ -1276,6 +1195,82 @@
             $(".step-3 .photos-section .container").slick('slickAdd', paneElement, addindex);
             
             ++elCounter;
+
+            //UPDATE FRAME
+            $('.frames-container .frame-above.active-frame').removeClass('active-frame');
+            $('.frames-container .frame-above').each(function(){
+                if(String($(this).data('frame-name')).toLowerCase() === $("input[name='order_type']:checked").val().toLowerCase() && !$(this).hasClass('active-frame')){
+                    $(this).addClass('active-frame');
+                }
+            });
+
+        }
+
+        //STEP 2 INITIALIZE UPLOADED
+        function initializeUploads (file) {
+            //crop on initial
+            // var usesrc = file[0].src;
+            var paneElement = `<li class="single-container result not-cropped">
+                <!--IF HAS UPLOADED SHOW THIS-->
+                <div class="photo-pane" data-name="`+file.name+`">
+                    <div class="result-photo">
+                        <!--ORIGINAL UPLOADED PHOTO FOR CROPPER HIDDEN-->
+                        <img src="`+file.original+`" alt="orginal photo" class="pic-original">
+                        <!--RESULT PHOTO FROM CROP-->
+                        <div class="photo-wrap-big" style="padding: `+frameboundary+`px">
+                        <img src="`+file.src+`" alt="pic to use" class="pic-used">
+                        </div>
+                        <!--FRAMES-->
+                        <div class="frames-container">
+                        <?php if (count($frames) > 0 ): ?>
+
+                        <?php $c = 1;?>
+
+                        <?php $i = 1; foreach ($frames as $key => $value): ?>
+
+                            <?php if ( $c == 1 ) { ?>
+
+                                <img src="<?php echo $value->frame_image_f;?>" alt="frame to use" data-frame-name="<?php echo $value->frame_type;?>" class="frame-above active-frame">
+
+                                <?php $c++ ;?>
+
+                            <?php } else { ?>
+
+                                <img src="<?php echo $value->frame_image_f;?>" alt="frame to use" data-frame-name="<?php echo $value->frame_type;?>" class="frame-above">
+
+                                <?php $c++ ;?>
+
+                            <?php } ?>
+
+                        <?php endforeach; ?>
+
+                        <?php endif; ?>
+                        </div>
+                    </div>
+                    <ul class="photo-options">
+                        <li><button type="button" class="adjust-crop-btn">Adjust Crop</button></li>
+                        <li><button type="button" class="remove-photo-btn">Remove</button></li>
+                    </ul>
+                </div>
+            </li>`;
+
+            var addindex = 0
+            if($(".single-container").length){
+                addindex = $(".single-container").length;
+            }else{
+                addindex = 0}
+            $(".step-3 .photos-section .container").slick('slickAdd', paneElement, addindex);
+            
+            ++elCounter;
+
+            //UPDATE FRAME
+            $('.frames-container .frame-above.active-frame').removeClass('active-frame');
+            $('.frames-container .frame-above').each(function(){
+                if(String($(this).data('frame-name')).toLowerCase() === $("input[name='order_type']:checked").val().toLowerCase() && !$(this).hasClass('active-frame')){
+                    $(this).addClass('active-frame');
+                }
+            });
+
         }
 
         //checkout images adding
@@ -1313,44 +1308,48 @@
         //CREATES PANES PER FILE UPLOADED ON STEP 2
         var initIndex = 0;
         var addElement = `<li class="add-new-single">
+                            <!--UPLOAD-->
+                            <div class="upload-pane">
+                                <ul class="inner-upload-options">
+                                    <!--INCREMENT COUNTER PER PHOTO SECTION-->
+                                    <li><input type="file" accept="image/*" name="order_images[]" multiple id="photo-cp-upload-`+elCounter+`" class="single-input-file">
+                                        <label for="photo-cp-upload-`+elCounter+`" class="upload-pc"><img src="<?php echo base_url('public/frontend/'); ?>images/cam.png" class="logo" alt="camera">Upload photos from my phone or computer</label>
+                                    </li>
+                                    <li><button type="button" class="upload-fb fbstacks"><img src="<?php echo base_url('public/frontend/'); ?>images/fb.png" class="logo" alt="camera">Import from Facebook</button></li>
+                                    <li><button type="button" class="upload-ig igstacks"><img src="<?php echo base_url('public/frontend/'); ?>images/ig.png"  class="logo"alt="camera">Import from Instagram</button></li>
+                                </ul>
+                            </div>
                             <div class="empty-pane">
                                 <span class="add-logo"></span>
                                 ADD PHOTO
                             </div>
                         </li>`;
 
-        // function initialCrop () {
-        //     return new Promise (function(resolve) {
-        //         setTimeout(function(){
-        //             resolve('passed')
-        //         }, 2000);
-        //     });
-        // }
-
+        //finalize uploaded step 2
         $("#initial-images-button").click(function(){
             if(current < steps.length && !stepchange){
                 //initialize elements
-                $(filesUploaded).each(function(){
-                    initializeUploads($(this));
+                $(filesUploaded).each(function(index){
+                    initializeCrop($(this), index);
+                    // initializeUploads($(this));
                 });
-
-                // $(filesUploaded).each(async function() {
-                //     const status = await initialCrop();
-                //     console.log(status);
-                // })
 
                 $(".step-3 .photos-section .container").slick('slickAdd', addElement, $(".single-container").length);
                 // $(".step-3 .photos-section .container").slick('slickRemove', 0);
                 ++initIndex;
 
                 stepchange = true;
+                $("html, body").animate({ scrollTop: 0 }, 100);
                 $(steps[current]).fadeOut(200,function(){
                     $(steps[current]).removeClass('active-step');
                     ++current;
                     $(steps[current]).fadeIn(200);
                     $(steps[current]).addClass('active-step');
                     stepchange = false;
-                })
+                });
+                
+                setTimeout(function(){console.log('triggered');
+                    $('.photos-section .container').slick('slickGoTo', 1)}, 500);
             }
         });
 
@@ -1358,23 +1357,17 @@
 
         //STEP 3  ADD SINGLE EVENT
         $(document).on('change', ".single-input-file", function(){
-            $image = $(this).closest('.single-container').find('.pic-original');
-            $image2 = $(this).closest('.single-container').find('.pic-used');
-            $index = $(this).closest('.single-container').index() - 1;
             
-            //sets uploaded image as image inside
-            var url = URL.createObjectURL($('.single-input-file')[$index].files[0]);
-            $image.attr('src', url);
-            $image2.attr('src', url);
+            var $files = $('.single-input-file')[0];
+            //creates file element
+            for (var i = 0; i < $files.files.length; i++) {
+                // var temp = blob2base(URL.createObjectURL($files.files.item(i)));
+                initializeCropSingle({name: $files.files.item(i).name, src: URL.createObjectURL($files.files.item(i))});
+            }
 
-            //sets data name and adds to filesuploaded array
-            filesUploaded.push({name: $('.single-input-file')[$index].files[0].name, src: url});
-            // $(this).closest('.single-container').find('.photo-pane').data('name', $('.single-input-file')[$index].files[0].name);
-            $(this).closest('.single-container').find('.photo-pane').attr('data-name', $('.single-input-file')[$index].files[0].name)
-
-            //shows result
-            $(this).closest('.single-container').addClass('result');
-            $(this).closest('.single-container').addClass('not-cropped');
+            $('.single-input-file').val('');
+            $('.add-new-single').removeClass('show-uploads');
+            console.log('pass');
         });
 
         //STEP 3 REMOVE SINGLE EVENT
@@ -1391,10 +1384,6 @@
                     }
                 }
             }
-            //adds disabled
-            // if($('.photos-section .single-container').length <= 1){
-            //     $(".remove-photo-btn").addClass('disabled');
-            // }
         });
 
 
@@ -1414,56 +1403,231 @@
             }else {
                 $("#special-placeorder").prop('disabled', true);
             }
-        })
-
-
-        //CROPPER STUFF HERE
-        //CROPPER INITIALIZE
-        $("#maincropper").croppie({
-            viewport: {
-                width: 240,
-                height: 240,
-                showZoomer: true,
-                url: "http://lorempixel.com/500/400/",
-            },
-            boundary: { width: 300, height: 300}
         });
-        
-        //adjust crop button
-        var cropindex = 0;
-        $(document).on('click', '.adjust-crop-btn', function(){
-            cropindex = $(this).closest('.single-container').index();
-            var $image = $(this).closest('.photo-pane').find('.pic-original');
 
-            //UPDATE CROPPER TO CROP IMAGE
-            $("#maincropper").croppie("bind", {
-                url: $image.attr('src')
+
+
+
+        //RY CODE
+        $('.ord_type').each(function(){
+            $(this).click(function(){
+                $('#ordertype').val( $(this).val() );
             });
-            $(".cropper-popup").fadeIn(200);
         });
 
-        //CROPPER GET RESULT
-        $("#done-crop").click(function(){
-            var passcropped = $($('.single-container')[cropindex-1]).find('.pic-used');
-
-            $("#maincropper").croppie('result', {
-                type: 'canvas',
-                size: 'viewport',
-            }).then(function(resp) {
-                $(passcropped).attr('src', resp)
-
-                //update files uploaded src after cropping
-                filesUploaded[cropindex-1].src = resp;
-                $($('.single-container')[cropindex-1]).removeClass('not-cropped');
-                    
+        $('.mops').each(function(){
+            $(this).click(function(){
+                $('#mop').val( $(this).data('value') );
             });
-            $(".cropper-popup").fadeOut(200);
+        });
+
+            // filepicker.setKey('AJgYnKcG3TQv39JCso97wz');
+
+        //STEP 2 FILESTACKS FB (MULTIPLE)
+        $('.upload-options .fbook').each(function(){
+            $(this).click(function(){
+                const client = filestack.init('AJgYnKcG3TQv39JCso97wz');
+                const options = {
+                    fromSources: ["facebook"],
+                    maxFiles: 15,
+                    viewType: "grid",
+                    onFileUploadFinished: function(response){
+                        var jison = JSON.stringify(response);
+                            var jsonStringify = '[' + jison + ']';
+                            var jsonObj = JSON.parse(jsonStringify);
+
+                            for(var i = 0; i < jsonObj.length; i++)
+                            {   
+                                var res = jsonObj[i];
+                                console.log(res);
+                                var tempcreate = {name: res['uploadId'], src: res['url']};
+                                createFileElement(tempcreate);
+                                filesUploaded.push(tempcreate);
+                                checkUploads();
+                            }
+                        }
+
+                }
+                client.picker(options).open();
+            });
+        });
+    
+        //STEP 2 FILESTACKS IG (MULTIPLE)
+        $('.upload-options .instag').each(function(){
+            $(this).click(function(){
+                const client = filestack.init('AJgYnKcG3TQv39JCso97wz');
+                const options = {
+                    fromSources: ["instagram"],
+                    maxFiles: 15,
+                    viewType: "grid",
+                    onFileUploadFinished: function(response){
+                        var jison = JSON.stringify(response);
+                            var jsonStringify = '[' + jison + ']';
+                            var jsonObj = JSON.parse(jsonStringify);
+
+                            for(var i = 0; i < jsonObj.length; i++)
+                            {   
+                                var res = jsonObj[i];
+                                var tempcreate = {name: res['uploadId'], src: res['url']};
+                                createFileElement(tempcreate);
+                                filesUploaded.push(tempcreate);
+                                checkUploads();
+                            }
+                        }
+
+                }
+                client.picker(options).open();
+            });
+        });
+
+        //STEP 3 FB UPLOAD (MULTIPLE)
+        $(document).on('click', '.fbstacks', function(){
+            
+            const client = filestack.init('AJgYnKcG3TQv39JCso97wz');
+            const options = {
+                fromSources: ["facebook"],
+                maxFiles: 15,
+                viewType: "grid",
+                onFileUploadFinished: function(response){
+                    var jison = JSON.stringify(response);
+                    var jsonStringify = '[' + jison + ']';
+                    var jsonObj = JSON.parse(jsonStringify);
+
+                    for(var i = 0; i < jsonObj.length; i++)
+                    {   
+                        var res = jsonObj[i];
+                        initializeCropSingle({name: res['uploadId'], src: res['url']});
+                    }
+                    $('.single-input-file').val('');
+                    $('.single-input-file').removeClass('show-uploads');
+                }
+
+            }
+                client.picker(options).open();
+            
+
+        });
+        //STEP 3 IG UPLOAD (MULTIPLE)
+        $(document).on('click', '.igstacks', function(){
+            const client = filestack.init('AJgYnKcG3TQv39JCso97wz');
+            const options = {
+                fromSources: ["instagram"],
+                maxFiles: 15,
+                viewType: "grid",
+                onFileUploadFinished: function(response){
+                    var jison = JSON.stringify(response);
+                        var jsonStringify = '[' + jison + ']';
+                        var jsonObj = JSON.parse(jsonStringify);
+
+                        for(var i = 0; i < jsonObj.length; i++)
+                        {   
+                            var res = jsonObj[i];
+                            initializeCropSingle({name: res['uploadId'], src: res['url']});
+                        }
+                $('.single-input-file').val('');
+                $('.single-input-file').removeClass('show-uploads');
+                }
+
+            }
+            client.picker(options).open();
+        })
+
+        //checkout
+        //
+            function numberWithCommas(number) {
+                var parts = number.toString().split(".");
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return parts.join(".");
+            }
+
+            $('.checkout-btn').click(function(){
+            var countimages = $('.photo-pane').length;
+            var additionals  = countimages - 3;
+            if (countimages > 3){
+                $('.quantity').text( "x" + additionals);
+                var base = Number($('#base').val());
+                var perframe = parseFloat(Number($('#perframe').val())) * additionals;
+                $('.adds').text( "₱ " + numberWithCommas(perframe.toFixed(2)));
+                var total = base + perframe;
+                var format = parseFloat(total);
+                console.log(format);
+                $('.value-total').text( "₱ " + numberWithCommas(format.toFixed(2)));
+                $('.amounts').text("₱ " + numberWithCommas(format.toFixed(2)));
+            }else{
+                $('#greater3').hide();
+                var basetotal = parseFloat($('#base').val());
+                console.log(basetotal);
+                $('.value-total').text("₱ " + numberWithCommas(basetotal.toFixed(2)));
+                $('.amounts').text("₱ " + numberWithCommas(basetotal.toFixed(2)));
+            };
+            });
 
         });
 
-        //HIDE CROPPER
-        $("#back-crop").click(function(){
-            $(".cropper-popup").fadeOut(200);
+
+        //PAYMENT
+        $("#payment_proof").change(function(){
+            if ($(this).val() !== '') {
+                $(".upload-result").text($(this).val().replace(/C:\\fakepath\\/i, ''));
+                $('.submit-payment').prop('disabled', false);
+            }
         })
-        })
+
+        $('input[name="payment_option"]').change(function(){
+            if ($('input[name="payment_option"]:checked').val() === "bank_transfer" && !$("#bank-transfer-content").hasClass('active')) {
+                //set heading
+                $(".payment-method-heading h4.active").fadeOut(200, function(){
+                    $("#bank-transfer-head").fadeIn(200);
+                    $(".payment-method-heading h4.active").removeClass('active');
+                    $("#bank-transfer-head").addClass('active');
+                })
+                $(".payment_content.active").fadeOut(200,function(){
+                    $("#bank-transfer-content").fadeIn(200);
+                    $(".payment_content.active").removeClass('active');
+                    $("#bank-transfer-content").addClass('active');
+
+
+                    //reset upload
+                    $("#payment_proof").val('');
+                    $(".upload-result").text('No Upload.');
+                    $('.submit-payment').prop('disabled', true);
+                })
+            }
+            else if ($('input[name="payment_option"]:checked').val() === "gcash_transfer" && !$("#gcash-content").hasClass('active')) {
+                //set heading
+                $(".payment-method-heading h4.active").fadeOut(200, function(){
+                    $("#gcash-head").fadeIn(200);
+                    $(".payment-method-heading h4.active").removeClass('active');
+                    $("#gcash-head").addClass('active');
+                })
+                $(".payment_content.active").fadeOut(200,function(){
+                    $("#gcash-content").fadeIn(200);
+                    $(".payment_content.active").removeClass('active');
+                    $("#gcash-content").addClass('active');
+
+                    //reset upload
+                    $("#payment_proof").val('');
+                    $(".upload-result").text('No Upload.');
+                $('.submit-payment').prop('disabled', true);
+                })
+            }
+            else if ($('input[name="payment_option"]:checked').val() === "peso_pay" && !$("#peso-pay-content").hasClass('active')) {//set heading
+                $(".payment-method-heading h4.active").fadeOut(200, function(){
+                    $("#pesopay-head").fadeIn(200);
+                    $(".payment-method-heading h4.active").removeClass('active');
+                    $("#pesopay-head").addClass('active');
+                })
+                $(".payment_content.active").fadeOut(200,function(){
+                    $("#peso-pay-content").fadeIn(200);
+                    $(".payment_content.active").removeClass('active');
+                    $("#peso-pay-content").addClass('active');
+
+                    //reset upload
+                    $("#payment_proof").val('');
+                    $(".upload-result").text('No Upload.');
+                $('.submit-payment').prop('disabled', true);
+                })
+                
+            }
+        });
         </script>

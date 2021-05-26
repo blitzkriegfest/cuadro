@@ -5,7 +5,7 @@
       <div class="col-lg-12">
         <section class="panel">
           <header class="panel-heading">
-            Frames
+            Frequently Asked Questions
             <?php if ($flash_msg = $this->session->flash_msg): ?>
               <br><sub style="color: <?php echo $flash_msg['color'] ?>"><?php echo $flash_msg['message'] ?></sub>
             <?php endif; ?>
@@ -20,6 +20,7 @@
                   <tr>
                     <th>#</th>
                     <th>FAQ</th>
+                    <th>Answer</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -30,6 +31,7 @@
                       <tr>
                         <th scope="row"><?php echo $i++ ?></th>
                         <td><?php echo $value->faq_question ?></td>
+                        <td><?php echo $value->faq_answer ?></td>
                         <td>
                           <button type="button"
                           data-payload='<?php echo json_encode(['faq_id' => $value->faq_id, 'faq_question' => $value->faq_question, 'faq_answer' => $value->faq_answer])?>'

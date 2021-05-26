@@ -35,6 +35,13 @@ class Admin_core_controller extends CI_Controller
     $this->load->view('frontend/partials/footer', $data);
   }
 
+  public function wrapper_nofooter($body, $data = null)
+  {
+
+    $this->load->view('frontend/partials/header', $data);
+    $this->load->view($body, $data);
+  }
+
   public function admin_redirect($param = null)
   {
     if ($this->session->role !== 'administrator') {

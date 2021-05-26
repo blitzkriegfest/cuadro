@@ -5,7 +5,7 @@
       <div class="col-lg-12">
         <section class="panel">
           <header class="panel-heading">
-            Projects
+            Rates Management
             <?php if ($flash_msg = $this->session->flash_msg): ?>
               <br><sub style="color: <?php echo $flash_msg['color'] ?>"><?php echo $flash_msg['message'] ?></sub>
             <?php endif; ?>

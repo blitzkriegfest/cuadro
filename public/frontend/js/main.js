@@ -1,3 +1,26 @@
+//remove footer on get started
+if (window.location.pathname.indexOf('getStarted') > 0) {
+    $("footer").css('display','none');
+    $("body").addClass('get-started-page');
+}
+
+//disable keys on input number
+
+var inputBox = $("input[type='number']");
+var invalidChars = [
+    101,
+    45,
+  ];
+  
+inputBox.each(function(){
+    $(this).keypress(function(e) {
+        var code = e.keyCode || e.which;
+        if (invalidChars.includes(code)) {
+            e.preventDefault();
+        }
+    });
+});
+
 var slider3 = {slidesToShow: 3, slidesToScroll: 3, autoplay: true, autoplaySpeed: 3000, infinite: true, arrows: true, responsive: [{breakpoint: 601, settings: {slidesToShow:1,slidesToScroll:1}}]}
 
 //header active nav
@@ -151,4 +174,3 @@ $(".pagination li a").each(function(){
 //hide footer in get started
 
 //STEP 2 global variables
-

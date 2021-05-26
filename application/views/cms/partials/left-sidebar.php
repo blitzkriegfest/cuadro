@@ -37,7 +37,7 @@
             <span>Admin Management</span>
           </a>
         </li>
-        <li class="sub-menu">
+        <!-- <li class="sub-menu">
 
           <a href="javascript:;" class="<?php echo (in_array($this->uri->segment(2), ['news', 'events', 'about']))  ? 'active': ''; ?>">
             <i class="fa fa-tasks"></i>
@@ -49,7 +49,15 @@
             <li><a <?php echo $this->uri->segment(2) === 'about' ? 'style="color:#ff6c60"': ''; ?> href="<?php echo base_url('admin/about') ?>">About</a></li>
           </ul>
         </li>
-        <li>
+         -->
+          <li>
+            <a href="<?php echo base_url('cms/rates') ?>"
+              class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'rates') ? 'active': ''; ?>">
+              <i class="fa fa-book"></i>
+              <span>Rates Management</span>
+            </a>
+          </li>
+          <li>
           <a href="<?php echo base_url('cms/frames') ?>"
             class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'frames') ? 'active': ''; ?>">
             <i class="fa fa-book"></i>
@@ -57,7 +65,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url('cms/orders') ?>"
+          <a href="<?php echo base_url('cms/orders?page=1') ?>"
             class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'orders') ? 'active': ''; ?>">
             <i class="fa fa-book"></i>
             <span>Orders</span>
@@ -82,13 +90,6 @@
             class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'projects') ? 'active': ''; ?>">
             <i class="fa fa-th"></i>
             <span>Projects</span>
-          </a>
-        </li>
-        <li>
-          <a href="<?php echo base_url('cms/rates') ?>"
-            class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'rates') ? 'active': ''; ?>">
-            <i class="fa fa-book"></i>
-            <span>Rates Management</span>
           </a>
         </li>
       </ul>
