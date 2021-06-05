@@ -1,12 +1,14 @@
 /*Desktop Resolutions*/
 @media screen and (max-width: 1600px) {
-
+	.header-wai5m {font-size: 42px!important; line-height: 48px!important;}
 }
 
 @media screen and (max-width: 1440px) {
 
 	.get-started .wrap .step-2 ul.upload-options{padding-top: 16px;}
 	.get-started .wrap .step-2 p{margin-bottom: 16px;}
+	
+	.header-wai5m {font-size: 36px!important; line-height: 42px!important; left: 163px!important;}
 }
 
 @media screen and (max-width: 1366px) {
@@ -72,6 +74,17 @@
 	
 	.get-started .wrap .step-6 .payment_content_wrap .payment_content .details li label,
 	.get-started .wrap .step-6 .payment_content_wrap .payment_content .details li p{width: 100%; font-size: 18px; line-height: 22px;}
+	
+	.header-wai5m {font-size: 32px!important; line-height: 36px!important;}
+}
+
+@media screen and (max-width: 1200px) {
+	.header-wai5m {display: none!important;}
+	.featured h1 {display: block!important;}
+	
+	.featured{height: auto; padding: 130px 24px 32px;}
+	.featured h1{font-size: 48px; line-height: 54px; position: relative; top: auto; padding: 20px 12px;}
+	.featured{width: 100%; height: auto;}
 }
 
 @media screen and (max-height: 768px) {
@@ -93,10 +106,13 @@
 
 	.get-started .wrap .step-5 .checkouts .container .right .top{padding: 16px;}
 	.get-started .wrap .step-5 .checkouts .container .right .total{padding: 12px 16px;}
+	
 }
 
 /*Portrait Tablets*/
 @media screen and (max-width: 999px) {
+	.featured{height: auto; padding: 110px 24px 32px;}
+
 	/* header .pagewrapper nav ul li a{padding: 0 12px;} */
 	/* .pagewrapper, .pagewrapper2 {width: 96%;} */
 	header .mainnav{display: none;}
@@ -105,10 +121,6 @@
 	header{height: auto; padding-bottom: 0; padding-top: 0;}
 	header .pagewrapper{height: 108px;}
 	header .pagewrapper aside{left: 0; right: auto; padding: 8px;}
-	
-	.featured{height: auto; padding: 110px 24px 32px;}
-	.featured h1{font-size: 48px; line-height: 54px; position: relative; top: auto; padding: 20px 12px;}
-	.featured{width: 100%; height: auto;}
 
 	.why-us ul li:first-child{width: 100%; margin-bottom: 24px;}
 	.why-us ul li{width: 50%;}

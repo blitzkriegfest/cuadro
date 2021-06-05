@@ -48,7 +48,8 @@ class Order_model extends Admin_core_model
       'sender_email' => @$data['sender_email'],
       'sender_number' => @$data['sender_number'],
       'proof_of_payment' => @$data['proof_of_payment'],
-      'mode_of_payment' => @$data['mode_of_payment']
+      'mode_of_payment' => @$data['mode_of_payment'],
+      'created_at' => date('Y-m-d H:i:s')
     ]);
     $last_id = $this->db->insert_id();
 

@@ -564,6 +564,31 @@
     <script src="<?php echo base_url('public/frontend/'); ?>js/main.js"></script>
 
     <script src="<?php echo base_url('public/admin/js/custom/'); ?>getstarted_management.js"></script>
+    
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+            <script>
+              window.fbAsyncInit = function() {
+                FB.init({
+                  xfbml            : true,
+                  version          : 'v10.0'
+                });
+              };
+
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <!-- Your Chat Plugin code -->
+            <div class="fb-customerchat"
+              attribution="biz_inbox"
+              page_id="102555568620612">
+            </div>
 
         <!--NATH GET STARTED CODE-->
         <script type="text/javascript">
@@ -810,24 +835,24 @@
             
         })
 
-        $("#ordetails").ajaxForm({
-            beforeSend: function() {
-                $("html, body").animate({ scrollTop: 0 }, 100);
-                $(".loading-wrap").css('display', 'block');
-            },
-            uploadProgress: function(event, position, total, percentComplete) {
-                var percentVal = percentComplete + '%';
-                if (percentComplete >= 100) {
-                    $("#process-heading").html('Please Wait');
-                    $("#upload-progress").html(percentVal);
-                }else {
-                    $("#upload-progress").html(percentVal);
-                }
-            },
-            complete: function(xhr) {
-                window.location.replace('thankyou');
-            }
-        });
+        // $("#ordetails").ajaxForm({
+        //     beforeSend: function() {
+        //         $("html, body").animate({ scrollTop: 0 }, 100);
+        //         $(".loading-wrap").css('display', 'block');
+        //     },
+        //     uploadProgress: function(event, position, total, percentComplete) {
+        //         var percentVal = percentComplete + '%';
+        //         if (percentComplete >= 100) {
+        //             $("#process-heading").html('Please Wait');
+        //             $("#upload-progress").html(percentVal);
+        //         }else {
+        //             $("#upload-progress").html(percentVal);
+        //         }
+        //     },
+        //     complete: function(xhr) {
+        //         window.location.replace('thankyou');
+        //     }
+        // });
 
 
         // $("#ordetails").submit(function(e){
@@ -1061,7 +1086,7 @@
             $("#maincropper").croppie("bind", {
                 url: $image.attr('src'),
                 orientation: '1',
-                setZoom: '0'
+                zoom: '0'
             });
             $(".cropper-popup").fadeIn(200);
         });
@@ -1104,7 +1129,8 @@
             $("#init-cropper").croppie("bind", {
                 url: src,
                 orientation: '1',
-                setZoom: '0'
+                zoom: '0',
+                points: [0,0,250,250]
             }).then(function(){
                 $("#init-cropper").croppie("result", {
                     type: "canvas",
@@ -1125,7 +1151,8 @@
             $("#init-cropper").croppie("bind", {
                 url: src,
                 orientation: '1',
-                setZoom: '0'
+                zoom: '0',
+                points: [0,0,250,250]
             }).then(function(){
                 $("#init-cropper").croppie("result", {
                     type: "canvas",
@@ -1631,3 +1658,5 @@
             }
         });
         </script>
+
+        

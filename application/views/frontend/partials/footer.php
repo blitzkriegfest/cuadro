@@ -44,31 +44,32 @@
 
                     <ul class="office">
 
-                      <li>
+                      <?php $i = 1; foreach ($contact as $key => $value): ?>
 
-                        <h5>Operations:</h5>
+                        <li>
 
-                        <p>3 Kaimito St. Town & Country 
+                            <h5><?php echo $value->contact_name;?>:</h5>
 
-                        Executive Village, Antipolo City </p>
+                            <p><?php echo $value->contact_address;?></p>
 
-                        <p>Contact #:<br>
+                            <p>Contact #:<br>
+                            <?php 
+                            $variable = $value->contact_number;
+                           $array = explode(', ',$variable);
+                           foreach($array as $row)
+                            {?>
+                                <a href="tel:+<?php echo $row;?>">+<?php echo $row;?> </a> 
+                            <?php }?>
+                            
+                            
+                            </p>
+                            
 
-                        <a href="tel:+63286453578">+(632) 8645-3578</a>, <a href="tel:+639995851756">0999-5851756</a></p>
+                        </li>
 
-                      </li>
 
-                      <li>
+                    <?php endforeach;?>
 
-                        <h5>Sales & Marketing:</h5>
-
-                        <p>43 Caballero St. Town & Country Executive Village, Antipolo City </p>
-
-                        <p>Contact #:<br>
-
-                        <a href="tel:+63284778644">+(632) 8477-8644</a>, <a href="tel:+63284778644">0999-5851753</a></p>
-
-                      </li>
 
                     </ul>
 

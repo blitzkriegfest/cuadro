@@ -57,7 +57,7 @@ $(document).ready(function() {
    $('#modeofpayment').text("Mode of Payment: " + payload.mode_of_payment)
    $('#preview').attr('src', payload.proof_of_payment)
    $('#link').attr('href', payload.proof_of_payment)
-   $("#orderstatuschange option[value='"+payload.order_status+"']").attr('selected', 'selected');
+   $("#orderstatuschange option[value='"+payload.page+"']").attr('selected', 'selected');
 
    $('#main-form').attr('action', base_url + 'cms/orders/updateStatus/' + payload.order_id)
    $('.modal').modal()

@@ -1,8 +1,10 @@
       <section class="featured">
 
         <h1>Wall Art in <span>5 Minutes</span></h1>
+        <?php $i = 1; foreach ($resources as $key => $value): ?>
 
-        <img src="<?php echo base_url('public/frontend/'); ?>images/IMG_6150.jpg" alt="Wall Art in 5 Minutes">
+        <img src="<?php echo $value->homepage_image_f?>" alt="Wall Art in 5 Minutes">
+      <?php endforeach;?>
 
       </section>
 
@@ -14,35 +16,19 @@
 
           <ul>
 
-            <li>
-
-              <aside><img src="<?php echo base_url('public/frontend/'); ?>images/no-nail.png" alt="No more banging on walls"></aside>
-
-              <h4>No more banging on your walls</h4>
-
-              <p>Our frames use a special tape adhesive</p>
-
-            </li>
+            <?php $i = 1; foreach ($feature as $key => $value): ?>
 
             <li>
 
-              <aside><img src="<?php echo base_url('public/frontend/'); ?>images/stick.png" alt="Frame Stick and Unstick"></aside>
+              <aside><img src="<?php echo $value->feature_image_f;?>"></aside>
 
-              <h4>Frames stick and unstick from your wall without any damage</h4>
+              <h4><?php echo $value->feature_title;?></h4>
 
-              <p>Our frames stick to any FLAT surface </p>
-
-            </li>
-
-            <li>
-
-              <aside><img src="<?php echo base_url('public/frontend/'); ?>images/free-delivery.png" alt="Free Delivery"></aside>
-
-              <h4>Conveniently delivered to your doorstep</h4>
-
-              <p><span>FREE DELIVERY</span> nationwide within 7-14 days </p>
+              <p><?php echo $value->feature_description;?></p>
 
             </li>
+          <?php endforeach;?>
+            
 
           </ul>
 
@@ -93,18 +79,16 @@
       </section>   
 
       
-
+      <?php $i = 1; foreach ($resources as $key => $value): ?>
       <section class="video">
 
         <div class="pagewrapper2">
 
           <article>
 
-            <h2>FRAME YOUR TREASURES<br>
+            <h2><?php echo $value->yiframe_title?></h2>
 
-            TREASURE YOUR FRAMES</h2>
-
-            <p>Turn your walls into galleries of your most special moments or favorite decor</p>
+            <p><?php echo $value->yiframe_desc?></p>
 
             <h6><a href="<?php echo base_url('getStarted');?>">LET'S DO IT!</a></h6>
 
@@ -114,7 +98,7 @@
 
             <div class="video-container">
 
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/oE1HxR0DG8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <?php echo htmlspecialchars_decode($value->yiframe_embed);?>
 
             </div>
 
@@ -123,6 +107,7 @@
         </div>
 
       </section>  
+    <?php endforeach;?>
 
       <script src="text/javascript">
         var elem = document.getElementsByClassName("featured").firstElementChild;

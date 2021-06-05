@@ -3,9 +3,14 @@
         <div class="pagewrapper3">
 
             <div class="wrap">
+                <aside class="gmaps">
+                <?php $i = 1; foreach ($resources as $key => $value): ?>
+                <?php $new = str_replace(' ', '%20', $value->location_embed);?>
+                <?php $last = str_replace('&', '%26', $new);?>
 
-                <aside class="gmaps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.6601308884756!2d121.1109655148404!3d14.618426889791124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b844bc35a8a7%3A0xa9ad4469f680bf9f!2sTown%20%26%20Country%20Executive%20Village!5e0!3m2!1sen!2sph!4v1619431541464!5m2!1sen!2sph" style="border:0;" allowfullscreen="" loading="lazy"></iframe></aside>
-
+                <iframe src="<?php echo $last;?>" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <?php endforeach;?>
+                </aside>
                 <article>
 
                     <h2>Contact Us</h2>
@@ -16,31 +21,31 @@
 
                         <ul class="office">
 
-                        <li>
-
-                            <h5>Operations:</h5>
-
-                            <p>3 Kaimito St. Town & Country<br/>
-
-                            Executive Village, Antipolo City </p>
-
-                            <p>Contact #:<br>
-
-                            <a href="tel:+63286453578">+(632) 8645-3578</a>, <a href="tel:+639995851756">0999-5851756</a></p>
-
-                        </li>
+                        <?php $i = 1; foreach ($contact as $key => $value): ?>
 
                         <li>
 
-                            <h5>Sales & Marketing:</h5>
+                            <h5><?php echo $value->contact_name;?>:</h5>
 
-                            <p>43 Caballero St. Town & Country<br/> Executive Village, Antipolo City </p>
+                            <p><?php echo $value->contact_address;?></p>
 
                             <p>Contact #:<br>
-
-                            <a href="tel:+63284778644">+(632) 8477-8644</a>, <a href="tel:+63284778644">0999-5851753</a></p>
+                            <?php 
+                            $variable = $value->contact_number;
+                           $array = explode(', ',$variable);
+                           foreach($array as $row)
+                            {?>
+                                <a href="tel:+<?php echo $row;?>">+<?php echo $row;?> </a> 
+                            <?php }?>
+                            
+                            
+                            </p>
+                            
 
                         </li>
+
+
+                    <?php endforeach;?>
 
                         </ul>
 

@@ -50,6 +50,8 @@
 
                         <a href="<?php echo base_url(); ?>" class="return-home-btn">RETURN</a>
 
+                        <p><b>Note:</b> kindly check your email for your sales order update/s.</p>
+
                   </div>
 
               </div>
@@ -73,6 +75,31 @@
   <script src="<?php echo base_url('public/frontend/'); ?>/js/croppie.js"></script>
 
   <script src="<?php echo base_url('public/frontend/'); ?>/js/main.js"></script>
+
+  <!-- Messenger Chat Plugin Code -->
+  <div id="fb-root"></div>
+            <script>
+              window.fbAsyncInit = function() {
+                FB.init({
+                  xfbml            : true,
+                  version          : 'v10.0'
+                });
+              };
+
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <!-- Your Chat Plugin code -->
+            <div class="fb-customerchat"
+              attribution="biz_inbox"
+              page_id="102555568620612">
+            </div>
 
       
 

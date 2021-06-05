@@ -809,7 +809,10 @@ img.mfp-img {
 
 header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwbox; position: fixed; top: 0; left: 0; height: 130px; z-index: 1000;
   .pagewrapper {@extend .flex; @extend .betweenstretch; height: 129px;
-    aside {width: 110px; height: 110px; position: absolute; top: 0; left: 24px;z-index: 1}
+    aside {width: 110px; height: 110px; position: absolute; top: 0; left: 24px;z-index: 1}  
+    h1 {position: absolute; top: calc(50% - 10px); left: 186px; transform: translateY(-50%); text-align: center; font: 48px/56px $head1; color: $yellow;
+      span {font-size: inherit; line-height: inherit; font-family: $head2; color: $red;}
+    }
     nav {@extend .wid100; padding-left: 130px; height: 119px; position: relative;
       ul {@extend .listn; @extend .flex; @extend .endcenter; height: 100%;
         li {height: 100%; margin-left: 10px;
@@ -960,7 +963,7 @@ header {@extend .wid100; background: $white; padding: 10px 0 1px; @extend .shdwb
 
 .featured {@extend .wid100; position: relative; height: 100vh; overflow: hidden; z-index: 1;
   img {@extend .coverimg; }
-  h1 {@extend .wid100; position: absolute; top: 170px; left: 0; text-align: center; font: 56px/62px $head1; color: $yellow; text-shadow: 0 0 8px rgba(0,0,0, 0.75);
+  h1 {@extend .wid100; position: absolute; top: 170px; left: 0; text-align: center; font: 56px/62px $head1; color: $yellow;display: none;
     span {font-size: inherit; line-height: inherit; font-family: $head2; color: $red;}
   }
 }
@@ -1523,10 +1526,10 @@ ul.accordion{width: 100%; height: calc(100% - 72px); overflow-y: auto; @extend .
 }
 .thank-you{
   h1{margin-bottom: 12px;}
-  h2{font: 32px/40px $fonthead; text-align: center;}
+  h2{font: 32px/40px $fonthead; text-align: center; }
   p{font: 16px/24px $fontmain; margin-bottom: 12px; text-align: center;}
   .return-home-btn{display: inline-block; background: $orange;font: 22px/22px $fonthead; padding: 16px 24px; min-width: 165px; text-align: center; color: white; border-radius: 8px;
-    background: $orange;transition: opacity 100ms ease-in-out; position: relative; left: 50%; transform: translateX(-50%); margin-top: 42px;
+    background: $orange;transition: opacity 100ms ease-in-out; position: relative; left: 50%; transform: translateX(-50%); margin-top: 42px; margin-bottom: 12px;
     &:hover{opacity: 0.8;}
   }
 }
@@ -1573,3 +1576,15 @@ input[type=number]::-webkit-outer-spin-button {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4); text-align: center; font: 12px/18px $fontmain; color: red;}
 
 #upload-progress {color: $orange; font: 36px/42px $fontbold;}
+
+.coming-soon {width: 100%; height: 100%; padding-top: 0!important;
+
+  .pagewrapper{width: 100%; height: 100%; min-height: 100vh; padding-top: 130px; @extend .flex; align-items: center; justify-content: center; padding-top: 0!important;
+  
+    .logo-wrap img{width: auto; height: auto; display: block; margin-bottom: 12px; margin: 0 auto 12px;}
+
+    h1{color: $orange; font: 40px/56px $fonthead; text-align: center;}
+
+  }
+
+}

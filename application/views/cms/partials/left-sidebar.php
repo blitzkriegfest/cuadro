@@ -92,6 +92,34 @@
             <span>Projects</span>
           </a>
         </li>
+        <li>
+          <a href="<?php echo base_url('cms/resources') ?>"
+            class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'resources') ? 'active': ''; ?>">
+            <i class="fa fa-gear"></i>
+            <span>Resources</span>
+          </a>
+        </li>
+         <li>
+          <a href="<?php echo base_url('cms/contact') ?>"
+            class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'contact') ? 'active': ''; ?>">
+            <i class="fa fa-gear"></i>
+            <span>Contacts</span>
+          </a>
+        </li>
+         <li>
+          <a href="<?php echo base_url('cms/features') ?>"
+            class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'features') ? 'active': ''; ?>">
+            <i class="fa fa-gear"></i>
+            <span>Features</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url('cms/seo') ?>"
+            class="<?php echo $this->uri->segment(1) === 'cms' && ($this->uri->segment(2) === 'seo') ? 'active': ''; ?>">
+            <i class="fa fa-gear"></i>
+            <span>SEO</span>
+          </a>
+        </li>
       </ul>
       <!-- sidebar menu end-->
     </div>

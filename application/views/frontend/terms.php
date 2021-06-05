@@ -30,7 +30,7 @@
 
               <h5 style="text-align: center; width: 100%;">WEBSITE TERMS AND CONDITIONS</h5>
 
-              <p>
+              <!-- <p>
 
               Welcome to the Website of Cuadro Corporation (<a href="http://www.cuadroph.com/">www.cuadroph.com</a>) owned and
 
@@ -627,7 +627,11 @@
                 </li>
               </ul>
 
-              </p>
+              </p> -->
+
+              <?php $i = 1; foreach ($resources as $key => $value): ?>
+              <?php echo $value->terms;?>
+            <?php endforeach;?>
 
               
 

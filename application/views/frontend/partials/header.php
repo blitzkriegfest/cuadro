@@ -11,6 +11,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
             <!-- Place CSS links here -->
+            <link rel="icon" href="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg">
 
             <link rel="stylesheet" href="<?php echo base_url('public/frontend/'); ?>css/slick.css"/>
 
@@ -28,7 +29,20 @@
             <!-- <script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script> -->
             <!-- for v3 -->
             <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
-            <meta name="robots" content="noindex, nofollow">
+
+            <?php $i = 1; foreach ($seo as $key => $value): ?>
+            <meta name="<?php echo $value->tags;?>" content="<?php echo $value->value;?>">
+            <?php endforeach;?>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-198032754-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-198032754-1');
+            </script>
 
     </head>
 
@@ -40,6 +54,7 @@
 
           <aside><a href="<?php echo base_url();?>"><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></a></aside>
 
+          <h1 class="header-wai5m">Wall Art in <span>5 Minutes</span></h1>
 
 
           <nav class="mainnav">

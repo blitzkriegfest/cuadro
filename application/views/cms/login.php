@@ -58,7 +58,8 @@
 <body class="login-body">
   <div class="container">
     <form class="form-signin" method="post" action="<?php echo base_url('cms/login/attempt') ?>">
-      <h2 class="form-signin-heading" style="background: dimgray;"> CMS LOGIN
+      <h2 class="form-signin-heading" style="background: #f27f3c;"> CMS LOGIN<br>
+      <center><img src="<?php echo base_url('public/frontend/'); ?>images/cuadro-frames-logo.jpg" alt="Cuadro Frames"></center>
         <!-- <img src="" alt=""
         style="max-height:80px;"> -->
       </h2>
@@ -68,7 +69,7 @@
         <?php if ($login_msg = $this->session->login_msg): ?>
           <p style="color: <?php echo $login_msg['color'] ?>"><?php echo $login_msg['message'] ?></p>
         <?php endif; ?>
-        <button style="background: dimgray; box-shadow: 0px 4px #908f8f"
+        <button style="background: #f27f3c; box-shadow: 0px 4px #db6622"
         class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
       </div>
     </form>

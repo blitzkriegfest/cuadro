@@ -200,7 +200,7 @@ button {
 }
 
 /* Layouts/Displays */
-.flex, header .pagewrapper, header .pagewrapper nav ul, header .pagewrapper nav ul li a, header .pagewrapper nav ul li:last-child, header #mobnav, header .mob-dropdown .menu nav ul li a, header .mob-dropdown .menu nav ul li.faq, header .mob-dropdown .menu .lets-do-it a, header .mob-dropdown .menu .bottom ul.privacy-terms, header .mob-dropdown .menu .bottom ul.socials, header .mob-dropdown .faqs h3, .faq-desktop .faq-lbox-cont, .why-us ul, .why-us ul li, .projects ul.project-list, .projects ul.project-list li div.proj div.overlay h4, .video, footer ul.footer, footer ul.footer li.contact-info ul.cinfo li.contactdet ul.office, footer ul.footer li.footermenu ul.menulist, footer ul.footer li.social-links ul.socials, footer .mobile-footer .mobile-footer-links, footer .lets-do-it a, .contact-info-main .wrap, .contact-info-main .wrap article .contact-det ul.office, .contact-form .pagewrapper3 .wrap ul, .short-banner .wrap, .products .product-list, .products .product-list li article, .products .pagination, .get-started .wrap .navigation, .get-started .wrap .iagree-sec, .get-started .wrap .step-1 ul.pick-options, .get-started .wrap .step-1 ul.pick-options li:first-child, .get-started .wrap .step-1 ul.pick-options li:last-child, .get-started .wrap .step-1 ul.pick-options li:first-child label, .get-started .wrap .step-1 ul.pick-options li:last-child label, .get-started .wrap .step-1 ul.pick-options li.divider, .get-started .wrap .step-2 ul.upload-options, .get-started .wrap .step-3 .frame-options-container ul.frame-options, .get-started .wrap .step-3 .photos-section .container, .get-started .wrap .step-3 .photos-section .container li.single-container .photo-pane .photo-options, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane ul.inner-upload-options li label, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane ul.inner-upload-options li .upload-fb, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane ul.inner-upload-options li .upload-ig, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane .photo-options, .get-started .wrap .step-3 .photos-section .container .add-new-single .upload-pane ul.inner-upload-options li label, .get-started .wrap .step-3 .photos-section .container .add-new-single .upload-pane ul.inner-upload-options li .upload-fb, .get-started .wrap .step-3 .photos-section .container .add-new-single .upload-pane ul.inner-upload-options li .upload-ig, .get-started .wrap .step-3 .photos-section .container .add-new-single .upload-pane .photo-options, .get-started .wrap .step-3 .photos-section .container .add-new-single .empty-pane, .get-started .wrap .step-4 .forms ul.form-list, .get-started .wrap .step-5 .checkouts .container, .get-started .wrap .step-5 .checkouts .container .right .top .photos-list-final, .get-started .wrap .step-5 .checkouts .container .right .top .costs li, .get-started .wrap .step-5 .checkouts .container .right .total, .get-started .wrap .step-6 ul.payment_options, .get-started .wrap .step-6 ul.payment_options > li label, .get-started .wrap .step-6 ul.payment_options > li label p, .get-started .wrap .step-6 .payment_content_wrap, .get-started .wrap .step-6 .payment_content_wrap .left .payment_content .details li, .get-started .wrap .step-6 .payment_content_wrap .right .payment_submission label, .cropper-popup .container, .cropper-popup .container .lbox .buttons-container {
+.flex, header .pagewrapper, header .pagewrapper nav ul, header .pagewrapper nav ul li a, header .pagewrapper nav ul li:last-child, header #mobnav, header .mob-dropdown .menu nav ul li a, header .mob-dropdown .menu nav ul li.faq, header .mob-dropdown .menu .lets-do-it a, header .mob-dropdown .menu .bottom ul.privacy-terms, header .mob-dropdown .menu .bottom ul.socials, header .mob-dropdown .faqs h3, .faq-desktop .faq-lbox-cont, .why-us ul, .why-us ul li, .projects ul.project-list, .projects ul.project-list li div.proj div.overlay h4, .video, footer ul.footer, footer ul.footer li.contact-info ul.cinfo li.contactdet ul.office, footer ul.footer li.footermenu ul.menulist, footer ul.footer li.social-links ul.socials, footer .mobile-footer .mobile-footer-links, footer .lets-do-it a, .contact-info-main .wrap, .contact-info-main .wrap article .contact-det ul.office, .contact-form .pagewrapper3 .wrap ul, .short-banner .wrap, .products .product-list, .products .product-list li article, .products .pagination, .get-started .wrap .navigation, .get-started .wrap .iagree-sec, .get-started .wrap .step-1 ul.pick-options, .get-started .wrap .step-1 ul.pick-options li:first-child, .get-started .wrap .step-1 ul.pick-options li:last-child, .get-started .wrap .step-1 ul.pick-options li:first-child label, .get-started .wrap .step-1 ul.pick-options li:last-child label, .get-started .wrap .step-1 ul.pick-options li.divider, .get-started .wrap .step-2 ul.upload-options, .get-started .wrap .step-3 .frame-options-container ul.frame-options, .get-started .wrap .step-3 .photos-section .container, .get-started .wrap .step-3 .photos-section .container li.single-container .photo-pane .photo-options, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane ul.inner-upload-options li label, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane ul.inner-upload-options li .upload-fb, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane ul.inner-upload-options li .upload-ig, .get-started .wrap .step-3 .photos-section .container li.single-container .upload-pane .photo-options, .get-started .wrap .step-3 .photos-section .container .add-new-single .upload-pane ul.inner-upload-options li label, .get-started .wrap .step-3 .photos-section .container .add-new-single .upload-pane ul.inner-upload-options li .upload-fb, .get-started .wrap .step-3 .photos-section .container .add-new-single .upload-pane ul.inner-upload-options li .upload-ig, .get-started .wrap .step-3 .photos-section .container .add-new-single .upload-pane .photo-options, .get-started .wrap .step-3 .photos-section .container .add-new-single .empty-pane, .get-started .wrap .step-4 .forms ul.form-list, .get-started .wrap .step-5 .checkouts .container, .get-started .wrap .step-5 .checkouts .container .right .top .photos-list-final, .get-started .wrap .step-5 .checkouts .container .right .top .costs li, .get-started .wrap .step-5 .checkouts .container .right .total, .get-started .wrap .step-6 ul.payment_options, .get-started .wrap .step-6 ul.payment_options > li label, .get-started .wrap .step-6 ul.payment_options > li label p, .get-started .wrap .step-6 .payment_content_wrap, .get-started .wrap .step-6 .payment_content_wrap .left .payment_content .details li, .get-started .wrap .step-6 .payment_content_wrap .right .payment_submission label, .cropper-popup .container, .cropper-popup .container .lbox .buttons-container, .coming-soon .pagewrapper {
   display: flex;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1195,6 +1195,24 @@ header .pagewrapper aside {
   z-index: 1;
 }
 
+header .pagewrapper h1 {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 186px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-align: center;
+  font: 48px/56px "pt_sansbold", Arial, sans-serif;
+  color: #ffdd4a;
+}
+
+header .pagewrapper h1 span {
+  font-size: inherit;
+  line-height: inherit;
+  font-family: "inkfree", sans-serif;
+  color: #d00200;
+}
+
 header .pagewrapper nav {
   padding-left: 130px;
   height: 119px;
@@ -1711,7 +1729,7 @@ header .mob-dropdown .faqs ul.faq-list li .faq-content p {
   text-align: center;
   font: 56px/62px "pt_sansbold", Arial, sans-serif;
   color: #ffdd4a;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.75);
+  display: none;
 }
 
 .featured h1 span {
@@ -3715,6 +3733,7 @@ ul.accordion li .accord-content p {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   margin-top: 42px;
+  margin-bottom: 12px;
 }
 
 .thank-you .return-home-btn:hover {
@@ -3883,5 +3902,39 @@ input[type=number]::-webkit-outer-spin-button {
 #upload-progress {
   color: #f17f3a;
   font: 36px/42px "open_sansbold", Arial, sans-serif;
+}
+
+.coming-soon {
+  width: 100%;
+  height: 100%;
+  padding-top: 0 !important;
+}
+
+.coming-soon .pagewrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 130px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 0 !important;
+}
+
+.coming-soon .pagewrapper .logo-wrap img {
+  width: auto;
+  height: auto;
+  display: block;
+  margin-bottom: 12px;
+  margin: 0 auto 12px;
+}
+
+.coming-soon .pagewrapper h1 {
+  color: #f17f3a;
+  font: 40px/56px "ubuntubold", Arial, sans-serif;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

@@ -57,7 +57,6 @@
                     <th>Name</th>
                     <th>Order Type</th>
                     <th>Order Cost</th>
-                    <th>Order Status</th>
                     <th>Date Ordered</th>
                     <th>Action</th>
                   </tr>
@@ -71,7 +70,6 @@
                         <td><?php echo $value->name ?></td>
                         <td><?php echo $value->order_type ?></td>
                         <td><?php echo $value->order_cost ?></td>
-                        <td><?php echo $value->order_status ?></td>
                         <td><?php echo $value->created_at ?></td>
                         <td>
                           <?php $arr = [];
@@ -86,8 +84,18 @@
                           data-payload='<?php echo json_encode(['order_id' => $value->order_id, 'name' => $value->name, 'email' => $value->email, 'number' => $value->number, 'address_1' => $value->address_1, 'address_2' => $value->address_2, 'city' => $value->city, 'state_province' => $value->state_province, 'postal_code' => $value->postal_code, 'sender_name' => $value->sender_name ? $value->sender_name : "N/A", 'sender_email' => $value->sender_email ? $value->sender_email : "N/A", 'sender_number' => $value->sender_number ? $value->sender_number : "N/A", 'order_type' => $value->order_type, 'order_cost' => $value->order_cost, 'order_status' => $value->order_status, 'proof_of_payment' => $value->proof_of_payment_f, 'mode_of_payment' => $value->mode_of_payment])?>'
                           data-images='<?php echo json_encode($arr)?>' class="edit-row btn btn-info btn-xs">View Order Details</button>
                           
-                          <button type="button" data-id='<?php echo $value->order_id; ?>'
-                            class="btn btn-delete btn-danger btn-xs">Delete</button>
+                          <button type="button" data-id='<?php echo $value->order_id; ?>' class="btn btn-delete btn-danger btn-xs">Delete</button><br>
+                          <?php if ($value->order_status == 'Pending Payment'){ ?>
+                          	<button type="button" class="btn btn-info btn-xs" style="background-color: #dbb900a3; border-color: #dbb900a3; margin-top: 5px; cursor: default;">Pending Payment</button>
+                          <?php } elseif ($value->order_status == 'Processing Order'){ ?>
+                          	<button type="button" class="btn btn-info btn-xs" style="background-color: #ff9800; border-color: #ff9800; margin-top: 5px; cursor: default;">Processing Order</button>
+                          <?php ?>
+                      	  <?php } elseif ($value->order_status == 'Ready for Delivery'){ ?>
+                          	<button type="button" class="btn btn-info btn-xs" style="background-color: #009688; border-color: #009688; margin-top: 5px; cursor: default;">Ready for Delivery</button>
+                          <?php ?>
+                      	  <?php } elseif ($value->order_status == 'Delivered'){ ?>
+                          	<button type="button" class="btn btn-info btn-xs" style="background-color: #4caf50; border-color: #4caf50; margin-top: 5px; cursor: default;">Delivered</button>
+                          <?php } ?>
                           </td>
                         </tr>
                       <?php endforeach; ?>

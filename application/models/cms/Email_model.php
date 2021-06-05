@@ -63,7 +63,7 @@ class Email_model extends Admin_core_model
     $this->email->to($to);
     $this->email->subject($subject);
     $this->email->message($message);
-    $this->email->cc('nmendoza@myoptimind.com, april@myoptimind.com, sfernando@myoptimind.com, rmagsakay@myoptimind.com');
+    $this->email->cc('katherinemella@cuadroph.com, marxmella@cuadroph.com');
     return $this->email->send();
   }
 
